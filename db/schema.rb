@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 2022_02_28_161702) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "evaluations", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_evaluations_on_booking_id"
+    t.index ["user_id"], name: "index_evaluations_on_user_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "bio"
     t.string "address"
@@ -61,5 +71,7 @@ ActiveRecord::Schema.define(version: 2022_02_28_161702) do
 
   add_foreign_key "bookings", "services"
   add_foreign_key "bookings", "users"
+  add_foreign_key "evaluations", "bookings"
+  add_foreign_key "evaluations", "users"
   add_foreign_key "services", "users"
 end
