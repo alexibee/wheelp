@@ -36,7 +36,7 @@ end
 
 services = []
 adjectives = %w[perfect great amazing awesome exquisite brilliant gorgeous]
-nouns = %w[expert mechanic service ]
+nouns = %w[expert mechanic service]
 address = %w[London Paris Berlin Milan Kairo Greece Latvia Spain Norway]
 (1..10).each do |n|
   new_service = Service.new(
@@ -44,7 +44,7 @@ address = %w[London Paris Berlin Milan Kairo Greece Latvia Spain Norway]
     address: "#{n} #{address.sample} Street, #{address.sample}",
     price: rand(45..85),
     availability: Date.today + rand(1..20),
-    title: "#{adjectives.sample} #{nouns.sample} to help you find the card of your dreams",
+    title: "#{adjectives.sample} #{nouns.sample} to help you find the car of your dreams",
     user_id: experts.sample
   )
   new_service.save!
