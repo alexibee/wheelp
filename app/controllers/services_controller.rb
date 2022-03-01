@@ -31,7 +31,7 @@ class ServicesController < ApplicationController
     # we need `user_id` to associate service with corresponding user?
     @user = current_user
     @service.user = @user
-    if @service.save!
+    if @service.save
       redirect_to service_path(@service)
     else
       render :new
