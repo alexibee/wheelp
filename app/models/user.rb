@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   has_many :bookings, dependent: :destroy
   has_many :evaluations, dependent: :destroy
-  has_one :service, dependent: :destroy
+  has_many :service, dependent: :destroy
 end
