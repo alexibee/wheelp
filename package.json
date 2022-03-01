@@ -16,7 +16,7 @@
     "svgo": "2.x.x",
     "turbolinks": "^5.2.0",
     "watchpack": "^2.3.1",
-    "webpack": "^5.69.1",
+    "webpack": "4.x.x",
     "webpack-cli": "^4.9.2"
   },
   "version": "0.1.0",
