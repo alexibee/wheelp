@@ -1,6 +1,21 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.all
+    @search = params["search"]
+    if @search.present? && @search["name"] != ""
+      @result = @search["name"]
+      overall_search = Service.search_for_spowers_by_name_descr_cat_user(@result)
+      id = current_user.id
+      users_services = Service.where(user_id: id)
+      @services = overall_search - users_services
+    else
+      @services = Service.all
+      id = current_user.id
+      if Service.find_by(user_id: id)
+        @message = "These are the services you have:"
+      else
+        @message = "You can add your service to this list by creating a service"
+      end
+    end
   end
 
   def show
@@ -16,7 +31,6 @@ class ServicesController < ApplicationController
     # we need `user_id` to associate service with corresponding user?
     @user = current_user
     @service.user = @user
-    @service.rating = 1.0
     if @service.save!
       redirect_to service_path(@service)
     else
@@ -27,6 +41,6 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:title, :price, :description)
+    params.require(:service).permit(:title, :price, :bio, :photo)
   end
 end
