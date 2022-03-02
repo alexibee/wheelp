@@ -12,25 +12,5 @@
     <% end %>
   </div>
 
-  <div class="services">
-    <% @services.each do |service| %>
-      <% if current_user.id != service.user_id %>
-        <%= link_to service_path(service) do %>
-          <figure class="image-card">
-            <% if service.photo.attached? %>
-              <%= cl_image_tag service.photo.key, height: 300, width: 400, crop: :fill %>
-            <% else %>
-              <img src="https://media.wired.com/photos/5c54ee6a4feec32ca0f590d8/125:94/w_1761,h_1324,c_limit/superman-922909434.jpg" width="400" height="400" />
-            <% end %>
-            <figcaption>
-              <h3> <%=service.title.capitalize  %> </h3>
-              <div class="info d-flex justify-content-between">
-                <p>from £<%= service.price %></p>
-              </div>
-            </figcaption>
-          </figure>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render "shared/index_page_card" %>
 </div>
