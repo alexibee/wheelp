@@ -1,0 +1,10 @@
+<% if @message %>
+  <h3> <%= @message %> </h3>
+  <%= link_to "Find an expert", services_path, class: "link" %>
+<% else %>
+  <% @bookings.each do |booking| %>
+    <% @service = booking.service %>
+    <p><%= link_to booking.vehicle_address, service_booking_path(@service, booking), class: "link" %></p>
+  <% end %>
+  <%= link_to "Find an expert", services_path, class: "link" %>
+<% end %>
