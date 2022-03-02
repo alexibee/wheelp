@@ -1,6 +1,11 @@
 <h1> Your bookings </h1>
-<% @bookings.each do |booking| %>
-<p><%= booking.vehicle_brand %></p>
-<p><%= booking.vehicle_model %></p>
-<p><%= booking.vehicle_address %></p>
+
+<% if @message %>
+  <h3> <%= @message %> </h3>
+<% else %>
+  <% @bookings.each do |booking| %>
+  <p><%= booking.vehicle_brand %></p>
+  <p><%= booking.vehicle_model %></p>
+  <p><%= booking.vehicle_address %></p>
+  <% end %>
 <% end %>
