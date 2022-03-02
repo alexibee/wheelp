@@ -5,7 +5,11 @@ class BookingsController < ApplicationController
     @user = current_user
     if @user.expert
       @service = Service.find_by(user_id: @user.id)
+      if @service.nil?
+        @message = "Please create your services profile"
+      else
       @bookings = @service.bookings
+      end
     else
       @bookings = Booking.where(user_id: @user.id)
     end
