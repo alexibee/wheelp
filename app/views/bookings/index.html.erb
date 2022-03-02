@@ -1,6 +1,7 @@
 <h1> Your bookings </h1>
-<% @bookings.each do |booking| %>
-<p><%= booking.vehicle_brand %></p>
-<p><%= booking.vehicle_model %></p>
-<p><%= booking.vehicle_address %></p>
+
+<% if @user.expert %>
+  <%= render "shared/dashboard_expert" %>
+<% else %>
+  <%= render "shared/dashboard_customer" %>
 <% end %>
