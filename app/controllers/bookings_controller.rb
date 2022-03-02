@@ -16,7 +16,9 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @booking = Booking.find(params[:id])
+    @review = Review.new
   end
 
   def new
