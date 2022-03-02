@@ -9,8 +9,6 @@ Booking.destroy_all
 Service.destroy_all
 User.destroy_all
 
-
-
 usernames = ["shaquille_oatmeal", "hanging_with_my_gnomies", "hoosier_daddy", "fast_and_curious", "averagestudent", "BadKarma", "google_was_my_idea", "whats_my_name", "where_am_i", "wheelp4lyf", "mr_lewagon", "ms_lewagon", "806_or_die"]
 names = ["Bobby", "Roy", "Jose", "Alex", "Ismael", "Ibrahim", "Rob", "Dick", "Bill", "Auston", "Alice", "Laura", "Margaret", "Cindy", "Grace"]
 surnames = ["Brown", "Green", "Smith", "Jameson", "Gudbranson", "Velasquez", "Khan", "Goldman", "Lee", "Ozols"]
@@ -35,19 +33,35 @@ usernames.each do |user|
   puts "user #{user} created"
 end
 
+
 services = []
 adjectives = %w[perfect great amazing awesome exquisite brilliant gorgeous]
 nouns = %w[expert mechanic service]
 address = %w[London Paris Berlin Milan Kairo Greece Latvia Spain Norway]
+availability = []
+30.times do |i|
+  date = Date.today + i
+  availability << date
+end
 (1..10).each do |n|
+  unavailability = []
+  availability.count.times do |i|
+    action = [true, false]
+    if action.sample
+      date = Date.today + i
+      unavailability << date
+    end
+  end
   new_service = Service.new(
     bio: "I am a great expert and you will be amazed by how great my services are.",
     address: "#{n} #{address.sample} Street, #{address.sample}",
     price: rand(45..85),
-    availability: Date.today + rand(1..20),
+    availability: availability - unavailability,
     title: "#{adjectives.sample} #{nouns.sample} to help you find the car of your dreams",
     user_id: experts.sample
+
   )
+
   new_service.save!
   services << new_service.id
   puts "service #{n} created"
