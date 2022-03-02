@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     @booking.user_id = @user.id
     @booking.service_id = @service.id
     if @booking.save
-      redirect_to service_booking_path(@booking)
+      redirect_to service_booking_path(@service, @booking)
     else
       render :new
     end
