@@ -11,8 +11,10 @@ class BookingsController < ApplicationController
         @bookings = @service.bookings
       end
     else
-      @message = "You don't have any bookings at this time"
       @bookings = Booking.where(user_id: @user.id)
+      if @bookings.nil?
+        @message = "You don't have any bookings at this time"
+      end
     end
   end
 
