@@ -1,5 +1,15 @@
 class BookingsController < ApplicationController
-  before_action :set_service
+  before_action :set_service, only: %i[show new create]
+
+  def index
+    @user = current_user
+    if @user.expert
+      @service = Service.find_by(user_id: @user.id)
+      @bookings = @service.bookings
+    else
+      @bookings = Booking.where(user_id: @user.id)
+    end
+  end
 
   def show
     @booking = Booking.find(params[:id])
