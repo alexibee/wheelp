@@ -1,0 +1,55 @@
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(rgb(0, 0, 102), rgb(102, 0, 102), rgb(138, 0, 138));
+  color: white;
+  text-align: center;
+  font-size: small;
+  padding: 30px;
+  &-copyright {
+    font-size: 14px;
+    margin-top: 30px;
+  }
+}
+
+.contact-message {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 35px;
+  a {
+    color: white;
+  }
+
+  i {
+    font-size: 30px;
+    margin: 0 20px;
+  }
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  p {
+    font-size: 12px;
+  }
+
+ &-socials {
+  a {
+    margin: 15px;
+  color: white;
+
+  }
+  i {
+    font-size: 20px;
+  }
+ }
+}
