@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :reviews, only: %i[create]
     end
   end
-  resources :bookings, only: %i[edit update destroy]
+  resources :bookings, only: %i[edit update destroy] do
+    resources :evaluations, only: %i[new create show]
+  end
   get "/dashboard", to: 'bookings#index', as: :dashboard
 end
