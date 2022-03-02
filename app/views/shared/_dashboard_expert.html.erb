@@ -2,10 +2,16 @@
   <% if @message %>
     <h3> <%= @message %> </h3>
   <% else %>
+    <h2>Your bookings:</h2>
     <% @bookings.each do |booking| %>
-    <p><%= booking.vehicle_brand %></p>
-    <p><%= booking.vehicle_model %></p>
-    <p><%= booking.vehicle_address %></p>
+    <div class="bookings-card expert">
+      <img
+      src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
+      />
+      <p><%= booking.vehicle_brand %></p>
+      <p><%= booking.vehicle_model %></p>
+      <p><%= booking.vehicle_address %></p>
+    </div>
     <% end %>
   <% end %>
 </div>
