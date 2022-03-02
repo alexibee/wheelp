@@ -1,0 +1,10 @@
+.cta-button{
+  border: 3px solid darken($color, 0%);
+  color: darken($color, 0%);
+  background-color: darken($color, 40%);
+  &:hover{
+    border-color: lighten($color, 10%);
+    color: lighten($color, 10%);
+    background-color: darken($color, 30%);
+  }
+}

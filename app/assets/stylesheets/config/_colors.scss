@@ -8,3 +8,8 @@ $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
+
+$border: 3px;
+$color: #00d4FF;
+$dark-color: darken($color, 40%);
+$light-color: lighten($color, 10%);

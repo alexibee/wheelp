@@ -1,9 +1,11 @@
-<% if @message %>
-  <h3> <%= @message %> </h3>
-<% else %>
-  <% @bookings.each do |booking| %>
-  <p><%= booking.vehicle_brand %></p>
-  <p><%= booking.vehicle_model %></p>
-  <p><%= booking.vehicle_address %></p>
+<div class="container">
+  <% if @message %>
+    <h3> <%= @message %> </h3>
+  <% else %>
+    <% @bookings.each do |booking| %>
+    <p><%= booking.vehicle_brand %></p>
+    <p><%= booking.vehicle_model %></p>
+    <p><%= booking.vehicle_address %></p>
+    <% end %>
   <% end %>
-<% end %>
+</div>
