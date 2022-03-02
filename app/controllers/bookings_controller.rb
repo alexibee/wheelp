@@ -5,14 +5,21 @@ class BookingsController < ApplicationController
     @user = current_user
     if @user.expert
       @service = Service.find_by(user_id: @user.id)
-      @bookings = @service.bookings
+      if @service.nil?
+        @message = "Please create your services profile to receive bookings"
+      else
+        @bookings = @service.bookings
+      end
     else
+      @message = "You don't have any bookings at this time"
       @bookings = Booking.where(user_id: @user.id)
     end
   end
 
   def show
+    @user = current_user
     @booking = Booking.find(params[:id])
+    @review = Review.new
   end
 
   def new

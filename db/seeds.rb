@@ -84,5 +84,6 @@ models = %w[A5 Corolla M3 Golf Polo Testarossa Xedos Astra Cayenne Supra Spacewa
     service_id: services.sample
   )
   new_booking.save!
+  bookings << new_booking.id
   puts "booking #{n - 1} created"
 end
