@@ -1,4 +1,10 @@
 <%= @booking.service %>
 <%= @booking.vehicle_address %>
-<%= link_to "Back to expert page", service_path(@service) %>
+<h3> Add your review </h3>
+<%= simple_form_for [@service, @booking, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, as: :integer %>
+  <%= f.submit %>
+<% end %>
+<%= link_to "Show this expert's page", service_path(@service) %>
 <%= link_to "Back to your dashboard", dashboard_path %>
