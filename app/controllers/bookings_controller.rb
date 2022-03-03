@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    if current_user.expert == true
+    # if current_user.expert == true
   end
 
   private
