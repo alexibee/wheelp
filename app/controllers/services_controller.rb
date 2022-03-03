@@ -38,6 +38,10 @@ class ServicesController < ApplicationController
     end
   end
 
+  def wheelpers
+    @services = Service.all
+  end
+
   private
 
   def service_params

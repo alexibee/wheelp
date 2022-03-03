@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :evaluations, only: %i[new create show]
   end
   get "/dashboard", to: 'bookings#index', as: :dashboard
-  get "/wheelpers", to: 'bookings#index', as: :wheelpers
+  get "/wheelpers", to: 'services#wheelpers', as: :wheelpers
 end
