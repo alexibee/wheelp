@@ -1,7 +1,7 @@
 .bookings-card {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background: $background-color;
   display: flex;
   align-items: center;
   border: $border $dark-color;
