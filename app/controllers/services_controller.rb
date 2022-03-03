@@ -6,7 +6,7 @@ class ServicesController < ApplicationController
       @search = params["search"]
       if @search.present? && @search["search_info"] != ""
         @result = @search["search_info"]
-        @services = Service.search_by_bio(@result)
+        @services = Service.search_by_bio_and_title(@result)
       else
         @services = Service.all
       end
