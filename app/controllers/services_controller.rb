@@ -6,11 +6,15 @@ class ServicesController < ApplicationController
       @search = params["search"]
       if @search.present? && @search["address"] != ""
         @services = Service.near(@search["address"], 10)
-        if @search["search_info"] != ""
+        if @search["search_info"] != "" && !@services.nil?
           @result_words = @services.search_by_bio_title(@search["search_info"])
           @only_locations = @services - @result_words
           @services = @result_words + @only_locations
+        elsif @services.nil?
+          @services = Service.search_by_bio_title(@search["search_info"])
         end
+      elsif @search.present? && @search["address"] == ""
+        @services = Service.search_by_bio_title(@search["search_info"])
       else
         @services = Service.all
       end
