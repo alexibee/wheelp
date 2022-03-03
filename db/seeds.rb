@@ -54,12 +54,11 @@ end
   end
   new_service = Service.new(
     bio: "I am a great expert and you will be amazed by how great my services are.",
-    address: "#{n} #{address.sample} Street, #{address.sample}",
+    address: address.sample,
     price: rand(45..85),
     availability: availability - unavailability,
     title: "#{adjectives.sample} #{nouns.sample} to help you find the car of your dreams",
     user_id: experts.sample
-
   )
 
   new_service.save!
