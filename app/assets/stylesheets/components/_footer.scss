@@ -3,7 +3,7 @@
   bottom: 0;
   width: 100%;
   background-image: linear-gradient(rgb(0, 0, 102), rgb(102, 0, 102), rgb(138, 0, 138));
-  color: white;
+  color: $background-color;
   text-align: center;
   font-size: small;
   padding: 30px;
@@ -24,7 +24,7 @@
   justify-content: center;
   margin-left: 35px;
   a {
-    color: white;
+    color: $color;
   }
 
   i {
@@ -44,7 +44,7 @@
  &-socials {
   a {
     margin: 15px;
-  color: white;
+  color: $color;
 
   }
   i {
