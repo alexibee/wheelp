@@ -12,5 +12,9 @@
     </div>
     <% end %>
   </div>
+  <% if @services.empty? %>
+    <h3> <%= @message %> </h3>
+  <% else %>
     <%= render "shared/index_page_card" %>
+  <% end %>
 </div>

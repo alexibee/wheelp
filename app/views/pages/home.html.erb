@@ -1,7 +1,10 @@
 <div class="search-bar">
-  <form action="/services">
-    <input type="text" name="search" id="query" placeholder="   Search by location">
-  </form>
+  <%= simple_form_for :service, method: "GET", url: services_path, html: { class: 'mt-3' } do |f| %>
+    <%= f.input :address, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
+    <div class="center-button">
+      <%= f.submit "Search", class: "cta-button", id:"service" %>
+    </div>
+  <% end %>
 </div>
 <div class="wrapper">
   <div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">

@@ -3,23 +3,34 @@ class ServicesController < ApplicationController
     if current_user.expert
       redirect_to dashboard_path
     else
-      @search = params["search"]
+      @search = params["service"]
       if @search.present? && @search["address"] != ""
-        @services = Service.near(@search["address"], 10)
-        if @search["search_info"] != "" && !@services.nil?
-          @result_words = @services.search_by_bio_title(@search["search_info"])
-          @only_locations = @services - @result_words
-          @services = @result_words + @only_locations
-        elsif @services.nil?
-          @services = Service.search_by_bio_title(@search["search_info"])
-        end
-      elsif @search.present? && @search["address"] == ""
-        @services = Service.search_by_bio_title(@search["search_info"])
+        @services = Service.near(@search["address"], 20)
+        @message = "No experts within 20 km of this location" if @services.empty?
       else
         @services = Service.all
       end
     end
   end
+  # if  && @search["search_info"] == ""
+  #   @services = Service.all
+  # elsif @search["address"] != ""
+
+  #         if  "" && !@services.empty?
+  #           @result_words = @services.search_by_bio_title(@search["search_info"])
+  #           @only_locations = @services - @result_words
+  #           @services = @result_words + @only_locations
+  #         elsif @services.empty?
+  #           @message = "No experts within 20 km of this location"
+  #         end
+  #       else
+  #         @services = Service.search_by_bio_title(@search["search_info"])
+  #       end
+  #     else
+  #       @services = Service.all
+  #     end
+  #   end
+  # end
 
   def show
     @service = Service.find(params[:id])
