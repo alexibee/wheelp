@@ -5,9 +5,17 @@
 
   <div class="search-bar">
     <%= simple_form_for :search, method: "GET", html: { class: 'form-inline mt-3' } do |f| %>
-    <%= f.input :search_info, placeholder: 'Search by city, country, category', label:false, input_html: {value: ""} %>
+    <%= f.input :search_info, placeholder: 'Search by keyword or category', label:false, input_html: {value: ""} %>
     <div class="center-button d-flex justify-content-center">
       <%= f.submit "Search", class: "cta-button", id:"search" %>
+    </div>
+    <% end %>
+  </div>
+    <div class="search-bar">
+    <%= simple_form_for :search_location, method: "GET", html: { class: 'form-inline mt-3' } do |f| %>
+    <%= f.input :location, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
+    <div class="center-button d-flex justify-content-center">
+      <%= f.submit "Search", class: "cta-button", id:"search_address" %>
     </div>
     <% end %>
   </div>
