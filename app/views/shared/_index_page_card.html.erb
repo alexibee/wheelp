@@ -3,30 +3,32 @@
   <%= link_to service_path(service) do %>
     <div class="service-card d-flex align-items-start my-3">
       <div class="left-side">
-        <div class="avatar-image">
-          <% if service.photo.attached? %>
-            <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
-          <% else %>
-            <img src="https://media.wired.com/photos/5c54ee6a4feec32ca0f590d8/125:94/w_1761,h_1324,c_limit/superman-922909434.jpg" width="150" height="150" />
-          <% end %>
-        </div>
+        <% if service.photo.attached? %>
+          <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
+        <% else %>
+          <img src="https://media.wired.com/photos/5c54ee6a4feec32ca0f590d8/125:94/w_1761,h_1324,c_limit/superman-922909434.jpg" />
+        <% end %>
         <div class="reviews-info">
           <% total = 0 %>
           <% service.bookings.each do |book| %>
             <% total += book.review ? book.review.rating : 0 %>
           <% end %>
           <% if service.bookings.count > 0 %>
-            <%= total/service.bookings.count %>
+            <% total/service.bookings.count %>
+          <p> ★ 4.2 - <%= rand(2..200) %> Reviews</p>
           <% end %>
         </div>
       </div>
       <div class="right-side ps-3">
         <div class="top-right d-flex justify-content-between">
-          <h5> <%=service.user.first_name  %> </h5>
-          <h6>from £<%= service.price %></h6>
+          <h3> <%= service.title.capitalize %></h3>
+          <div class="price-tag">
+            <h6>from £<%= service.price %></h6>
+          </div>
         </div>
         <div class="right-middle">
-          <p><%= service.title %></p>
+          <h5> <%=service.user.first_name.capitalize  %> <%=service.user.last_name.capitalize  %></h5>
+          <p><%= service.bio %></p>
         </div>
         <div class="bottom-right d-flex justify-content-between">
           <div class="availability-window">
