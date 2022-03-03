@@ -1,4 +1,14 @@
+
+<%= simple_form_for :search, method: "GET", html: { class: 'mt-3' } do |f| %>
+<%= f.input :search_info, placeholder: 'Search by keyword or category', label:false, input_html: {value: ""} %>
+<%= f.submit "Search", class: "cta-button", id:"search" %>
+<% end %>
+
+
 <div class="container">
+  <% if @services.empty? %>
+    <h3> <%= @message %> </h3>
+  <% else %>
   <h2> Browse all our wheelpers </h2>
   <div class="cards-grid">
     <% @services.each do |service| %>
@@ -28,9 +38,6 @@
             <div class="product-links">
               <%= link_to "See more", service_path(service) %>
             </div>
-          </div>
-        </div>
-      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
