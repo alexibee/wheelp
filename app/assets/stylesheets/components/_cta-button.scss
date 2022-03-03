@@ -30,10 +30,6 @@
 
 // SUBMIT BUTTON
 .submit-button {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: block;
   width: 200px;
   height: 40px;
@@ -57,7 +53,6 @@
 
 .submit-button:after{
   position: absolute;
-  content: "";
   top: 0;
   left: 0;
   width: 0;
