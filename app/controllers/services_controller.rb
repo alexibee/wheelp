@@ -3,14 +3,13 @@ class ServicesController < ApplicationController
     if current_user.expert
       redirect_to dashboard_path
     else
-      @search = params["search_location"]
-      @search_words = params["search"]
-      if @search.present? && @search["location"] != ""
-        @services = Service.near(@search["location"], 10)
-        if @search_words.present? && @search_words["search_info"] != ""
-          @result_words = @services.search_by_bio_title(@search_words["search_info"])
-          @services_words = @services - @result_words
-          @services = @result_words + @services_words
+      @search = params["search"]
+      if @search.present? && @search["address"] != ""
+        @services = Service.near(@search["address"], 10)
+        if @search["search_info"] != ""
+          @result_words = @services.search_by_bio_title(@search["search_info"])
+          @only_locations = @services - @result_words
+          @services = @result_words + @only_locations
         end
       else
         @services = Service.all

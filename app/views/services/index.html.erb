@@ -4,18 +4,12 @@
    <%= link_to "Create a service", new_service_path, class: "cta-button" %>
 
   <div class="search-bar">
-    <%= simple_form_for :search, method: "GET", html: { class: 'form-inline mt-3' } do |f| %>
+    <%= simple_form_for :search, method: "GET", html: { class: ' d-block mt-3' } do |f| %>
     <%= f.input :search_info, placeholder: 'Search by keyword or category', label:false, input_html: {value: ""} %>
     <div class="center-button d-flex justify-content-center">
-      <%= f.submit "Search", class: "cta-button", id:"search" %>
-    </div>
-    <% end %>
-  </div>
-    <div class="search-bar">
-    <%= simple_form_for :search_location, method: "GET", html: { class: 'form-inline mt-3' } do |f| %>
-    <%= f.input :location, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
-    <div class="center-button d-flex justify-content-center">
-      <%= f.submit "Search", class: "cta-button", id:"search_address" %>
+    <%= f.input :address, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
+    <div class="center-button">
+      <%= f.submit "Search", class: "cta-button d-block", id:"search" %>
     </div>
     <% end %>
   </div>
