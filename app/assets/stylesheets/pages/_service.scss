@@ -1,0 +1,16 @@
+.show-body {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  min-width: min-content;
+}
+.show-body .undertitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+ .show-card-book {
+  display: flex;
+  justify-content: space-between;
+  color: $color
+ }

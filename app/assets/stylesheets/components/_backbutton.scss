@@ -1,0 +1,14 @@
+.backbutton {
+  color: $light-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $headers-font;
+  &:hover {
+    color: $dark-color;
+    text-decoration: underline;
+  }
+}
+
+.backbutton .position {
+  position: relative;
+}

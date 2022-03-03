@@ -1,25 +1,28 @@
 <div class="container">
-  <h2> Service show page</h2>
-  <% if @service.photo.attached? %>
-    <%= cl_image_tag @service.photo.key %>
-  <% else %>
-    <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="400" height="400" />
-  <% end %>
-  <div class="show-info">
-    <div class="show-card-text">
-      <h2><%= @service.title%></h2>
-      <div class="show-card-booking">
-        <h3>from £ <%= @service.price %></h3>
-      </div>
-      <p><%= @service.bio %></p>
-      <div class="reviews">
-        <p> reviews</p>
-      </div>
-      <%= link_to "Book", new_service_booking_path(@service), class: "link" %>
-    </div>
     <%= link_to "Back", services_path, class: "link" %>
+  <div class= "show-body">
+    <div class="show-header">
+      <h2> <%= @service.title.capitalize %></h2>
+      <div class="undertitle">
+        <p> 4.6 ★<i class="fa-thin fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
+        <p> 📍<%= @service.address %></p>
+      </div>
+    </div>
+    <div class="service-img">
+      <% if @service.photo.attached? %>
+        <%= cl_image_tag @service.photo.key %>
+      <% else %>
+        <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="400" height="400" />
+      <% end %>
+    </div>
+      <div class="show-card-text">
+        <div class="show-card-book">
+          <h3>£ <%= @service.price %>/per viewing</h3>
+          <%= link_to "Book", new_service_booking_path(@service), class: "cta-button" %>
+        </div>
+        <p><%= @service.bio %></p>
+      </div>
+    </div>
   </div>
-</div>
-
 
 </div>
