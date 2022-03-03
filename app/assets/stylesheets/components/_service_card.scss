@@ -9,15 +9,95 @@
   font-weight: 300;
 }
 
-.wheelper-card {
-  border: $light-color;
-  border-radius: 20px;
-  padding: 15px;
-  width: 40%;
+// WHEELPER
+
+.vertical-card {
+  width: 300px;
+  margin-top: 4rem;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding: 2rem;
+  background: $background-color;
+  box-shadow: 0 2px 7px #dfdfdf;
 }
 
-.wheelper-card:hover {
-  border: $border;
-  border-radius: 20px;
+.badge {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  background: $dark-color;
+  color: white;
+}
 
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  background: #f0f0f0;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%
+}
+
+.product-category {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 18px;
+}
+
+.product-details h4 a {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  color: $dark-color;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+  color: $color;
+}
+
+.product-details p {
+  font-size: 15px;
+  line-height: 22px;
+  margin-bottom: 18px;
+  color: #999;
+}
+
+.product-card-line {
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.product-bottom-details {
+  float: left;
+  width: 50%;
+}
+
+.product-bottom-details div {
+  float: left;
+  width: 50%;
+}
+
+.product-links {
+  text-align: right;
+  display: inline-block;
+  margin-left: 5px;
+  color: #e1e1e1;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.product-links a:hover {
+  color: $color;
 }

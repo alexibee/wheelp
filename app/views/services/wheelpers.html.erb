@@ -1,42 +1,36 @@
 <div class="container">
   <h2> Browse all our wheelpers </h2>
-  <% @services.each do |service| %>
-    <div class="cards-grid">
-      <div class="wheelper-card">
-        <div class="left-side">
-          <div class="avatar-image">
-            <% if service.photo.attached? %>
-              <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
-            <% else %>
-              <img src="https://media.wired.com/photos/5c54ee6a4feec32ca0f590d8/125:94/w_1761,h_1324,c_limit/superman-922909434.jpg" width="150" height="150" />
-            <% end %>
-          </div>
-          <div class="reviews-info">
-            <% total = 0 %>
-            <% service.bookings.each do |book| %>
-              <% total += book.review ? book.review.rating : 0 %>
-            <% end %>
-            <% if service.bookings.count > 0 %>
-              <%= total/service.bookings.count %>
-            <% end %>
-          </div>
+  <div class="cards-grid">
+    <% @services.each do |service| %>
+
+      <div class="vertical-card">
+        <% total = 0 %>
+        <% service.bookings.each do |book| %>
+          <% total += book.review ? book.review.rating : 0 %>
+        <% end %>
+        <% if service.bookings.count > 0 %>
+          <%= total/service.bookings.count %>
+        <% end %>
+        <div class="badge"> ★ 4.3</div>
+        <div class="product-image">
+          <% if service.photo.attached? %>
+            <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
+          <% else %>
+            <img src="https://media.wired.com/photos/5c54ee6a4feec32ca0f590d8/125:94/w_1761,h_1324,c_limit/superman-922909434.jpg" />
+          <% end %>
         </div>
-        <div class="right-side ps-3">
-          <div class="top-right d-flex justify-content-between">
-            <h5> <%=service.user.first_name  %> </h5>
-            <h6>from £<%= service.price %></h6>
-          </div>
-          <div class="right-middle">
-            <p><%= service.title %></p>
-          </div>
-          <div class="bottom-right d-flex justify-content-between">
-            <div class="availability-window">
-            <p>Availability</p>
+        <div class="product-details">
+          <span class="product-category"> category </span>
+          <h4> <%= service.user.first_name  %> <%= service.user.last_name  %> </h4>
+          <p> <%= service.bio %></p>
+          <div class="product-bottom-details">
+            <p> from £<%= service.price %></p>
+            <div class="product-links">
+              <%= link_to "See more", service_path(service) %>
             </div>
-            <%= link_to "See more", service_path(service), class:"submit-button" %>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

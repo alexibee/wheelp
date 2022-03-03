@@ -2,6 +2,6 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: 2;
+  grid-template-columns: 2fr;
   grid-gap: 10px;
 }
