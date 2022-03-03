@@ -1,0 +1,22 @@
+.homecard-left{
+  display: flex;
+  padding: 30px;
+  height: 400px;
+  padding-left: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+  width: 1200px;
+}
+.homecard-right{
+  display: flex;
+  flex-direction: row-reverse;
+  height: 400px;
+  text-align: right;
+  padding: 30px;
+  padding-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+   width: 1200px;
+}

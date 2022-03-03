@@ -4,7 +4,11 @@
       <h1> WHEELP</h1>
       <p> Avoid the hassle and uncertainty of buying a used vehicle by getting expert condition verification from the confort of your home. </p>
       <% if user_signed_in?%>
-        <%= link_to "Services", services_path, class: "btn btn-secondary btn-lg", id:"search" %>
+        <div class="search-bar">
+          <form action="/services">
+            <input type="text" name="search" id="query" placeholder="   Search by location">
+          </form>
+        </div>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg" %>
       <% end %>

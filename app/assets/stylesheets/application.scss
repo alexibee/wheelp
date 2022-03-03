@@ -11,12 +11,4 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-body {
-  overflow: auto;
-  background-color: $white;
-  position: relative;
-}
-
-.container {
-  min-height: 100vh;
-}
+@import "components/home_card";
