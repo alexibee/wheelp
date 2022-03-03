@@ -4,12 +4,12 @@
 <%= f.submit "Search", class: "cta-button", id:"search" %>
 <% end %>
 
-
+<h2> Browse all our wheelpers </h2>
 <div class="container">
   <% if @services.empty? %>
     <h3> <%= @message %> </h3>
   <% else %>
-  <h2> Browse all our wheelpers </h2>
+
   <div class="cards-grid">
     <% @services.each do |service| %>
 
