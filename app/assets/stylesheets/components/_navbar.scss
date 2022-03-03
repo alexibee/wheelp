@@ -14,7 +14,7 @@
 .container-fluid {
   display: flex;
   justify-content: space-between;
-  background:linear-gradient(180deg, #311C77 0%, #D31DF0 100%);
+  background-color: $dark-color;
 }
 .nav-item{
   display: flex;
@@ -23,10 +23,10 @@
   padding-top: 15px;
 }
 .nav-link{
-  color: aquamarine;
+  color: $light-color;
   &:hover{
-    background-color: red;
-     stroke-width: 4;
+    color: $background-color;
+    stroke-width: 4;
     stroke-dasharray: 196, 543;
     stroke-dashoffset: 437;
   }
