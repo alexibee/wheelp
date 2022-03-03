@@ -11,6 +11,12 @@ class ServicesController < ApplicationController
         @services = Service.all
       end
     end
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
