@@ -1,12 +1,15 @@
 class ServicesController < ApplicationController
   def index
     @search = params["search"]
-    if @search.present? && @search["name"] != ""
-      @result = @search["name"]
-      overall_search = Service.search_for_spowers_by_name_descr_cat_user(@result)
-      id = current_user.id
-      users_services = Service.where(user_id: id)
-      @services = overall_search - users_services
+    if @search.present? && @search["search_info"] != ""
+      if current_user.expert
+
+
+      @result = @search["search_info"]
+      @services = Service.search_by_bio(@result)
+      # id = current_user.id
+      # users_services = Service.where(user_id: id)
+      # @services = overall_search - users_services
     else
       @services = Service.all
       id = current_user.id
