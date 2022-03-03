@@ -3,16 +3,4 @@
     <input type="text" name="search" id="query" placeholder="   Search by location">
   </form>
 </div>
-<div class="wrapper">
-  <div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">
-    <div class="container ">
-      <h1> WHEELP</h1>
-      <p> Avoid the hassle and uncertainty of buying a used vehicle by getting expert condition verification from the confort of your home. </p>
-      <% if user_signed_in?%>
-        <%= link_to "Services", services_path, class: "btn btn-secondary btn-lg", id:"search" %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<<%= render "shared/banner" %>>
