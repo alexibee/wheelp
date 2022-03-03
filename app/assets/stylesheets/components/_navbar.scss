@@ -25,7 +25,7 @@
 .nav-link{
   color: aquamarine;
   &:hover{
-    background-color: red;
+    background-color: $dark-color;
      stroke-width: 4;
     stroke-dasharray: 196, 543;
     stroke-dashoffset: 437;

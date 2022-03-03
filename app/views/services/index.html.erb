@@ -1,13 +1,13 @@
 <div class="container">
   <h2>All services listed</h2>
 
-   <%= link_to "Create a service", new_service_path, class: "btn btn-secondary" %>
+   <%= link_to "Create a service", new_service_path, class: "cta-button" %>
 
   <div class="search-bar">
     <%= simple_form_for :search, method: "GET", html: { class: 'form-inline mt-3' } do |f| %>
     <%= f.input :name, placeholder: 'Search for a service', label:false, input_html: {value: ""} %>
     <div class="center-button d-flex justify-content-center">
-      <%= f.submit "Search", class: "btn btn-secondary", id:"search" %>
+      <%= f.submit "Search", class: "cta-button", id:"search" %>
     </div>
     <% end %>
   </div>

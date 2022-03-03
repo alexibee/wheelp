@@ -1,0 +1,32 @@
+.bookings-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border: $border $dark-color;
+}
+
+.bookings-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.bookings-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.bookings-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.bookings-card .info {
+  padding: 16px;
+}

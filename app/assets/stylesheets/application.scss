@@ -11,10 +11,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/navlink";
-
-html, body {
+body {
   overflow: auto;
-  height: 100vh;
+  background-color: $white;
   position: relative;
+}
+
+.container {
+  min-height: 100vh;
 }
