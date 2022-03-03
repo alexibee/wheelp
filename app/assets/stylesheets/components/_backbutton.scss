@@ -3,9 +3,15 @@
   text-decoration: none;
   text-transform: uppercase;
   font-family: $headers-font;
+  border: $border;
+  background-color: $background-color;
+  border-color: gray;
+  padding: 4px 4px;
   &:hover {
     color: $dark-color;
-    text-decoration: underline;
+    background-color: $dark-color;
+    border-color: $background-color;
+    color: $light-color;
   }
 }
 

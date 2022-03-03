@@ -1,21 +1,19 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light ">
   <div class="container-fluid">
-    <div class="navbar-brand">
-      <%= link_to image_tag("test8-logo.png"), root_path %>
-    </div>
-    <div class="navbar-links" id="">
+    <%= link_to "wheelp", services_path, class: "logo-button home" %>
+    <div class="navbar-links" i>
       <ul>
-        <li class="nav-item">
-          <%= link_to "WHEELPERS", wheelpers_path, class: "nav-link" %>
-          <%= link_to "FAQ", "#", class: "nav-link" %>
+        <li class="nav-item tabs-underlined">
+          <%= link_to "WHEELPERS", wheelpers_path, class: "tab-underlined" %>
+          <%= link_to "FAQ", "#", class: "tab-underlined" %>
           <% if user_signed_in? %>
             <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
-            <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "tab-underlined" %>
             <%# </div> %>
           <% else %>
-            <%= link_to "LOGIN", new_user_session_path, class: "nav-link" %>
-            <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link" %>
+            <%= link_to "LOGIN", new_user_session_path, class: "tab-underlined" %>
+            <%= link_to "SIGN UP", new_user_registration_path, class: "submit-button" %>
           <% end %>
         </li>
       </ul>

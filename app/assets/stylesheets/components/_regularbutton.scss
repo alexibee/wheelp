@@ -1,0 +1,19 @@
+.regular-button {
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid rgb(221, 221, 221);
+  background-color: rgb(255, 255, 255);
+  outline: none;
+  margin: 0px;
+  color: rgb(34, 34, 34);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  position: relative;
+  transition-property: -ms-transform, -webkit-transform, transform, background-color, border-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  line-height: 16px;
+  width: 100%;
+}
