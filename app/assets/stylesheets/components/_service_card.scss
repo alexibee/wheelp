@@ -8,3 +8,16 @@
   color: $color;
   font-weight: 300;
 }
+
+.wheelper-card {
+  border: $light-color;
+  border-radius: 20px;
+  padding: 15px;
+  width: 40%;
+}
+
+.wheelper-card:hover {
+  border: $border;
+  border-radius: 20px;
+
+}
