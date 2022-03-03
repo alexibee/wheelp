@@ -1,22 +1,14 @@
 class ServicesController < ApplicationController
   def index
-    @search = params["search"]
-    if @search.present? && @search["search_info"] != ""
-      if current_user.expert
-
-
-      @result = @search["search_info"]
-      @services = Service.search_by_bio(@result)
-      # id = current_user.id
-      # users_services = Service.where(user_id: id)
-      # @services = overall_search - users_services
+    if current_user.expert
+      redirect_to dashboard_path
     else
-      @services = Service.all
-      id = current_user.id
-      if Service.find_by(user_id: id)
-        @message = "These are the services you have:"
+      @search = params["search"]
+      if @search.present? && @search["search_info"] != ""
+        @result = @search["search_info"]
+        @services = Service.search_by_bio(@result)
       else
-        @message = "You can add your service to this list by creating a service"
+        @services = Service.all
       end
     end
   end
