@@ -11,10 +11,13 @@ class ServicesController < ApplicationController
         @services = Service.all
       end
     end
-    @markers = @flats.geocoded.map do |flat|
+
+    @markers = @services.geocoded.map do |service|
       {
         lat: flat.latitude,
-        lng: flat.longitude
+        lng: flat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { service: service })
+        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
       }
     end
   end
