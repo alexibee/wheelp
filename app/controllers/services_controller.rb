@@ -10,15 +10,14 @@ class ServicesController < ApplicationController
       else
         @services = Service.all
       end
-    end
-
-    @markers = @services.geocoded.map do |service|
-      {
-        lat: service.latitude,
-        lng: service.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { service: service })
-        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
-      }
+      @markers = @services.geocoded.map do |service|
+        {
+          lat: service.latitude,
+          lng: service.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { service: service })
+          # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
+        }
+      end
     end
   end
 
@@ -68,7 +67,6 @@ class ServicesController < ApplicationController
   #     end
   #   end
   # end
-
   end
 
   private
