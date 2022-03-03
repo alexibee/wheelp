@@ -41,6 +41,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    if current_user.expert == true
+  end
+
   private
 
   def set_service
