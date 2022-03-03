@@ -8,9 +8,10 @@
       <img
       src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
       />
-      <p><%= booking.vehicle_brand %></p>
-      <p><%= booking.vehicle_model %></p>
-      <p><%= booking.vehicle_address %></p>
+      <div class="info">
+        <p><%= booking.vehicle_brand + " " + booking.vehicle_model%></p>
+        <p>📍 <%= booking.vehicle_address %></p>
+      </div>
     </div>
     <% end %>
   <% end %>
