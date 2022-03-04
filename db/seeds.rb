@@ -141,7 +141,7 @@ end
   action = actions.sample
 
   new_service = Service.new(
-    description: "I'm a #{timing.sample} #{category} #{character} who #{verbs.sample} #{vehicle} #{vehicle}.",
+    description: "I'm a #{timing.sample} #{category} #{character} who #{verbs.sample} #{vehicle_adjective} #{vehicle}.",
     bio: "I am a #{vehicle} #{timing.sample} #{category} who #{verbs.sample} #{vehicle_adjective} vehicles.
     #{wheelp.sample.capitalize} and I can guarantee that I'm a #{character} #{category}.
     #{phrase.sample} so #{contact_phrase.sample}",
