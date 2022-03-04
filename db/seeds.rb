@@ -141,17 +141,18 @@ end
   action = actions.sample
 
   new_service = Service.new(
-    description: "#{wheelp.sample.capitalize} and I can guarantee that I'm a #{character} #{category}",
+    description: "I'm a #{timing.sample} #{category} #{character} who #{verbs.sample} #{vehicle} #{vehicle}.",
     bio: "I am a #{vehicle} #{timing.sample} #{category} who #{verbs.sample} #{vehicle_adjective} vehicles.
     #{wheelp.sample.capitalize} and I can guarantee that I'm a #{character} #{category}.
-    #{phrase.sample} so #{contact_phrase}",
+    #{phrase.sample} so #{contact_phrase.sample}",
     address: address,
     price: rand(45..85),
     availability: availability - unavailability,
     title: "#{character} #{vehicle_adjective} #{vehicle} #{category} #{action}",
     user_id: experts.sample
   )
-
+  file = URI.open(experts_photos.sample)
+  new_service.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_service.save!
   services << new_service.id
   puts "service #{n} created"
