@@ -1,6 +1,9 @@
 <div class="search-bar-box">
   <%= simple_form_for :search, method: "GET", html: { class: 'search-bar' } do |f| %>
-  <%= f.submit "Search", class: "grey-button", id:"search" %>
+   <%= button_tag type:"submit", class: "icon-button", id:"service" do %>
+        🔎
+      <% end %>
+  <%# <%= f.submit "Search", class: "grey-button", id:"search" %> %>
   <%= f.input :search_info, placeholder: 'Search by keyword or category', class:"search-input", label:false, input_html: {value: ""} %>
   <% end %>
 </div>

@@ -2,7 +2,9 @@
 <div class="container">
   <div class="search-bar-box">
     <%= simple_form_for :service, method: "GET", html: { class: 'search-bar mt-3', data: { geocoder_target: "address" } } do |f| %>
-      <%= f.submit "Search", class: "grey-button", id:"service" %>
+      <%= button_tag type:"submit", class: "icon-button", id:"service" do %>
+        🔎
+      <% end %>
       <%= f.input :address, placeholder: 'Search by address, city or country', label:false, input_html: {value: ""} %>
     <% end %>
   </div>
