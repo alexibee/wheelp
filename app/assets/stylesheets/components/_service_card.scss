@@ -1,9 +1,9 @@
 .service-card {
   width: 550px;
   padding: 25px;
-  box-shadow: 0 2px 7px #dfdfdf;
-  background-color: rgb(230, 230, 230);
-  border-radius: 20px;
+  background-color: $light-gray;
+  border: $border $dark-color;
+  border-radius: 10px;
 }
 
 .service-card img {
@@ -12,6 +12,7 @@
   height: 160px;
   margin-bottom: 3px;
 }
+
 .service-card h6 {
   color: $color;
   font-weight: 300;
@@ -43,20 +44,19 @@
 
 .vertical-card {
   width: 300px;
-  margin-top: 4rem;
-  margin-bottom: 15px;
-  overflow: hidden;
-  padding: 2rem;
-  background: $background-color;
-  box-shadow: 0 2px 7px #dfdfdf;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: $light-gray;
+  box-shadow: 0 3px 7px #dfdfdf;
 }
 
 .badge {
   position: absolute;
   text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 700;
-  background: $dark-color;
+  font-size: 10px;
+  font-weight: 600;
+  background: $color;
   color: white;
 }
 
@@ -64,8 +64,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 250px;
+  height: 200px;
   background: #f0f0f0;
+  img {
+    border-radius: 20px;
+  }
 }
 
 .product-image img {
@@ -107,27 +110,4 @@
   overflow: hidden;
   border-top: 1px solid #eee;
   padding-top: 20px;
-}
-
-.product-bottom-details {
-  float: left;
-  width: 50%;
-}
-
-.product-bottom-details div {
-  float: left;
-  width: 50%;
-}
-
-.product-links {
-  text-align: right;
-  display: inline-block;
-  margin-left: 5px;
-  color: #e1e1e1;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-.product-links a:hover {
-  color: $color;
 }
