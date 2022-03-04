@@ -107,7 +107,7 @@ end
     "verify the condition any #{vehicle} for you",
     "assist you in your next #{vehicle} purchase",
     "offering #{price_adjective} priced service",
-    "helps you finding a #{vehicle} at a #{price_adjectives} price"
+    "helps you finding a #{vehicle} at a #{price_adjectives.sample} price"
   ]
   wheelp = [
     "I love offering my service in Wheelp",
