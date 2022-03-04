@@ -1,33 +1,63 @@
-.navbar {
-  padding-top: 0;
-  padding-bottom: 3rem;
+// .navbar {
+//   padding-top: 0;
+//   padding-bottom: 3rem;
+// }
+
+// .logo-button .home {
+//   width: 400px;
+// }
+
+// .container-fluid {
+//   display: flex;
+//   justify-content: space-between;
+//   background-color: $white;
+//   padding: 0.5rem 1.5rem;
+//   padding-left: 2rem;
+// }
+// .nav-item{
+//   display: flex;
+//   text-align: center;
+//   padding-top: 15px;
+// }
+// .nav-link{
+//   color: $light-color;
+//   &:hover{
+//     color: $background-color;
+//     stroke-width: 4;
+//     stroke-dasharray: 196, 543;
+//     stroke-dashoffset: 437;
+//   }
+// }
+.navbar-wheelp {
+  padding: 4px;
+  margin-bottom: 1em;
 }
 
-.logo-button .home {
-  width: 400px;
+.dropdown {
+  padding: 6px;
 }
 
-.container-fluid {
-  display: flex;
-  justify-content: space-between;
-  background-color: $white;
-  padding: 0.5rem 1.5rem;
-  padding-left: 2rem;
-}
-.nav-item{
-  display: flex;
-  text-align: center;
-  padding-top: 15px;
-}
-.nav-link{
-  color: $light-color;
-  &:hover{
-    color: $background-color;
-    stroke-width: 4;
-    stroke-dasharray: 196, 543;
-    stroke-dashoffset: 437;
+.dropdown-toggle {
+  cursor: pointer;
+  &:hover {
+    color: $color;
   }
 }
+
+// .navbar-content-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   background: $light-color;
+// }
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
 
 // NAV TABS
 
