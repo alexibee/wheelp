@@ -8,6 +8,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'flatpickr/dist/flatpickr.css';
 
 @import "mapbox-gl/dist/mapbox-gl";
 // @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
@@ -26,4 +27,3 @@ body {
 .container {
   min-height: 100vh;
 }
-

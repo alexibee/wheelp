@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Evaluation.destroy_all
 Review.destroy_all
 Booking.destroy_all
 Service.destroy_all
@@ -33,7 +34,6 @@ usernames.each do |user|
   end
   puts "user #{user} created"
 end
-
 
 services = []
 adjectives = %w[perfect great amazing awesome exquisite brilliant gorgeous]

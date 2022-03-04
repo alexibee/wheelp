@@ -1,9 +1,13 @@
 .show-body {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
   min-width: min-content;
+  h2 {
+    text-align: center;
+  }
 }
+
 .show-body .undertitle {
   display: flex;
   flex-direction: row;
@@ -12,5 +16,19 @@
  .show-card-book {
   display: flex;
   justify-content: space-between;
-  color: $color
+  color: $color;
+  text-align: center;
  }
+.container a {
+  color: $color;
+  font-weight: bold;
+  text-decoration: none;
+  &:hover {
+    color: $dark-color;
+  }
+}
+.service-img {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
