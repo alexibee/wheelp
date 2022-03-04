@@ -6,7 +6,7 @@
     <%= f.input :bio, as: :text %>
     <%= f.input :price, as: :numeric %>
     <%= f.input :photo, as: :file %>
-    <%= f.input_field :availability, as: :date, html5: true, data: { flatpickr_service_form_target: "input"} %>
+    <%= f.input_field :availability, as: :date, html5: true, value: '', data: { flatpickr_service_form_target: "input" } %>
     <%= f.submit "Create service", class: "submit-button" %>
   <% end %>
 </div>
