@@ -33,6 +33,7 @@
         <div class="bottom-right d-flex justify-content-between">
           <div class="availability-window">
           <p>Availability</p>
+          <%= render "shared/availability", service: service %>
           </div>
           <%= link_to "Book Now", new_service_booking_path(service) ,class:"submit-button" %>
         </div>
