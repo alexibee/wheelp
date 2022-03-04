@@ -20,6 +20,11 @@
           <% end %>
         </div>
       </div>
+      <% next_seven_days = (1..7).map { |n| (Date.today + n).strftime("%a")} %>
+        <% seven_date_array = ((Date.today + 1)..(Date.today+7)).to_a %>
+      <% next_avail = service.availability.select { |d| d <= seven_date_array.last && d >= seven_date_array.first } %>
+      <% true_false = seven_date_array.map { |d| next_avail.include?(d) } %>
+        <% raise %>
       <div class="right-side ps-3">
         <div class="top-right d-flex justify-content-between">
           <h5> <%=service.user.first_name  %> </h5>
