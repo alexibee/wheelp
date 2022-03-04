@@ -1,13 +1,32 @@
 .search-bar{
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  .grey-button {
+    margin-right: 10px;
+  }
 }
 #query {
-  border-radius: 16px;
+  border-radius: 20px;
   border: $border $dark-color;
-  width: 400px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  width: 45vw;
   height: 40px;
   font-size: 12px;
   color: $light-color;
+}
+
+.form-control .string .required {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 20px;
 }
