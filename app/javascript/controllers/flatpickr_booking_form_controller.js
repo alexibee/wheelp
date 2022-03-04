@@ -5,7 +5,6 @@ const availableDates = JSON.parse(document.querySelector('#booking-form').datase
 
 export default class extends Controller {
   static targets = ["input"]
-  // const dateInput = document.getElementById("booking_date")
 
   connect() {
     flatpickr(this.inputTarget, {
