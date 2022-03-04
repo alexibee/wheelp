@@ -1,13 +1,43 @@
 .service-card {
   width: 550px;
   padding: 25px;
-  border: $border $dark-color;
-  border-radius: 10px;
+  box-shadow: 0 2px 7px #dfdfdf;
+  background-color: rgb(230, 230, 230);
+  border-radius: 20px;
+}
+
+.service-card img {
+  border-radius: 15px;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 3px;
 }
 .service-card h6 {
   color: $color;
   font-weight: 300;
 }
+
+.right-side {
+  color: black !important;
+  text-decoration: none;
+  font-family: $body-font;
+  h3 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 12px;
+  }
+}
+.price-tag {
+  color: $color;
+  text-decoration: none;
+  font-size: 8px;
+  font-weight: 500;
+  background-color: $background-color;
+  padding: 3px;
+  border-radius: 50%;
+}
+.service-card
 
 // WHEELPER
 
