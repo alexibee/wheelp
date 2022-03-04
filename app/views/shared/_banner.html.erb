@@ -4,11 +4,14 @@
       <h1> WHEELP</h1>
       <p> Avoid the hassle and uncertainty of buying a used vehicle by getting expert condition verification from the confort of your home. </p>
       <% if user_signed_in?%>
-        <div class="search-bar">
-          <form action="/services">
-            <input type="text" name="search" id="query" placeholder="   Search by location">
-          </form>
-        </div>
+      <div class="search-bar">
+        <%= simple_form_for :service, method: "GET", url: services_path, html: { class: 'mt-3' } do |f| %>
+          <%= f.input :address, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
+          <div class="center-button">
+            <%= f.submit "Search", class: "cta-button", id:"service" %>
+          </div>
+        <% end %>
+      </div>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, class: "logo-button" %>
       <% end %>
