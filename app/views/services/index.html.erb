@@ -14,7 +14,7 @@
     <% else %>
       <%= render "shared/index_page_card" %>
     <% end %>
-    <div class="map mt-3" style="width: 100%; height: 100vh;"
+    <div class="mapbox-map mt-3" style="width: 100%; height: 100vh;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
