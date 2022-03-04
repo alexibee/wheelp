@@ -10,11 +10,9 @@
 
 .showmap {
   max-width: 400px;
-  border-radius: none;
+  border-radius: 15px;
   box-shadow: $shadow;
-  position: sticky;
   height: 400px;
-  display: flex;
   justify-content: right;
 }
 
