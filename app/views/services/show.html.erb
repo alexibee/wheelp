@@ -12,7 +12,7 @@
     </div>
     <div class="service-img">
       <% if @service.photo.attached? %>
-        <%= cl_image_tag @service.photo.key %>
+        <%= cl_image_tag @service.photo.key, width: 400, height: 400 %>
       <% else %>
         <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="400" height="400" />
       <% end %>
