@@ -31,23 +31,26 @@
 
 // NAV TABS
 
-.tabs-underlined {
+.tab {
   display: flex;
   align-items: center;
-}
-
-.tabs-underlined .tab-underlined {
-  color: $dark-color;
-  padding: 8px;
-  margin: 8px;
-  opacity: .4;
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 4px solid transparent;
+  padding: 8px;
+  margin: 8px;
+  color: $dark-color;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.tabs-underlined .tab-underlined .active {
+.tab:hover {
+  color: $color;
+}
+
+.tab .active {
   opacity: 1;
   border-bottom: 3px solid $dark-color;
+  color: $color;
 
 }

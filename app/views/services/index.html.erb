@@ -1,15 +1,11 @@
 
 <div class="container">
-  <h2>All services listed</h2>
 
-  <%= link_to "Create a service", new_service_path, class: "cta-button" %>
-
-  <div class="search-bar">
-    <%= simple_form_for :service, method: "GET", html: { class: 'mt-3', data: { geocoder_target: "address" } } do |f| %>
-      <%= f.input :address, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
-    <div class="center-button">
-      <%= f.submit "Search", class: "cta-button", id:"service" %>
-    </div>
+  <%= link_to "Create a service", new_service_path, class: "grey-button" %>
+  <div class="search-bar-box">
+    <%= simple_form_for :service, method: "GET", html: { class: 'search-bar mt-3', data: { geocoder_target: "address" } } do |f| %>
+      <%= f.submit "Search", class: "grey-button", id:"service" %>
+      <%= f.input :address, placeholder: 'Search by address, city or country', label:false, input_html: {value: ""} %>
     <% end %>
   </div>
   <div class="d-flex">
@@ -18,7 +14,7 @@
     <% else %>
       <%= render "shared/index_page_card" %>
     <% end %>
-    <div class="mt-3 mapbox-map" style="width: 100%; height: 100vh;"
+    <div class="map mt-3" style="width: 100%; height: 100vh;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

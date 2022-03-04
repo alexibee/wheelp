@@ -1,5 +1,5 @@
 .logo-button {
-  font-family: $headers-font;
+  font-family: $wheelp-font;
   text-decoration: none;
   text-transform: lowercase;
   font-weight: 200;
@@ -13,7 +13,50 @@
 }
 
 .logo-button:hover {
-  font-family: $headers-font;
+  font-family: $wheelp-font;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 200;
+  color: white;
+  border: $border;
+  border-color: white;
+  background-color: $dark-color;
+}
+
+.grey-button {
+  font-family: $body-font;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+  color: $font-color;
+  border: 1px solid;
+  border-color: white;
+  background-color:  rgb(230, 230, 230);
+  padding: 5px 15px;
+  border-radius: 30px;
+}
+
+.grey-button {
+  background-color: sgrey;
+}
+
+.big-logo-button {
+  font-family: $wheelp-font;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 200;
+  font-size: 24px;
+  color: white;
+  border: $border;
+  border-color: white;
+  background-color: $color;
+  padding: 5px 15px;
+  border-radius: 30px;
+}
+
+.logo-button:hover {
+  font-family: $wheelp-font;
   text-decoration: none;
   text-transform: lowercase;
   font-weight: 200;
