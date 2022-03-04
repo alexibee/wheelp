@@ -3,6 +3,7 @@
       <p> <i class="fa-solid fa-circle-arrow-left"></i> </p>
     <% end %>
   <div class= "show-body">
+  <%= link_to "Back", services_path, class: "link" %>
     <div class="show-header">
       <h2> <%= @service.title.capitalize %></h2>
       <div class="undertitle">
