@@ -1,16 +1,21 @@
 import { Controller } from "@hotwired/stimulus"
 import flatpickr from "flatpickr"
 
-const availableDates = JSON.parse(document.querySelector('#booking-form').dataset.available)
 
-export default class extends Controller {
-  static targets = ["input"]
+// if ((location.pathname).includes('/bookings/new')) {
 
-  connect() {
-    flatpickr(this.inputTarget, {
-      minDate: "today",
-      enable: availableDates,
-      dateFormat: "Y-m-d",
-    });
+
+
+  export default class extends Controller {
+    static targets = ["input"]
+    static values = { "available": Array }
+
+    connect() {
+      flatpickr(this.inputTarget, {
+        minDate: "today",
+        enable: this.availableValue,
+        dateFormat: "Y-m-d",
+      });
+    }
   }
-}
+// }
