@@ -1,4 +1,4 @@
-<div class="container col-6 mt-10 form">
+<div class="container col-6 mt-10 form" data-controller="flatpickr-service-form">
   <h3>Create a new service</h3>
   <%= simple_form_for [ @service ] do |f| %>
     <%= f.input :title %>
@@ -6,6 +6,7 @@
     <%= f.input :bio, as: :text %>
     <%= f.input :price, as: :numeric %>
     <%= f.input :photo, as: :file %>
+    <%= f.input_field :availability, as: :date, html5: true, data: { flatpickr_service_form_target: "input"} %>
     <%= f.submit "Create service", class: "submit-button" %>
   <% end %>
 </div>

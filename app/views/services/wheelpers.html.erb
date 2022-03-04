@@ -9,7 +9,7 @@
   <% if @services.empty? %>
     <h3> <%= @message %> </h3>
   <% else %>
-  <h2> Browse all our wheelpers </h2>
+    <h2> Browse all our wheelpers </h2>
     <div class="cards-grid">
       <% @services.each do |service| %>
         <div class="vertical-card">
@@ -36,12 +36,11 @@
               <p> from £<%= service.price %></p>
               <div class="product-links">
                 <%= link_to "See more", service_path(service) %>
-
               </div>
             </div>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
