@@ -35,7 +35,6 @@ usernames.each do |user|
   puts "user #{user} created"
 end
 
-
 services = []
 adjectives = %w[perfect great amazing awesome exquisite brilliant gorgeous]
 nouns = %w[expert mechanic service]
