@@ -4,8 +4,6 @@ import flatpickr from "flatpickr"
 
 // if ((location.pathname).includes('/bookings/new')) {
 
-
-
   export default class extends Controller {
     static targets = ["input"]
     static values = { "available": Array }

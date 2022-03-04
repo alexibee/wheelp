@@ -1,4 +1,6 @@
 <div class="container">
+
+  <%= link_to "Create a service", new_service_path, class: "grey-button" %>
   <% if @message %>
     <h3> <%= @message %> </h3>
   <% else %>
