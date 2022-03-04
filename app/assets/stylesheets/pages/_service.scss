@@ -8,6 +8,16 @@
   }
 }
 
+.showmap {
+  max-width: 400px;
+  border-radius: none;
+  box-shadow: $shadow;
+  position: sticky;
+  height: 400px;
+  display: flex;
+  justify-content: right;
+}
+
 .show-body .undertitle {
   display: flex;
   flex-direction: row;
@@ -18,6 +28,7 @@
   justify-content: space-between;
   color: $color;
   text-align: center;
+  padding: 30px;
  }
 .container a {
   color: $color;
