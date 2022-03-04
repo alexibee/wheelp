@@ -2,11 +2,9 @@
 <div class="search-bar">
   <%= simple_form_for :service, method: "GET", url: services_path, html: { class: 'mt-3' } do |f| %>
     <%= f.input :address, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
-    <div class="center-button">
-      <%= f.submit "Search", class: "cta-button", id:"service" %>
-    </div>
+    <%= f.submit "Search", class: "logo-button", id:"service" %>
   <% end %>
 </div>
+ <i class="fab fa-solid fa-magnifying-glass"></i>
 <%= render "shared/banner" %>
 <%= render "shared/homepage_cards" %>
-

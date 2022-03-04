@@ -1,5 +1,7 @@
 <div class="container">
-    <%= link_to "Back", services_path, class: "link" %>
+    <%= link_to services_path do %>
+      <p> <i class="fa-solid fa-circle-arrow-left"></i> </p>
+    <% end %>
   <div class= "show-body">
     <div class="show-header">
       <h2> <%= @service.title.capitalize %></h2>
