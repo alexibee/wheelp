@@ -50,6 +50,11 @@
   box-shadow: 0 3px 7px #dfdfdf;
 }
 
+.vertical-card:hover {
+  border-color: $color;
+  border: $border;
+}
+
 .badge {
   position: absolute;
   text-transform: uppercase;
