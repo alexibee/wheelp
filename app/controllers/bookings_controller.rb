@@ -42,7 +42,9 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    # if current_user.expert == true
+    if current_user.expert
+      @booking = Booking.find(params[:id])
+
   end
 
   private
