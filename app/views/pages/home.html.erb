@@ -1,7 +1,10 @@
-
-<%= render "shared/banner" %>
-<%= render "shared/homepage_cards" %>
-<%= render "shared/sign_up_banner" %>
+<% if user_signed_in?%>
+ <%= render "shared/banner" %>
+<% else %>
+  <%= render "shared/new_banner" %>
+  <%= render "shared/homepage_cards" %>
+  <%= render "shared/sign_up_banner" %>
+<% end %>
 
 <!-- <div class="search-bar">
   <%= simple_form_for :service, method: "GET", url: services_path, html: { class: 'mt-3' } do |f| %>
@@ -10,5 +13,5 @@
   <% end %>
 </div>
  <i class="fab fa-solid fa-magnifying-glass"></i>
-<%= render "shared/banner" %>
+<%= render "shared/new_banner" %>
 <%= render "shared/homepage_cards" %> -->
