@@ -1,17 +1,19 @@
-<div class="bookings-card expert", id="request-<%=booking.id%>">
-  <img
-  src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
-  />
-  <div class="info">
-    <p><%= booking.vehicle_brand + " " + booking.vehicle_model%></p>
-    <p>📍 <%= booking.vehicle_address %></p>
+<%= link_to service_booking_path(@service, booking) do %>
+  <div class="bookings-card expert", id="request-<%=booking.id%>">
+    <img
+    src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
+    />
+    <div class="info">
+      <p><%= booking.vehicle_brand + " " + booking.vehicle_model%></p>
+      <p>📍 <%= booking.vehicle_address %></p>
+    </div>
+    <% if booking.state == 0 %>
+      <h6> Pending request <h6>
+      <%= link_to "Accept", booking_path(booking, state: 1), remote: true, method: :patch %>
+      <%= link_to "Decline", booking_path(booking, state: -1), remote: true, method: :patch %>
+    <% elsif booking.state == 1 %>
+      <h6> Awaiting evaluation </h6>
+      <%= link_to "Add evaluation", new_booking_evaluation_path(booking) %>
+    <% end %>
   </div>
-  <% if booking.state == 0 %>
-    <h6> Pending request <h6>
-    <%= link_to "Accept", booking_path(booking, state: 1), remote: true, method: :patch %>
-    <%= link_to "Decline", booking_path(booking, state: -1), remote: true, method: :patch %>
-  <% elsif booking.state == 1 %>
-    <h6> Awaiting evaluation </h6>
-  <% end %>
-
-</div>
+<% end %>
