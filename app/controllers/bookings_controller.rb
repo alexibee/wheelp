@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
     @booking.user_id = @user.id
     @booking.service_id = @service.id
     if @booking.save
-      redirect_to service_booking_path(@service, @booking)
+      redirect_to dashboard_path(anchor: "booking-#{@booking.id}")
     else
       render :new
     end
@@ -41,10 +41,12 @@ class BookingsController < ApplicationController
 
   def update
     @booking.state = params[:state]
-    if @booking.save
+    if @booking.save && @booking.state == 1
       redirect_to dashboard_path(anchor: "booking-#{@booking.id}")
+    elsif @booking.save && @booking.state == -1
+      redirect_to dashboard_path
     else
-      render 'bookings/dashboard'
+      flash[:notice] = "We weren't able to do that"
     end
   end
 

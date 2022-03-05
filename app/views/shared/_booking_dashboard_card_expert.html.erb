@@ -8,8 +8,8 @@
   </div>
   <% if booking.state == 0 %>
     <h6> Pending request <h6>
-    <%= link_to "Accept", booking_path(booking, state: 1), method: :patch %>
-    <%= link_to "Decline", booking_path(booking, state: -1), method: :patch %>
+    <%= link_to "Accept", booking_path(booking, state: 1), remote: true, method: :patch %>
+    <%= link_to "Decline", booking_path(booking, state: -1), remote: true, method: :patch %>
   <% elsif booking.state == 1 %>
     <h6> Awaiting evaluation </h6>
   <% end %>
