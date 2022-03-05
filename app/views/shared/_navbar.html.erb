@@ -25,7 +25,11 @@
 -->
 <div class="navbar-wheelp navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+    <% if current_user.expert %>
+      <%= link_to "wheelp", dashboard_path, class: "big-logo-button"%>
+    <% else %>
       <%= link_to "wheelp", services_path, class: "big-logo-button"%>
+    <% end %>
     <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> %>

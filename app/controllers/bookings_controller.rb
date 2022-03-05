@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_service, only: %i[show new create]
+  before_action :set_booking, only: %i[show edit update]
 
   def index
     @user = current_user
@@ -20,7 +21,6 @@ class BookingsController < ApplicationController
 
   def show
     @user = current_user
-    @booking = Booking.find(params[:id])
     @review = Review.new
   end
 
@@ -41,10 +41,8 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
-    if current_user.expert
-      @booking = Booking.find(params[:id])
-
+  def update
+    @booking.update(booking_params)
   end
 
   private
@@ -53,7 +51,19 @@ class BookingsController < ApplicationController
     @service = Service.find(params[:service_id])
   end
 
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
   def booking_params
-    params.require(:booking).permit(:date, :vehicle_address)
+    params.require(:booking).permit(:date,
+                                    :vehicle_brand,
+                                    :vehicle_address,
+                                    :vehicle_model,
+                                    :vehicle_year,
+                                    :vehicle_contact,
+                                    :vehicle_url,
+                                    :additional_details,
+                                    :state)
   end
 end
