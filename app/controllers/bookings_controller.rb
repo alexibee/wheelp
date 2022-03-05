@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_service, only: %i[show new create]
+  before_action :set_booking, only: %i[show update]
 
   def index
     @user = current_user
@@ -12,15 +13,12 @@ class BookingsController < ApplicationController
       end
     else
       @bookings = Booking.where(user_id: @user.id)
-      if @bookings.nil?
-        @message = "You don't have any bookings at this time"
-      end
+      @message = "You don't have any bookings at this time" if @bookings.nil?
     end
   end
 
   def show
     @user = current_user
-    @booking = Booking.find(params[:id])
     @review = Review.new
   end
 
@@ -35,14 +33,21 @@ class BookingsController < ApplicationController
     @booking.user_id = @user.id
     @booking.service_id = @service.id
     if @booking.save
-      redirect_to service_booking_path(@service, @booking)
+      redirect_to dashboard_path(anchor: "booking-#{@booking.id}")
     else
       render :new
     end
   end
 
-  def edit
-    # if current_user.expert == true
+  def update
+    @booking.state = params[:state]
+    if @booking.save && @booking.state == 1
+      redirect_to dashboard_path(anchor: "request-#{@booking.id}")
+    elsif @booking.save && @booking.state == -1
+      redirect_to dashboard_path
+    else
+      flash[:notice] = "We weren't able to do that"
+    end
   end
 
   private
@@ -51,7 +56,18 @@ class BookingsController < ApplicationController
     @service = Service.find(params[:service_id])
   end
 
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
   def booking_params
-    params.require(:booking).permit(:date, :vehicle_address)
+    params.require(:booking).permit(:date,
+                                    :vehicle_brand,
+                                    :vehicle_address,
+                                    :vehicle_model,
+                                    :vehicle_year,
+                                    :vehicle_contact,
+                                    :vehicle_url,
+                                    :additional_details)
   end
 end
