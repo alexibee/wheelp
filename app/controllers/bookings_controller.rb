@@ -20,6 +20,12 @@ class BookingsController < ApplicationController
   def show
     @user = current_user
     @review = Review.new
+    @marker = {
+      lat: @service.latitude,
+      lng: @service.longitude,
+      info_window: render_to_string(partial: "shared/info_window", locals: { service: @service })
+      # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
+    }
   end
 
   def new
