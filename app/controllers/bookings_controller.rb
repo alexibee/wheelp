@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_service, only: %i[show new create]
-  before_action :set_booking, only: %i[show edit update]
+  before_action :set_booking, only: %i[show update]
 
   def index
     @user = current_user
@@ -13,9 +13,7 @@ class BookingsController < ApplicationController
       end
     else
       @bookings = Booking.where(user_id: @user.id)
-      if @bookings.nil?
-        @message = "You don't have any bookings at this time"
-      end
+      @message = "You don't have any bookings at this time" if @bookings.nil?
     end
   end
 
@@ -41,8 +39,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  # def accept
+
+  # end
+
+  # def decline
+  # end
+
   def update
-    @booking.update(booking_params)
+    @booking.state = params[:state]
+    if @booking.save
+      redirect_to dashboard_path(anchor: "booking-#{@booking.id}")
+    else
   end
 
   private
@@ -63,7 +71,6 @@ class BookingsController < ApplicationController
                                     :vehicle_year,
                                     :vehicle_contact,
                                     :vehicle_url,
-                                    :additional_details,
-                                    :state)
+                                    :additional_details)
   end
 end
