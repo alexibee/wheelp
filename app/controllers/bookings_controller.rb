@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
   def update
     @booking.state = params[:state]
     if @booking.save && @booking.state == 1
-      redirect_to dashboard_path(anchor: "booking-#{@booking.id}")
+      redirect_to dashboard_path(anchor: "request-#{@booking.id}")
     elsif @booking.save && @booking.state == -1
       redirect_to dashboard_path
     else
