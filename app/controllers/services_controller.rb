@@ -27,7 +27,7 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
-    @markers = @services.geocoded.map do |service|
+    @markers = @service.geocoded.map do |service|
       {
         lat: service.latitude,
         lng: service.longitude,
@@ -39,9 +39,7 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
-    # we need `user_id` to associate service with corresponding user?
-    @user = current_user
-    @service.user = @user
+    @service.user = current_user
     if @service.save
       redirect_to service_path(@service)
     else
