@@ -9,18 +9,16 @@
       <div class="banner-text" >
         <h4> Avoid the hassle and uncertainty and get an evaluation on the condition of the vehicle from the confort of your home. </h4>
         <%= link_to "Sign up", new_user_registration_path, class: "cta-button" %>
-        <% if user_signed_in?%>
       </div>
-      <div class="search-bar">
+    </div>
+    <div class="search-bar">
+      <% if user_signed_in?%>
         <%= simple_form_for :service, method: "GET", url: services_path, html: { class: 'mt-3' } do |f| %>
           <%= f.input :address, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
           <div class="center-button">
-            <%= f.submit "Search", class: "cta-button", id:"service" %>
+            <%= f.submit "get some wheelp", class: "cta-button", id:"service" %>
           </div>
         <% end %>
-      </div>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, class: "logo-button" %>
       <% end %>
     </div>
   </div>
