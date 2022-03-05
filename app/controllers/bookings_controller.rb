@@ -39,13 +39,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  # def accept
-
-  # end
-
-  # def decline
-  # end
-
   def update
     @booking.state = params[:state]
     if @booking.save

@@ -10,5 +10,8 @@
     <h6> Pending request <h6>
     <%= link_to "Accept", booking_path(booking, state: 1), method: :patch %>
     <%= link_to "Decline", booking_path(booking, state: -1), method: :patch %>
+  <% elsif booking.state == 1 %>
+    <h6> Awaiting evaluation </h6>
   <% end %>
+
 </div>
