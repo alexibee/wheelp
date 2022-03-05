@@ -1,34 +1,38 @@
 .banner {
+  display: flex;
+  height: 70vh;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  height: 65vh;
+  max-height: 80vh;
+}
+
+.banner-card {
   display: flex;
   align-items: center;
-  position: relative;
-  height: 70vh;
+  justify-content: center;
+  img  {
+    max-width: 570px;
+    height: 380px;
+  }
+}
+
+.banner-line {
+  text-align: center;
+  margin: 2rem;
+  margin-bottom: 0px;
+  min-width: 396px;
+  width: 530px;
 }
 
 .banner-text {
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  margin:0;
-  h1 {
-  color: $color;
-  font-family: $wheelp-font;
-  font-size: 30px;
-  }
-  p {
-    color: $color;
-    font-weight: bold;
-  } a {
-    background-color: $color;
-    border: none;
-    color: $background-color;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 12px;
+  h4 {
+  font-family: "Roboto", "Helvetica", "sans-serif";
+  font-style: Regular;
+  font-size: 34px;
+  line-height: 42px;
+  text-align: Center;
+  max-width: 636px;
   }
 }
