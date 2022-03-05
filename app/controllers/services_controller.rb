@@ -27,21 +27,11 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
-    @markers = @services.geocoded.map do |service|
-      {
-        lat: service.latitude,
-        lng: service.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { service: service })
-        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
-      }
-    end
   end
 
   def create
     @service = Service.new(service_params)
-    # we need `user_id` to associate service with corresponding user?
-    @user = current_user
-    @service.user = @user
+    @service.user = current_user
     if @service.save
       redirect_to service_path(@service)
     else
