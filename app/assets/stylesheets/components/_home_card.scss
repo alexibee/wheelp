@@ -1,3 +1,33 @@
+// PROCESS
+.homecard {
+  display: flex;
+  align-items: baseline;
+  .number {
+    font-size: 160px;
+    font-weight: 900;
+    color: $background-color;
+  }
+}
+
+.text {
+  font-family: $body-font;
+  color: $gray;
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 22px;
+    font-weight: 500;
+  }
+}
+
+.process {
+  display: flex;
+  justify-content: center;
+}
+// HOME CARD
+
 .homecard-left{
   display: flex;
   padding: 30px;

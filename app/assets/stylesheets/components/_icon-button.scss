@@ -1,14 +1,4 @@
 .icon-button {
-  border: $border;
-  background-color: $background-color;
-  border-color: $color;
-  border-radius: 50%;
-  &:hover {
-    border-color: $color;
-    background-color: $color;
-  }
-}
-
-.backbutton .position {
-  position: relative;
+  color: $color;
+  box-shadow: $box-shadow;
 }
