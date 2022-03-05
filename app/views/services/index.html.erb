@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="search-bar-box">
     <%= simple_form_for :service, method: "GET", html: { class: 'search-bar mt-3', data: { geocoder_target: "address" } } do |f| %>
@@ -10,7 +9,11 @@
     <% if @services.empty? %>
       <h3> <%= @message %> </h3>
     <% else %>
-      <%= render "shared/index_page_card" %>
+      <div class="container">
+        <% @services.each do |service| %>
+          <%= render "shared/index_page_card", service: service %>
+        <% end %>
+      </div>
     <% end %>
     <div class="mapbox-map mt-3" style="width: 100%; height: 100vh;"
       data-controller="mapbox"
