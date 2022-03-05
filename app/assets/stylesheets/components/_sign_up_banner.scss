@@ -1,14 +1,12 @@
 .contact-banner{
   display: flex;
   justify-content: space-around;
-  background-color:#072414;
+  background-color: $color;
   height: 200px;
   align-items: center;
 }
 .contact-text{
-  color: $color;
+  color: $background-color;
 
-}
-.contact-button{
 
 }
