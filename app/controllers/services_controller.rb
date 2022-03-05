@@ -6,7 +6,7 @@ class ServicesController < ApplicationController
       @search = params["service"]
       if @search.present? && @search["address"] != ""
         @services = Service.near(@search["address"], 20)
-        @message = "No experts within 20 km of this location" if @services.empty?
+        @message = "No experts within 20 km of this location"
       else
         @services = Service.all
       end

@@ -1,13 +1,22 @@
-<%# <% next_seven_days = (1..7).map { |n| (Date.today + n).strftime("%a")} %>
-<% seven_date_array = ((Date.today + 1)..(Date.today+7)).to_a %>
+<% next_seven_days = (1..7).map { |n| (Date.today + n).strftime("%a")} %>
+<% seven_date_array = ((Date.today + 1)..(Date.today + 7)).to_a %>
 <% next_avail = service.availability.select { |d| d <= seven_date_array.last && d >= seven_date_array.first } %>
 <% true_false = seven_date_array.map { |d| next_avail.include?(d) } %>
-<p>
-<% true_false.each do |el| %>
-  <% if el %>
-    <%= "🟢" %>
-  <% else %>
-    <%= "🔴" %>
-  <% end %>
-<% end %>
-</p>
+<table class="table">
+  <tr>
+    <% next_seven_days.each do |d| %>
+      <th class="text-center"><%= d %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <% true_false.each do |el| %>
+      <td class="text-center">
+        <% if el %>
+          <%= "🟢" %>
+        <% else %>
+          <%= "🔴" %>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+</table>
