@@ -51,6 +51,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path(anchor: "booking-#{@booking.id}")
     else
+      render 'bookings/dashboard'
+    end
   end
 
   private
