@@ -29,12 +29,7 @@
   padding: 30px;
  }
 .container a {
-  color: $color;
-  font-weight: bold;
   text-decoration: none;
-  &:hover {
-    color: $dark-color;
-  }
 }
 .service-img {
   align-items: center;
