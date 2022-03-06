@@ -5,9 +5,9 @@
     <p> Vehicle: <%= @booking.vehicle_brand %> </p>
     <p> Vehicle location: <%= @booking.vehicle_address %> </p>
     <p> Status: <%= render "states_converted", booking: @booking %> </p>
-    <% elsif @booking.state == 1 && !@booking.evaluation %>
-      <p> Evaluation is in process... </p>
-    <% elsif @booking.state == 1 && @booking.evaluation %>
+    <% elsif @booking.state == 1 && @booking.evaluation.nil? %>
+      <p> Evaluation is in progress... </p>
+    <% elsif @booking.state == 1 && !@booking.evaluation.nil? %>
       <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation) %>
     <% end %>
   </div>
