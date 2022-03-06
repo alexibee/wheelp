@@ -4,6 +4,7 @@
     src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
     />
     <div class="info">
+      <p> <%= booking.user.first_name %> </p>
       <p><%= booking.vehicle_brand + " " + booking.vehicle_model%></p>
       <p>📍 <%= booking.vehicle_address %></p>
     </div>
@@ -11,9 +12,12 @@
       <h6> Pending request <h6>
       <%= link_to "Accept", booking_path(booking, state: 1), remote: true, method: :patch %>
       <%= link_to "Decline", booking_path(booking, state: -1), remote: true, method: :patch %>
-    <% elsif booking.state == 1 %>
+    <% elsif booking.state == 1 && !booking.evaluation %>
       <h6> Awaiting evaluation </h6>
       <%= link_to "Add evaluation", new_booking_evaluation_path(booking) %>
+    <% elsif booking.state == 1 && booking.evaluation %>
+      <h6> Evaluation completed </h6>
+      <%= link_to "See evaluation", booking_evaluation_path(booking, booking.evaluation) %>
     <% end %>
   </div>
 <% end %>

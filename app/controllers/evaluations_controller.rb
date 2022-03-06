@@ -1,16 +1,16 @@
 class EvaluationsController < ApplicationController
+  before_action :find_booking, only: %i[new show create]
+
   def new
-    find_booking
     @evaluation = Evaluation.new
   end
 
   def create
-    find_booking
     @evaluation = Evaluation.new(evaluation_params)
     @evaluation.user = current_user
     @evaluation.booking = @booking
     if @evaluation.save
-      redirect_to booking_evaluation_path(@booking, @evaluation)
+      redirect_to service_booking_path(@booking)
     else
       render :new
     end
@@ -21,14 +21,13 @@ class EvaluationsController < ApplicationController
     @evaluation = Evaluation.find(params[:id])
   end
 
+  private
+
   def find_booking
     @booking = Booking.find(params[:booking_id])
   end
 
-  private
-
   def evaluation_params
-    params.require(:evaluation).permit(:comment)
+    params.require(:evaluation).permit(:photo, :video, :document, :comment)
   end
-
 end

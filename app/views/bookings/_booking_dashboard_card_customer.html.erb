@@ -1,0 +1,23 @@
+<%= link_to service_booking_path(booking.service, booking) do %>
+  <div class="bookings-card customer", id="booking-<%=booking.id%>">
+    <img
+    src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
+    />
+    <div class="info">
+      <p><%= booking.vehicle_brand + " " + booking.vehicle_model%></p>
+      <p>📍 <%= booking.vehicle_address %></p>
+      <p> <%= booking.service.user.first_name %>
+    </div>
+    <% if booking.state == 0 %>
+      <h6> Pending request <h6>
+    <% elsif booking.state == 1 && !booking.evaluation %>
+      <h6> Request accepted </h6>
+      <h6> <%= booking.service.user.first_name %> is working on it </h6>
+    <% elsif booking.state == 1 && booking.evaluation %>
+      <h6> Evaluation completed </h6>
+      <%= link_to "See evaluation", booking_evaluation_path(booking, booking.evaluation) %>
+    <% else%>
+      <h6> Request declined </h6>
+    <% end %>
+  </div>
+<% end %>

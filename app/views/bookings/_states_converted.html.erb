@@ -1,0 +1,7 @@
+<% if booking.state == 0 %>
+  <%= "Pending confirmation" %>
+<% elsif booking.state == -1 %>
+  <%= "Declined" %>
+<% else %>
+  <%= "Confirmed" %>
+<% end %>
