@@ -1,6 +1,21 @@
 .show-service-card {
   border-radius: 30px;
   box-shadow: 0 3px 7px #dfdfdf;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.show-card-top {
+  display: flex;
+  justify-content: space-around;
+  .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color;
+  }
 }
 
 .show-service-left {
@@ -11,11 +26,10 @@
   }
 }
 
-.show-card-text-container {
+.show-card-right-info {
   padding: 30px;
   margin-bottom: 10px;
   flex-direction: column;
-
 }
 
 .show-card-book {
@@ -29,4 +43,9 @@
 #service-show-btn {
   width: 200px;
   text-align: center;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
 }
