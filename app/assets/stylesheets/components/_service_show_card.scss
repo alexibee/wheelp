@@ -1,32 +1,85 @@
+.show-service-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
 .show-service-card {
-  border-radius: 30px;
-  box-shadow: 0 3px 7px #dfdfdf;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  max-width: 850px;
 }
 
 .show-service-left {
-  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding-right: 1rem;
+  .category-tag {
+    min-width: 50px;
+    max-width: 300px;
+    width: 100px;
+    padding: 5px 5px;
+    color: #F6F2FF;
+    background-color: gray;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    p {
+      margin: 0px;
+      text-transform: uppercase;
+    }
+  }
   img {
     border-radius: 30px;
+    margin-top: 10px;
     margin-bottom: 10px;
   }
 }
 
-.show-card-text-container {
-  padding: 30px;
-  margin-bottom: 10px;
-  flex-direction: column;
-
-}
-
-.show-card-book {
-  align-self: center;
-}
-
-.show-service-name-price{
+.show-card-right-info .top {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color;
+  }
 }
+
+.show-service-subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.show-card-right-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .availabilty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 
 #service-show-btn {
   width: 200px;
   text-align: center;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
 }
