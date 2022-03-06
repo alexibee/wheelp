@@ -9,7 +9,7 @@ $green: #1EDD88;
 $dark-gray: #303030;
 $gray: #515151;
 
-$subtle: 1px solid;
+$subtle: 1px solid rgb(221, 221, 221);
 $border: 3px solid;
 
 $color: #6D378E;
@@ -20,5 +20,5 @@ $background-color: #F6F2FF;
 $font-color: darken($color, 50%);
 
 $shadow: 0 2px 7px #dfdfdf;
-$color-shadow: rgba(#6D378E, 0.35) 0px 5px 15px;
-$box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+$color-shadow: rgba(#6D378E, 12%) 0px 6px 16px;
+$box-shadow: ($gray, 0.12) 0px 6px 16px;

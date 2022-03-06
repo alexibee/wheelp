@@ -1,5 +1,5 @@
 <% if @user.expert %>
-  <%= render "evaluation_customer_show", evaluation: @evaluation, booking: @booking %>
-<% else %>
   <%= render "evaluation_expert_show", evaluation: @evaluation, booking: @booking %>
+<% else %>
+  <%= render "evaluation_customer_show", evaluation: @evaluation, booking: @booking %>
 <% end %>
