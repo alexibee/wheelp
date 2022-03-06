@@ -1,15 +1,14 @@
 .service-card {
   width: 550px;
-  padding: 10px;
+  padding: 1rem;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: $shadow;
-
+  border-radius: 2%;
+  box-shadow: 0 2px 7px #dfdfdf;
 }
 
 .service-card:hover{
   border: $subtle;
-  border-color: gray;
+  border-color: rgb(214, 214, 214);
 }
 
 .service-card img {
@@ -23,11 +22,19 @@
   color: $color;
   font-weight: 300;
 }
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .right-side {
-  color: black !important;
+  display: flex;
   text-decoration: none;
-  font-family: $body-font;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
   h3 {
     font-size: 18px;
   }
@@ -39,7 +46,15 @@
   color: $color;
   text-decoration: none;
   font-size: 8px;
-  font-weight: 700;
+  font-weight: 800;
+}
+
+.category-tag {
+  background-clip: padding-box;
+  background-color: var(--formatted-badge_background-color);
+  border: var(--formatted-badge_border);
+  border-radius: var(--h-l-f-om-o);
+  box-shadow: var(--e-swdx-p);
 }
 
 // WHEELPER
