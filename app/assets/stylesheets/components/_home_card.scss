@@ -50,3 +50,14 @@
   margin: 30px;
   width: 1200px;
 }
+
+.homepage_cards {
+  mark {
+    padding: 0.2rem 0.7rem;
+    text-transform: lowercase;
+    background-color: $background-color;
+    color: $color;
+    font-family: $wheelp-font;
+    border-radius: 1.2em;
+  }
+}
