@@ -1,5 +1,5 @@
 class EvaluationsController < ApplicationController
-  before_action :find_booking, only: %i[new create]
+  before_action :find_booking, only: %i[new show create]
 
   def new
     @evaluation = Evaluation.new

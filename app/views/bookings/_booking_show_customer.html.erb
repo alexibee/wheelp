@@ -3,8 +3,13 @@
   <div class="p-3">
     <p> Wheelper: <%= @booking.service.user.first_name %> </p>
     <p> Vehicle: <%= @booking.vehicle_brand %> </p>
-    <p> Vehicle address: <%= @booking.vehicle_address %> </p>
+    <p> Vehicle location: <%= @booking.vehicle_address %> </p>
     <p> Status: <%= render "states_converted", booking: @booking %> </p>
+    <% elsif @booking.state == 1 && !@booking.evaluation %>
+      <p> Evaluation is in process... </p>
+    <% elsif @booking.state == 1 && @booking.evaluation %>
+      <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation) %>
+    <% end %>
   </div>
   <div class="showmap" style="width: 80%; height: 400px;"
         data-controller="mbox"

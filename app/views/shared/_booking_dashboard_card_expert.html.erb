@@ -11,9 +11,11 @@
       <h6> Pending request <h6>
       <%= link_to "Accept", booking_path(booking, state: 1), remote: true, method: :patch %>
       <%= link_to "Decline", booking_path(booking, state: -1), remote: true, method: :patch %>
-    <% elsif booking.state == 1 %>
+    <% elsif booking.state == 1 && !booking.evaluation %>
       <h6> Awaiting evaluation </h6>
       <%= link_to "Add evaluation", new_booking_evaluation_path(booking) %>
+    <% elsif booking.state == 1 && booking.evaluation %>
+      <%= link_to "See evaluation", booking_evaluation_path(booking, booking.evaluation) %>
     <% end %>
   </div>
 <% end %>
