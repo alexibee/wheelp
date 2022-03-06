@@ -18,3 +18,13 @@
 @import "pages/index";
 @import "components/home_card";
 @import "components/sign_up_banner";
+
+body {
+  overflow: auto;
+  background-color: $white;
+  position: relative;
+}
+
+.container {
+  min-height: 100vh;
+}

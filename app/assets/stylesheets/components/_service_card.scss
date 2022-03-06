@@ -1,9 +1,16 @@
+.services-map-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
 .service-card {
   width: 550px;
-  padding: 1rem;
   background-color: white;
-  border-radius: 2%;
-  box-shadow: 0 2px 7px #dfdfdf;
 }
 
 .service-card:hover{
@@ -25,8 +32,12 @@
 .left-side {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-right: 1rem;
+  .reviews-info p{
+    margin: 0px;
+  }
 }
 
 .right-side {
@@ -47,6 +58,7 @@
   text-decoration: none;
   font-size: 8px;
   font-weight: 800;
+  margin-left: 0.5rem;
 }
 
 // WHEELPER

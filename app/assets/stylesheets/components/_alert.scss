@@ -4,3 +4,18 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert-frame {
+  min-width: fit-content;
+  min-height: fit-content;
+  border: $subtle;
+  box-shadow: $box-shadow;
+  padding: 1rem;
+  p {
+    font-size: 16px;
+    color: $font-color;
+  }
+  .link {
+    text-decoration: underline;
+  }
+}

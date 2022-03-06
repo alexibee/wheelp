@@ -1,12 +1,14 @@
 
 <%= link_to service_path(service) do %>
-  <div class="service-card d-flex align-items-start my-3">
+  <div class="frame service-card d-flex align-items-start my-3">
     <div class="left-side">
-      <% if service.photo.attached? %>
-        <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
-      <% else %>
-        <img src="https://media.wired.com/photos/5c54ee6a4feec32ca0f590d8/125:94/w_1761,h_1324,c_limit/superman-922909434.jpg" />
-      <% end %>
+      <div class="wheelper-photo">
+        <% if service.photo.attached? %>
+          <%= cl_image_tag service.photo.key, height: 150, width: 150, crop: :fill %>
+        <% else %>
+          <img src="https://media.wired.com/photos/5c54ee6a4feec32ca0f590d8/125:94/w_1761,h_1324,c_limit/superman-922909434.jpg" />
+        <% end %>
+      </div>
       <div class="reviews-info">
         <% total = 0 %>
         <% service.bookings.each do |book| %>
@@ -18,7 +20,8 @@
         <% end %>
       </div>
     </div>
-    <div class="right-side ps-3">
+
+    <div class="right-side">
       <div class="top-right d-flex justify-content-between">
         <h3> <%= service.title.capitalize %></h3>
         <div class="price-tag">
@@ -27,7 +30,7 @@
       </div>
       <div class="right-middle">
         <h5> <%=service.user.first_name.capitalize  %> <%=service.user.last_name.capitalize  %></h5>
-        <p><%= service.description %></p>
+        <p> "<%= service.description %>"</p>
       </div>
       <div class="bottom-right">
         <div class="availability-window">
