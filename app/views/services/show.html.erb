@@ -1,36 +1,39 @@
-<div class="container">
-    <%= link_to services_path do %>
-      <i class="fas fa-solid fa-circle-arrow-left"></i>
-    <% end %>
-  <div class= "show-body">
-  <%= link_to "Back", services_path, class: "link" %>
-    <div class="show-header">
-      <h2> <%= @service.title.capitalize %></h2>
-      <div class="undertitle">
-        <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
-        <p> 📍<%= @service.address %></p>
+<div class="show-container col-9">
+
+  <div class= "show-service-card">
+    <div class="show-service-left">
+      <div class="show-service-img">
+        <% if @service.photo.attached? %>
+          <%= cl_image_tag @service.photo.key, width: 400, height: 400 %>
+        <% else %>
+          <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="400" height="400" />
+        <% end %>
+        <%# <div class="showmap" style="width: 100%;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>
+        <%# data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
+      <%# </div> %>
+      </div>
+      <div class="show-service-left-bottom">
       </div>
     </div>
-    <div class="service-img">
-      <% if @service.photo.attached? %>
-        <%= cl_image_tag @service.photo.key, width: 400, height: 400 %>
-      <% else %>
-        <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="400" height="400" />
-      <% end %>
-      <div class="showmap" style="width: 100%;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-    </div>
+    <div class="show-card-text-container">
+      <div class="show-service-card-header">
+        <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
+        <h3>£ <%= @service.price %>/per viewing</h3>
+        <p> 📍<%= @service.address %></p>
+        <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
+        <h4> <%= @service.title.capitalize %></h4>
+      </div>
       <div class="show-card-text">
-        <div class="show-card-book">
-          <h3>£ <%= @service.price %>/per viewing</h3>
-          <%= link_to "Book", new_service_booking_path(@service), class: "cta-button" %>
-        </div>
         <p><%= @service.bio %></p>
       </div>
+      <div class="show-card-book">
+        <%= link_to "Book", new_service_booking_path(@service), class: "cta-button" %>
+      </div>
     </div>
+    </div>
+    <%= link_to "Back", services_path, class: "link" %>
   </div>
 
 </div>
