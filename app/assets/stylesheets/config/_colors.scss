@@ -6,19 +6,28 @@ $blue: #0D6EFD;
 $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
-$dark-gray: #303030;
-$gray: #515151;
 
-$subtle: 1px solid rgb(221, 221, 221);
-$border: 3px solid;
 
 $color: #6D378E;
 $dark-color: darken($color, 20%);
-$light-color: lighten($color, 80%);
+$light-color: lighten($color, 50%);
 
-$background-color: #F6F2FF;
+$background-color: $light-color;
 $font-color: darken($color, 50%);
 
+// GRAYS
+
+$sublte-gray: $background-color;
+$dark-gray: #303030;
+$gray: #515151;
+
+// BORDERS
+$subtle: 1px solid $background-color;
+$border: 3px solid;
+
+// SHADOWS
 $shadow: 0 3px 7px #dfdfdf;
 $color-shadow: rgba(#6D378E, 12%) 0px 6px 16px;
 $box-shadow: ($gray, 0.12) 0px 6px 16px;
+
+$other: #F6F2FF;
