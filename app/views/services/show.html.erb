@@ -8,8 +8,12 @@
 <div class="center-button">
   <%= link_to "Book", new_service_booking_path(@service), class: "cta-button", id:"service-show-btn" %>
 </div>
+
   <div class= "frame show-service-card">
     <div class="show-service-left">
+      <div class="category-tag">
+        <p>category</p>
+      </div>
       <div class="show-service-img">
         <% if @service.photo.attached? %>
           <%= cl_image_tag @service.photo.key, width: 300, height: 300 %>
@@ -20,7 +24,7 @@
     </div>
 
     <div class="show-card-right-info">
-      <div class="show-card-text-top">
+      <div class="show-card-top">
         <div class="show-service-card-header">
           <div class="show-service-card-name">
             <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
@@ -44,7 +48,7 @@
     </div>
   </div>
 
-  <div class="frame">
+  <div class="frame reviews-box">
     <h1> Reviews </h1>
   </div>
 
