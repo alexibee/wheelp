@@ -1,0 +1,10 @@
+<div class="container col-6 text-center">
+  <h1> Your evaluation </h1>
+  <p>"<%= @evaluation.comment %>"</p>
+  <p>
+    <%= link_to "Back", service_booking_path(@booking.service, @booking) %>
+  </p>
+  <p>
+    <%= link_to "Back to your dashboard", dashboard_path %>
+  </p>
+</div>
