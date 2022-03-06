@@ -1,9 +1,32 @@
 .show-service-card {
-  display: flex;
-  justify-content: center;
+  border-radius: 30px;
+  box-shadow: 0 3px 7px #dfdfdf;
+}
+
+.show-service-left {
+  padding: 30px;
+  img {
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.show-card-text-container {
+  padding: 30px;
+  margin-bottom: 10px;
+  flex-direction: column;
 
 }
 
-.show-service-img {
-  padding: 10px;
+.show-card-book {
+  align-self: center;
+}
+
+.show-service-name-price{
+  display: flex;
+}
+
+#service-show-btn {
+  width: 200px;
+  text-align: center;
 }
