@@ -1,38 +1,28 @@
-.show-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: min-content;
-  h2 {
-    text-align: center;
-  }
+.show-container {
+  height: 80vh;
+  padding: 0 200px;
+  margin: 0 auto;
 }
 
-.showmap {
-  max-width: 400px;
-  border-radius: 15px;
-  box-shadow: $shadow;
-  height: 400px;
-  justify-content: right;
-}
 
-.show-body .undertitle {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
- .show-card-book {
-  display: flex;
-  justify-content: space-between;
-  color: $color;
-  text-align: center;
-  padding: 30px;
- }
-.container a {
-  text-decoration: none;
-}
-.service-img {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
+
+// .show-body .undertitle {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+// }
+//  .show-card-book {
+//   display: flex;
+//   justify-content: space-between;
+//   color: $color;
+//   text-align: center;
+//   padding: 30px;
+//  }
+// .container a {
+//   text-decoration: none;
+// }
+// .service-img {
+//   align-items: center;
+//   display: flex;
+//   justify-content: center;
+// }
