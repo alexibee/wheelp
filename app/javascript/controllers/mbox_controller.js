@@ -4,7 +4,7 @@ import mapboxgl from "!mapbox-gl"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    marker: String
+    marker: Object
   }
 
   connect() {
@@ -28,7 +28,7 @@ export default class extends Controller {
 
     // Pass the element as an argument to the new marker
       new mapboxgl.Marker() //pass customMarker here if we have
-        .setLngLat([ marker.lng, marker.lat ])
+        .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
         .setPopup(popup)
         .addTo(this.map)
     };
