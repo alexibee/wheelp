@@ -8,15 +8,18 @@ export default class extends Controller {
   }
 
   connect() {
+    console.dir(this.markerValue)
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
       container: this.element,
+      center: [ this.markerValue.lng, this.markerValue.lat ],
       style: "mapbox://styles/mapbox/streets-v10"
     })
     this.#addMarkerToMap()
     this.#fitMapToMarker()
   }
+
   #addMarkerToMap() {
       const popup = new mapboxgl.Popup().setHTML(this.markerValue.info_window)
       // const customMarker = document.createElement("div")
@@ -35,6 +38,6 @@ export default class extends Controller {
   #fitMapToMarker() {
     const bounds = new mapboxgl.LngLatBounds()
     bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 1 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 3, duration: 0 })
   }
 }

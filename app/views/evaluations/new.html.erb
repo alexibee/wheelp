@@ -2,6 +2,9 @@
   <h1> Add evaluation </h1>
   <%= simple_form_for [@booking, @evaluation] do |f| %>
     <%= f.input :comment %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :document, as: :file %>
+    <%= f.input :video, as: :file %>
     <%= f.submit %>
   <% end %>
 </div>
