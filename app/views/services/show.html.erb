@@ -14,9 +14,6 @@
         <%# data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
       <%# </div> %>
       </div>
-      <div class="show-service-left-bottom">
-        <%= link_to "Back", services_path, class: "link" %>
-      </div>
     </div>
     <div class="show-card-text-container d-flex justify-content-between">
       <div class="show-card-text-top">
@@ -24,24 +21,29 @@
           <div class="show-service-card-name">
             <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
             <div class="show-service-subtitle d-flex justify-content-between">
-              <h6>£ <%= @service.price %>/per viewing</h6>
               <p> 📍<%= @service.address %> </p>
               <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
             </div>
           </div>
-          <%= render "shared/availability", service: @service %>
-        </div>
-          <div class="show-service-name-price">
+          <div class="show-service-avail-price d-block">
+            <%= render "shared/availability", service: @service %>
           </div>
+        </div>
         <div class="show-card-text-bio">
           <h4> <%= @service.title.capitalize %></h4>
           <p><%= @service.bio %></p>
         </div>
       </div>
-      <div class="show-card-book">
+      <div class="show-card-book d-flex align-items-end">
         <%= link_to "Book", new_service_booking_path(@service), class: "cta-button", id:"service-show-btn" %>
+        <h3><%= "/£ #{@service.price}" %></h3>
       </div>
     </div>
   </div>
+  <div class="show-service-left-bottom p-3">
+    <%= link_to "Back", services_path, class: "link" %>
+  </div>
+
+  <h1> Reviews </h1>
 
 </div>
