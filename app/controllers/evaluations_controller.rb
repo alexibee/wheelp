@@ -10,7 +10,7 @@ class EvaluationsController < ApplicationController
     @evaluation.user = current_user
     @evaluation.booking = @booking
     if @evaluation.save
-      redirect_to service_booking_path(@booking)
+      redirect_to service_booking_path(@booking.service, @booking)
     else
       render :new
     end
