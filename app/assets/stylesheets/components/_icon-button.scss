@@ -1,4 +1,9 @@
 .icon-button {
   color: $color;
   box-shadow: $box-shadow;
+  background-color: white;
+  border: $border;
+  border-radius: 20px;
+  padding: 5px 15px;
+  border-color: $color;
 }
