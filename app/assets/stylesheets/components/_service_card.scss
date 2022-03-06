@@ -1,9 +1,15 @@
 .service-card {
   width: 550px;
-  padding: 25px;
-  background-color: $background-color;
+  padding: 10px;
+  background-color: white;
   border-radius: 10px;
   box-shadow: $shadow;
+
+}
+
+.service-card:hover{
+  border: $subtle;
+  border-color: gray;
 }
 
 .service-card img {
@@ -33,12 +39,13 @@
   color: $color;
   text-decoration: none;
   font-size: 8px;
-  font-weight: 500;
-  background-color: $background-color;
-  padding: 3px;
-  border-radius: 50%;
+  font-weight: 700;
 }
 
+.availability-window{
+  color: $gray;
+  font-size: 8px;
+}
 // WHEELPER
 
 .vertical-card {

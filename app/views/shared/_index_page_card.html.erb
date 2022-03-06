@@ -29,9 +29,9 @@
         <h5> <%=service.user.first_name.capitalize  %> <%=service.user.last_name.capitalize  %></h5>
         <p><%= service.description %></p>
       </div>
-      <div class="bottom-right d-flex justify-content-between">
+      <div class="bottom-right">
         <div class="availability-window">
-        <p>Availability</p>
+        <p>Availability this week</p>
         <%= render "shared/availability", service: service %>
         </div>
         <%= link_to "Book Now", new_service_booking_path(service) ,class:"submit-button" %>

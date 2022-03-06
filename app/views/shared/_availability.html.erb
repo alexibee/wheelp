@@ -5,7 +5,8 @@
 <table class="table">
   <tr>
     <% next_seven_days.each do |d| %>
-      <th class="text-center"><%= d %></th>
+      <% day = d[0]%>
+      <th class="text-center"><%= day%></th>
     <% end %>
   </tr>
   <tr>
