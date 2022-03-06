@@ -2,21 +2,24 @@
 <% seven_date_array = ((Date.today + 1)..(Date.today + 7)).to_a %>
 <% next_avail = service.availability.select { |d| d <= seven_date_array.last && d >= seven_date_array.first } %>
 <% true_false = seven_date_array.map { |d| next_avail.include?(d) } %>
-<table class="table">
+<table class="availability_table">
   <tr>
     <% next_seven_days.each do |d| %>
-      <th class="text-center"><%= d %></th>
+      <% day = d[0]%>
+      <th class="text-center"><%= day%></th>
     <% end %>
   </tr>
   <tr>
     <% true_false.each do |el| %>
-      <td class="text-center">
-        <% if el %>
-          <%= "🟢" %>
+      <% if el %>
+        <td class="text-center yes">
+          <i class="fas fa-solid fa-circle"></i>
+        </td>
         <% else %>
-          <%= "🔴" %>
+          <td class="text-center no">
+            <i class="fas fa-solid fa-circle"></i>
+          </td>
         <% end %>
-      </td>
     <% end %>
   </tr>
 </table>
