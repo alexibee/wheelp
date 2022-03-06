@@ -8,17 +8,21 @@
       </button>
     <% end %>
   </div>
-  <div class="d-flex">
-    <% if @services.empty? %>
-      <h3> <%= @message %> </h3>
-    <% else %>
-      <div class="container">
-        <% @services.each do |service| %>
-          <%= render "shared/index_page_card", service: service %>
-        <% end %>
-      </div>
+  <div class="container">
+    <div class="frame title-count">
+      <h3> Wheelpers </h3>
+      <% if @services.empty? %>
+        <h3> <%= @message %> </h3>
+      <% else %>
+        <h3> <%= @services.count %> </h3>
+
+      <% end %>
+
+    </div>
+    <% @services.each do |service| %>
+      <%= render "shared/index_page_card", service: service %>
     <% end %>
-    <div class="mapbox-map mt-3" style="width: 100%; height: 100vh;"
+    <div class="frame mapbox-map" style="width: 100%; height: 100vh;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
