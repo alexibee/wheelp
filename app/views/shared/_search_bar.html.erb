@@ -1,0 +1,8 @@
+ <div class="search-bar">
+  <%= simple_form_for :service, method: "GET", url: services_path, html: { class: 'mt-3' } do |f| %>
+    <%= f.input :address, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
+    <div class="center-button">
+      <%= f.submit "get some wheelp", class: "action-button", id:"service" %>
+    </div>
+  <% end %>
+</div>

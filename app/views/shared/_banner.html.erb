@@ -1,25 +1,15 @@
 <div class="wrapper">
   <div class="banner mb-3">
-    <div class= "banner-line">
-      <h3> Buying a used vehicle can be a daunting task, you could use some </h3>
-      <%= link_to "wheelp", new_user_registration_path, class: "big-logo-button" %>
+    <div class= "banner-header">
+      <h3>Get the peace of mind you need before you buy</h3>
+      <%= render "shared/search_bar" %>
     </div>
     <div class="banner-card">
       <img src="https://yi-files.s3.eu-west-1.amazonaws.com/products/888000/888186/1505715-full.jpg" alt="Wheelper and user illustration">
       <div class="banner-text" >
-        <h4> Avoid the hassle and uncertainty and get an evaluation on the condition of the vehicle from the confort of your home. </h4>
-        <%= link_to "Sign up", new_user_registration_path, class: "cta-button" %>
+        <h4> Quick, easy, and secure online verification of a vehicle's condition from our network of highly-trained wheelpers. </h4>
+        <%= link_to "explore wheelpers", new_user_registration_path, class: "cta-button" %>
       </div>
-    </div>
-    <div class="search-bar">
-      <% if user_signed_in?%>
-        <%= simple_form_for :service, method: "GET", url: services_path, html: { class: 'mt-3' } do |f| %>
-          <%= f.input :address, placeholder: 'Search by city, country, address', label:false, input_html: {value: ""} %>
-          <div class="center-button">
-            <%= f.submit "get some wheelp", class: "cta-button", id:"service" %>
-          </div>
-        <% end %>
-      <% end %>
     </div>
   </div>
 </div>

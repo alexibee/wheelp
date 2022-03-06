@@ -56,3 +56,30 @@
   position: absolute;
   top: 3px;
 }
+
+// ACTION
+
+.action-button {
+  text-transform: lowercase;
+  text-decoration: none;
+  border: 3px solid $color;
+  color: $background-color;
+  background-color: $color;
+  font-weight: 800;
+  min-width: 100px;
+  border-radius: 30px;
+  font-size: 20px;
+  display: inline-block;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-family: $wheelp-font;
+  box-shadow: $color-shadow;
+  min-width: 200px;
+}
+.action-button:hover {
+  border: $border;
+  border-color: $gray;
+  color: $background-color;
+  background-color: $gray;
+  box-shadow: $box-shadow;
+}
