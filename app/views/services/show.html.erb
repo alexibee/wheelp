@@ -3,12 +3,13 @@
   <%= link_to services_path do %>
     <i class="fas fa-solid fa-circle-arrow-left"></i>
   <% end %>
+  <%= link_to "Back", services_path, class: "link" %>
 </div>
-<%= link_to "Back", services_path, class: "link" %>
 <div class="center-button">
   <%= link_to "Book", new_service_booking_path(@service), class: "cta-button", id:"service-show-btn" %>
 </div>
 
+<div class="show-service-content">
   <div class= "frame show-service-card">
     <div class="show-service-left">
       <div class="category-tag">
@@ -24,7 +25,7 @@
     </div>
 
     <div class="show-card-right-info">
-      <div class="show-card-top">
+      <div class="top">
         <div class="show-service-card-header">
           <div class="show-service-card-name">
             <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
@@ -42,14 +43,17 @@
           <h4> <%= @service.title.capitalize %></h4>
           <p><%= @service.bio %></p>
         </div>
-        <div class="show-service-avail d-block">
+        <div class="availability">
           <%= render "shared/availability", service: @service %>
         </div>
     </div>
   </div>
 
-  <div class="frame reviews-box">
-    <h1> Reviews </h1>
+  <div class="frame reviews-card">
+    <div class="top">
+      <h2> Reviews </h2>
+    </div>
   </div>
+</div>
 
 </div>
