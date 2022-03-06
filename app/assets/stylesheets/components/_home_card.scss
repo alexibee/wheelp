@@ -48,8 +48,20 @@
   align-items: center;
   width: 1200px;
 }
+// MARKS
 
 .homepage_cards {
+  mark {
+    padding: 0.2rem 0.7rem;
+    text-transform: lowercase;
+    background-color: $background-color;
+    color: $color;
+    font-family: $wheelp-font;
+    border-radius: 1.2em;
+  }
+}
+
+.homecard{
   mark {
     padding: 0.2rem 0.7rem;
     text-transform: lowercase;
