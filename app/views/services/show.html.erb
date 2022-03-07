@@ -11,11 +11,11 @@
 <div class="show-galley">
   <div class="main-card">
     <div class="title-frame">
-      <h6> About the <mark> wheelper </mark> </h6>
+      <h6> About this <mark> wheelper </mark> </h6>
     </div>
 
     <div class= "frame main show-service-card">
-      <div class="frame show-service-left">
+      <div class="show-service-left">
         <div class="category-tag">
           <p>category</p>
         </div>
@@ -54,6 +54,15 @@
     </div>
   </div>
 
+  <div class="service-types">
+    <div class="title-frame">
+      <h6> Services included </h6>
+    </div>
+    <div class="list">
+      <%= render "services/service_type", service: @service %>
+    </div>
+  </div>
+
   <div class="reviews-card">
     <div class="title-frame">
       <h6> Reviews </h6>
@@ -63,13 +72,5 @@
     </div>
   </div>
 
-  <div class="service-types">
-    <div class="title-frame">
-      <h6> Services included </h6>
-    </div>
-    <div class="list">
-      <%= render "services/service_type", service: @service %>
-    </div>
-  </div>
 
 </div>

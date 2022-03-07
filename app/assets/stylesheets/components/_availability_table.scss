@@ -18,15 +18,14 @@
   margin-bottom: 1rem;
   vertical-align: top;
   border-color: #dee2e6;
-}
-.availability_table .yes {
-  th {
-    color: $color;
+  th td {
+    min-width: 2rem;
   }
 }
-
-.availability_table .text-center .no {
-  th {
-    color: $gray;
+.availability_table {
+  svg {
+    color: $color;
+    height: 1rem;
+    width: 1rem;
   }
 }
