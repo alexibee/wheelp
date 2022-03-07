@@ -49,6 +49,7 @@ class BookingsController < ApplicationController
     @booking.state = params[:state]
     if @booking.save && @booking.state == 1
       redirect_to dashboard_path(anchor: "request-#{@booking.id}")
+      @chatroom = Chatroom.create(name: "Evaluation request")
     elsif @booking.save && @booking.state == -1
       redirect_to dashboard_path
     else
