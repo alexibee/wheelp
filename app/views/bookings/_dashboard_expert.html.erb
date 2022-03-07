@@ -4,7 +4,7 @@
     <%= link_to "Create a service", new_service_path, class: "grey-button" %>
     <h3> <%= @message %> </h3>
   <% else %>
-    <% @bookings.sort_by {|obj| obj.date } %>
+    <% @bookings = @bookings.sort_by {|obj| obj.date } %>
     <% pending = @bookings.select do |booking| %>
       <% booking.state == 0 %>
     <% end %>

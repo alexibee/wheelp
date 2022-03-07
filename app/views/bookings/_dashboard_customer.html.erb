@@ -2,7 +2,7 @@
   <h3> <%= @message %> </h3>
   <%= link_to "Find an expert", services_path, class: "link" %>
 <% else %>
-  <% @bookings.sort_by {|obj| obj.date } %>
+  <% @bookings = @bookings.sort_by {|obj| obj.date } %>
   <% pending = @bookings.select do |booking| %>
    <%  booking.state == 0 %>
   <% end %>
