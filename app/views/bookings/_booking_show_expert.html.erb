@@ -9,10 +9,13 @@
     <% if @booking.state == 0 %>
       <%= link_to "Accept", booking_path(@booking, state: 1), remote: true, method: :patch %>
       <%= link_to "Decline", booking_path(@booking, state: -1), remote: true, method: :patch %>
-    <% elsif @booking.state == 1 && !@booking.evaluation %>
-      <%= link_to "Add evaluation", new_booking_evaluation_path(@booking) %>
-    <% elsif @booking.state == 1 && @booking.evaluation %>
-      <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation) %>
+    <% elsif @booking.state == 1 %>
+      <%= link_to "Message #{@booking.user.first_name}", chat_room %>
+      <% if !@booking.evaluation %>
+        <%= link_to "Add evaluation", new_booking_evaluation_path(@booking) %>
+      <% else @booking.evaluation %>
+        <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation) %>
+      <% end %>
     <% end %>
   </div>
   <div class="showmap" style="width: 80%; height: 400px;"
