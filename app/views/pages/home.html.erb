@@ -1,12 +1,14 @@
 <% if user_signed_in? %>
  <%= render "shared/banner" %>
  <%= render "shared/homepage_cards" %>
+ <%= render "shared/info-banner" %>
  <%= render "shared/steps_cards" %>
 <% else %>
   <%= render "shared/new_banner" %>
   <%= render "shared/steps_cards" %>
-  <%= render "shared/sign_up_banner" %>
+  <%= render "shared/info-banner" %>
   <%= render "shared/homepage_cards" %>
+  <%= render "shared/sign_up_banner" %>
 <% end %>
 
 <!-- <div class="search-bar">
