@@ -4,13 +4,13 @@
 <% else %>
   <% @bookings = @bookings.sort_by {|obj| obj.date } %>
   <% pending = @bookings.select do |booking| %>
-   <%  booking.state == 0 %>
+    <% booking.state == 0 %>
   <% end %>
   <% confirmed = @bookings.select do |booking| %>
-   <%  booking.state == 1 %>
+    <% booking.state == 1 %>
   <% end %>
   <% declined = @bookings.select do |booking| %>
-   <%  booking.state == -1 %>
+    <% booking.state == -1 %>
   <% end %>
 
   <% if pending.any? %>
