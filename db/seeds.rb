@@ -14,9 +14,7 @@ User.destroy_all
 usernames = ["shaquille_oatmeal", "hanging_with_my_gnomies", "hoosier_daddy", "fast_and_curious", "averagestudent", "BadKarma", "google_was_my_idea", "whats_my_name", "where_am_i", "wheelp4lyf", "mr_lewagon", "ms_lewagon", "806_or_die"]
 names = ["Bobby", "Roy", "Jose", "Alex", "Ismael", "Ibrahim", "Rob", "Dick", "Bill", "Auston", "Alice", "Laura", "Margaret", "Cindy", "Grace"]
 surnames = ["Brown", "Green", "Smith", "Jameson", "Gudbranson", "Velasquez", "Khan", "Goldman", "Lee", "Ozols"]
-experts_photos = [
-  "https://www.liveabout.com/thmb/oR_kgnRY47YAD6N5TRlpEYJTCtw=/2064x1161/smart/filters:no_upscale()/GettyImages-522272311-5949bdc15f9b58d58a035319.jpg",
-]
+experts_photos = ["https://www.liveabout.com/thmb/oR_kgnRY47YAD6N5TRlpEYJTCtw=/2064x1161/smart/filters:no_upscale()/GettyImages-522272311-5949bdc15f9b58d58a035319.jpg"]
 
 #---------USERS
 customers = []
