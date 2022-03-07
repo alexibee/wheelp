@@ -27,6 +27,7 @@ class BookingsController < ApplicationController
       # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
     }
     @chatroom = Chatroom.find(@booking.chatroom.id) if @booking.chatroom
+    @message = Message.new
   end
 
   def new

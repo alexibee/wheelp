@@ -1,4 +1,19 @@
+.chatroom-container {
+  border: 1px solid $dark-color;
+  position: relative;
+  padding: 20px;
+  a {
+    text-decoration: none;
+  }
+}
+
 .messages {
   height: 60vh;
   overflow: scroll;
+}
+
+.close-chat {
+  position: absolute;
+  right: 10px;
+  top: 0px;
 }
