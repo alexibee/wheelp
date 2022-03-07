@@ -3,6 +3,7 @@
 <% next_avail = service.availability.select { |d| d <= seven_date_array.last && d >= seven_date_array.first } %>
 <% true_false = seven_date_array.map { |d| next_avail.include?(d) } %>
 <table class="availability_table">
+  <p> Availability next week </p>
   <tr>
     <% next_seven_days.each do |d| %>
       <% day = d[0]%>
