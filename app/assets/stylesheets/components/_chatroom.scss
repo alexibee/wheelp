@@ -6,6 +6,9 @@
   a {
     text-decoration: none;
   }
+  input {
+    border-radius: 15px;
+  }
 }
 .messages {
   height: 60vh;
@@ -16,6 +19,7 @@
   position: absolute;
   right: 10px;
   top: 0px;
+  color: $light-color;
 }
 
 .messge-cont {
