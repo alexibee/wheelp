@@ -1,5 +1,6 @@
 <div class="container col-6 text-center">
-  <h1> Your evaluation </h1>
+  <h1> Evaluation </h1>
+  <h3> Provided by <%= evaluation.user.first_name %> </h3>
   <p>"<%= evaluation.comment %>"</p>
   <p> <%= cl_video_tag evaluation.video.key, controls: true, width: "480px", height: "360px" if evaluation.video.attached?%> </p>
   <div class="attachments d-flex justify-content-around">
