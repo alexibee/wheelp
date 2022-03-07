@@ -1,5 +1,5 @@
 <h1 class="text-center my-5"> Details of your evaluation request </h1>
-<div class="d-flex px-5" data-controller="reveal">
+<div class="d-flex container px-5" data-controller="reveal">
   <div class="p-3">
     <p> Wheelper: <%= @booking.service.user.first_name %> </p>
     <p> Vehicle: <%= @booking.vehicle_brand %> </p>
@@ -24,38 +24,40 @@
         data-mbox-marker-value="<%= @marker.to_json %>"
         data-mbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class="container col-3">
-    <div class="review-form-container d-none" data-reveal-target="reviews">
-      <h3> Add your review </h3>
-      <%= simple_form_for [@service, @booking, @review] do |f| %>
-        <%= f.input :content %>
-        <%= f.input :rating, as: :integer %>
-        <%= f.submit %>
-      <% end %>
-    </div>
-
-
-    <div class="chatroom-container px-3 d-none" data-controller="chatroom-subscription"
-      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-reveal-target="chat">
-      <%= link_to "X","", class: "close-chat", data: { action: "click->reveal#hideChat" } %>
-      <div class="messages" data-chatroom-subscription-target="messages">
-        <% @chatroom.messages.each do |message| %>
-          <%= render "messages/message", message: message %>
+  <% if @booking.state == 1 %>
+    <% if !@booking.evaluation.nil? %>
+      <div class="col-3">
+        <div class="review-form-container d-none" data-reveal-target="reviews">
+          <h3> Add your review </h3>
+          <%= simple_form_for [@service, @booking, @review] do |f| %>
+            <%= f.input :content %>
+            <%= f.input :rating, as: :integer %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+    <% end %>
+      <div class="chatroom-container px-3 d-none" data-controller="chatroom-subscription"
+        data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-reveal-target="chat">
+        <%= link_to "X","", class: "close-chat", data: { action: "click->reveal#hideChat" } %>
+        <div class="messages" data-chatroom-subscription-target="messages">
+          <% @chatroom.messages.each do |message| %>
+            <%= render "messages/message", message: message %>
+          <% end %>
+        </div>
+        <%= simple_form_for [@chatroom, @message],
+          remote: true,
+          html: {data: {chatroom_subscription_target: "form"}, class: "d-flex align-items-start"} do |f|
+        %>
+          <%= f.input :content,
+          label: false,
+          placeholder: "Message #{@booking.service.user.first_name}",
+          wrapper_html: {class: "flex-grow-1"}
+        %>
+          <%= f.submit "Send", class: "regular-button" %>
         <% end %>
       </div>
-      <%= simple_form_for [@chatroom, @message],
-        remote: true,
-        html: {data: {chatroom_subscription_target: "form"}, class: "d-flex align-items-start"} do |f|
-      %>
-        <%= f.input :content,
-        label: false,
-        placeholder: "Message #{@booking.service.user.first_name}",
-        wrapper_html: {class: "flex-grow-1"}
-      %>
-        <%= f.submit "Send", class: "regular-button" %>
-      <% end %>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <%= link_to "Show this expert's page", service_path(@service) %>
