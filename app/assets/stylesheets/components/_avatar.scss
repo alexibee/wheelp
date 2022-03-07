@@ -13,8 +13,48 @@
   border: $background-color $border;
 }
 .avatar-square {
-  width: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: $background-color $border;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  img {
+    border-radius: 50%;
+    border: $background-color $border;
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 1rem;
+  }
+}
+
+.user-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  p {
+    opacity: 0.7;
+  }
+}
+
+.user-centered-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  img {
+    border-radius: 50%;
+    border: $background-color $border;
+    max-width: 2rem;
+    max-height: 2rem;
+    margin-bottom: 0.75rem;
+  }
 }

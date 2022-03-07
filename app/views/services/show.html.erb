@@ -63,12 +63,15 @@
   </div>
 
   <div class="reviews-card">
+    <% reviews = @service.reviews %>
     <div class="title-frame">
       <h6> Reviews </h6>
     </div>
-    <div class="frame">
-      <h2> Reviewsfkjdsljflis </h2>
-    </div>
+    <% reviews.each do |review| %>
+      <div class="frame">
+        <%= render "reviews/reviews-card", review: review %>
+      </div>
+    <% end %>
   </div>
 
 
