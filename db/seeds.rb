@@ -15,22 +15,7 @@ usernames = ["shaquille_oatmeal", "hanging_with_my_gnomies", "hoosier_daddy", "f
 names = ["Bobby", "Roy", "Jose", "Alex", "Ismael", "Ibrahim", "Rob", "Dick", "Bill", "Auston", "Alice", "Laura", "Margaret", "Cindy", "Grace"]
 surnames = ["Brown", "Green", "Smith", "Jameson", "Gudbranson", "Velasquez", "Khan", "Goldman", "Lee", "Ozols"]
 experts_photos = [
-  "https://c.stocksy.com/a/TW3700/z9/1681841.jpg",
   "https://www.liveabout.com/thmb/oR_kgnRY47YAD6N5TRlpEYJTCtw=/2064x1161/smart/filters:no_upscale()/GettyImages-522272311-5949bdc15f9b58d58a035319.jpg",
-  "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pmx040118-mechanics002-1521726026.jpg",
-  "https://www.sait.ca/images/Programs%20and%20Courses/Apprenticeships%20and%20Trades/Apprenticeships/motorcycle-mechanic.jpg",
-  "https://i.pinimg.com/564x/b1/db/cc/b1dbccf5b65df457310bbdf8f6ab3fa8.jpg",
-  "https://www.arabnews.pk/sites/default/files/styles/n_670_395/public/2021/07/24/2730671-1458449640.jpg?itok=ntDGNREm",
-  "https://i0.wp.com/ericscarcare.com/wp-content/uploads/car_enthusiast.jpeg?fit=1200%2C900&ssl=1",
-  "https://media.thetab.com/blogs.dir/115/files/2017/05/img-5299.jpg",
-  "https://www.theargus.co.uk/resources/images/13278897.jpg?display=1&htype=0&type=responsive-gallery",
-  "https://ctp-media.imigino.com/image/1/process/1200x600?source=https://randfonteinherald.co.za/wp-content/uploads/sites/3/2020/10/IMG_7469_44133_tn.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfSXDk_CkDViwFI8BgS5ETtUtx_rt8kkm7YIyQPo9GP1sOuFojm9qjBvoh6CGItxLFmc&usqp=CAU",
-  "https://acekarts.com.au/assets/Uploads/10-things-only-car-lovers-would-understand-social-image.jpg",
-  "https://www.arabnews.com/sites/default/files/styles/n_670_395/public/2017/03/11/870556-1493855036.jpg?itok=cFUo7wwo",
-  "https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2019/01/Faye-Hadleymechanics.jpg?q=50&fit=crop&w=1600&dpr=1.5",
-  "https://i.ytimg.com/vi/sS325i_bVCc/maxresdefault.jpg",
-  "https://carleasespecialoffers.co.uk/assets/images/trista-schieffer-pw-post.jpg"
 ]
 
 #---------USERS
@@ -85,7 +70,7 @@ availability = []
   date = Date.today + i
   availability << date
 end
-(1..20).each do |n|
+(1..10).each do |n|
   unavailability = []
   availability.count.times do |i|
     action = [true, false]
@@ -175,6 +160,49 @@ models = %w[A5 Corolla M3 Golf Polo Testarossa Xedos Astra Cayenne Supra Spacewa
     service_id: services.sample
   )
   new_booking.save!
-  bookings << new_booking.id
+  bookings << new_booking
   puts "booking #{n - 1} created"
+end
+
+
+#----REVIEWS
+
+reviews = []
+good_content = [
+  "Excellent service, the wheelper arrived at exactly the time given.. to the minute.
+  He carried out the job very professionally 👍🏽",
+  "Good service, would recomend! :)",
+  "I highly recommed this service! Received a very detailed report 👏🏻!",
+  "Very efficient wheelper. The wheelper called me immediately and strongly recommended not to buy the car, I needed a ser",
+  "I know nothing about cars so this service was really helpful to me ☺️. I was able to purchase a car in very goog condition ✌🏼",
+  "Highly recommended, great work at very reasonable prices. Accommodating and really friendly.",
+  "Really helful and also super friendly. Thank you 👍🏼"
+]
+
+bad_content = [
+  "Horrible service, was late to the booking and the owner of the vehicle sold it by the time the wheelper arrived.",
+  "Never showed up to the viewing. Luckily the guys from Wheelp are very nice and gave me a refund of my money. Don't book this wheelper! 👀",
+  "The service was good but this wheelper was rude. Would not recomment",
+  "Not the best but the price is decent 🙃",
+  "I'm a long time user from Wheelp since I change my car very often and this was the worst wheelper I've booked so far.... sometimes happens 😣",
+]
+(3..20).each do |n|
+  type = [good_content, bad_content].sample
+  if type == good_content
+    rating = rand(4..5)
+  else
+    rating = rand (1..3)
+  end
+
+  booking = bookings.sample
+
+  new_review = Review.new(
+    content: type.sample,
+    rating: rating,
+    booking_id: booking.id,
+    user_id: booking.user_id
+    )
+  new_review.save!
+  reviews << new_review.id
+  puts "review #{n - 1} created"
 end
