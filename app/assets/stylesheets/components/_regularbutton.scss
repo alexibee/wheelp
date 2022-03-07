@@ -45,8 +45,12 @@
   }
 
   &:hover {
-    color: $background-color;
     border-radius: 1rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
     &:after {
       right: 0;
       left: 0;

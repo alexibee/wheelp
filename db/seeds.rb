@@ -172,16 +172,19 @@ good_content = [
   "Excellent service, the wheelper arrived at exactly the time given.. to the minute.
   He carried out the job very professionally 👍🏽",
   "Good service, would recomend! :)",
+  "Solid service. 💯"
+  ". Hes very knowledgeable, trustworthy, fair, and clear. He has experience in many makes.",
   "I highly recommed this service! Received a very detailed report 👏🏻!",
   "Very efficient wheelper. The wheelper called me immediately and strongly recommended not to buy the car, I needed a ser",
   "I know nothing about cars so this service was really helpful to me ☺️. I was able to purchase a car in very goog condition ✌🏼",
   "Highly recommended, great work at very reasonable prices. Accommodating and really friendly.",
-  "Really helful and also super friendly. Thank you 👍🏼"
+  "Really helful and also super friendly 10/10! Thank you 👍🏼"
 ]
 
 bad_content = [
   "Horrible service, was late to the booking and the owner of the vehicle sold it by the time the wheelper arrived.",
-  "Never showed up to the viewing. Luckily the guys from Wheelp are very nice and gave me a refund of my money. Don't book this wheelper! 👀",
+  "Never showed up to the viewing. Luckily the guys from Wheelp are very nice and gave me a refund of my money.
+  Don't book this wheelper! 👀",
   "The service was good but this wheelper was rude. Would not recomment",
   "Not the best but the price is decent 🙃",
   "I'm a long time user from Wheelp since I change my car very often and this was the worst wheelper I've booked so far.... sometimes happens 😣",

@@ -23,3 +23,47 @@
   font-family: $wheelp-font;
   border-radius: 1.2em;
 }
+
+// FLIP FRAME
+
+.box {
+  width: 700px;
+  height: 300px;
+}
+
+.box .front, .box .back {
+  padding: 1rem;
+  position: absolute;
+  width: 700px;
+  height: 300px;
+  background-color: white;
+  backface-visibility: hidden; cursor: pointer;
+  border-radius: 2rem;
+  box-shadow: $shadow;
+  transition: transform .4s;
+}
+
+.box .front {
+  border-radius: 2rem;
+}
+
+.box .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transform: rotateX(-180deg);
+}
+
+.box:hover .front {
+  transform: rotateX(180deg);
+  border: $subtle;
+  box-shadow: $color-shadow;
+}
+
+.box:hover .back {
+  transform: rotateX(0);
+  border: $subtle;
+  box-shadow: $color-shadow;
+
+}
