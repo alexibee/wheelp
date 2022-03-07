@@ -1,54 +1,74 @@
-<div class="subtle-button">
+<div class="icon-subtle-button hvr-float">
   <%= link_to services_path do %>
-    <i class="fa-solid fa-circle-arrow-left"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM384 288H205.3l49.38 49.38c12.5 12.5 12.5 32.75 0 45.25s-32.75 12.5-45.25 0L105.4 278.6C97.4 270.7 96 260.9 96 256c0-4.883 1.391-14.66 9.398-22.65l103.1-103.1c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L205.3 224H384c17.69 0 32 14.33 32 32S401.7 288 384 288z"/></svg>
   <% end %>
 </div>
 <div class="center-button">
-  <%= link_to "Book", new_service_booking_path(@service), class: "cta-button", id:"service-show-btn" %>
+  <%= link_to "Book", new_service_booking_path(@service), class: "regular-button hvr-pulse-grow", id:"service-show-btn" %>
 </div>
 
-<div class="show-service-content">
-  <div class= "frame show-service-card">
-    <div class="show-service-left">
-      <div class="category-tag">
-        <p>category</p>
-      </div>
-      <div class="show-service-img">
-        <% if @service.photo.attached? %>
-          <%= cl_image_tag @service.photo.key, width: 300, height: 300 %>
-        <% else %>
-          <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="300" height="300" />
-        <% end %>
-      </div>
+<div class="show-galley">
+  <div class="main-card">
+    <div class="title-frame">
+      <h6> About this <mark> wheelper </mark> </h6>
     </div>
 
-    <div class="show-card-right-info">
-      <div class="top">
-        <div class="show-service-card-header">
-          <div class="show-service-card-name">
-            <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
-          </div>
-          <div class="show-service-subtitle">
-            <p> 📍<%= @service.address %> </p>
-            <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
-          </div>
+    <div class= "frame main show-service-card">
+      <div class="show-service-left">
+        <div class="category-tag">
+          <p>category</p>
         </div>
-        <div class="price">
-          <h3><%= "£ #{@service.price}/hour" %></h3>
+        <div class="show-service-img">
+          <% if @service.photo.attached? %>
+            <%= cl_image_tag @service.photo.key, width: 300, height: 300 %>
+          <% else %>
+            <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="300" height="300" />
+          <% end %>
         </div>
       </div>
-        <div class="show-card-text-bio">
-          <h4> <%= @service.title.capitalize %></h4>
-          <p><%= @service.bio %></p>
+
+      <div class="show-card-right-info">
+        <div class="top">
+          <div class="show-service-card-header">
+            <div class="show-service-card-name">
+              <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
+            </div>
+            <div class="show-service-subtitle">
+              <p> 📍<%= @service.address %> </p>
+              <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
+            </div>
+          </div>
+          <div class="price">
+            <h3><%= "£ #{@service.price}/hour" %></h3>
+          </div>
         </div>
-        <div class="availability">
-          <%= render "shared/availability", service: @service %>
-        </div>
+          <div class="show-card-text-bio">
+            <h4> <%= @service.title.capitalize %></h4>
+            <p><%= @service.bio %></p>
+          </div>
+          <div class="availability">
+            <%= render "shared/availability", service: @service %>
+          </div>
+      </div>
     </div>
   </div>
-  <div class="frame reviews-card">
-    <div class="top">
-      <h2> Reviews </h2>
+  <div class="service-types">
+    <div class="title-frame">
+      <h6> Services included </h6>
     </div>
+    <div class="list">
+      <%= render "services/service_type", service: @service %>
+    </div>
+  </div>
+  <div class="reviews-card">
+    <% reviews = @service.reviews %>
+    <div class="title-frame">
+      <h6> Reviews </h6>
+    </div>
+    <% reviews.each do |review| %>
+      <div class="frame">
+        <%= render "reviews/reviews-card", review: review %>
+      </div>
+    <% end %>
   </div>
 </div>
