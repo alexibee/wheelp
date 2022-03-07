@@ -1,19 +1,48 @@
 .regular-button {
-  cursor: pointer;
-  text-align: center;
-  border: 1px solid rgb(221, 221, 221);
-  background-color: rgb(255, 255, 255);
-  outline: none;
-  margin: 0px;
-  color: rgb(34, 34, 34);
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  position: relative;
-  transition-property: -ms-transform, -webkit-transform, transform, background-color, border-color;
-  transition-duration: 0.15s;
-  transition-timing-function: ease-in-out;
-  padding: 10px 16px;
-  border-radius: 30px;
+  background-color: $dark-gray;
+  border-radius: 1rem;
+  color: $background-color;
+  padding: 0.5rem 0.75rem;
   font-size: 12px;
-  line-height: 16px;
-  width: 100%;
+  border: $sublte;
+}
+
+
+.link {
+  max-width: fit-content;
+  display: block;
+  margin: auto;
+  padding: 0.5rem 0.75rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  color: $font-color;
+  position: relative;
+  transition: all .3s cubic-bezier(.2, 0, 0, 1);
+  z-index: 1;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    right: 1.25rem;
+    left: 1.25rem;
+    background-color: $dark-gray;
+    transition: all .3s cubic-bezier(.2, 0, 0, 1);
+    transform-origin: bottom center;
+    z-index: -1;
+    border-radius: 1rem;
+  }
+
+  &:hover {
+    color: $background-color;
+    border-radius: 1rem;
+    &:after {
+      right: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
 }
