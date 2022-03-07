@@ -1,8 +1,9 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :service
-  has_one :evaluation
-  has_one :review
+  has_one :evaluation, dependent: :destroy
+  has_one :review, dependent: :destroy
+  has_one :chatroom, dependent: :destroy
   validates :vehicle_address, presence: true
   validates :state, presence: true, inclusion: { in: (-1..1) }
   geocoded_by :vehicle_address

@@ -10,7 +10,7 @@
       <%= link_to "Accept", booking_path(@booking, state: 1), remote: true, method: :patch %>
       <%= link_to "Decline", booking_path(@booking, state: -1), remote: true, method: :patch %>
     <% elsif @booking.state == 1 %>
-      <%= link_to "Message #{@booking.user.first_name}", chatroom_path(@chatroom) %>
+      <%= link_to "Message #{@booking.user.first_name}", chatroom_path(@chatroom) if !@chatroom.nil? %>
       <% if !@booking.evaluation %>
         <%= link_to "Add evaluation", new_booking_evaluation_path(@booking) %>
       <% else @booking.evaluation %>

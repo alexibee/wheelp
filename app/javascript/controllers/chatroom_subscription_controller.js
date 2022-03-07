@@ -3,7 +3,7 @@ import consumer from "../channels/consumer"
 
 export default class extends Controller {
   static values = { chatroomId: Number }
-  static targets = ["messages", "form"]
+  static targets = ["messages", "form", "input"]
 
   connect() {
     this.channel = consumer.subscriptions.create(
