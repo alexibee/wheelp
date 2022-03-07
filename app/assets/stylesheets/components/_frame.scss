@@ -5,3 +5,22 @@
   border: $subtle;
   border-color: $subtle;
 }
+
+.title-frame {
+  color: $font-color;
+  margin: 1rem;
+  h6{
+    filter: drop-shadow($shadow);
+    border-color: $background-color;
+    font-size: 2rem;
+  }
+}
+
+.title-frame mark {
+  padding: 0.2rem 0.7rem;
+  text-transform: lowercase;
+  background-color: $background-color;
+  color: $color;
+  font-family: $wheelp-font;
+  border-radius: 1.2em;
+}

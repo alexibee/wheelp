@@ -1,62 +1,75 @@
 
 <div class="subtle-button">
   <%= link_to services_path do %>
-    <i class="fa-solid fa-circle-arrow-left"></i>
+    <i class="fas fa-solid fa-circle-arrow-left"></i>
   <% end %>
 </div>
 <div class="center-button">
   <%= link_to "Book", new_service_booking_path(@service), class: "cta-button", id:"service-show-btn" %>
 </div>
 
-<div class="show-service-content">
-  <div class= "frame show-service-card">
-    <div class="show-service-left">
-      <div class="category-tag">
-        <p>category</p>
-      </div>
-      <div class="show-service-img">
-        <% if @service.photo.attached? %>
-          <%= cl_image_tag @service.photo.key, width: 300, height: 300 %>
-        <% else %>
-          <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="300" height="300" />
-        <% end %>
-      </div>
+<div class="show-galley">
+  <div class="main-card">
+    <div class="title-frame">
+      <h6> About the <mark> wheelper </mark> </h6>
     </div>
 
-    <div class="show-card-right-info">
-      <div class="top">
-        <div class="show-service-card-header">
-          <div class="show-service-card-name">
-            <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
-          </div>
-          <div class="show-service-subtitle">
-            <p> 📍<%= @service.address %> </p>
-            <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
-          </div>
+    <div class= "frame main show-service-card">
+      <div class="frame show-service-left">
+        <div class="category-tag">
+          <p>category</p>
         </div>
-        <div class="price">
-          <h3><%= "£ #{@service.price}/hour" %></h3>
+        <div class="show-service-img">
+          <% if @service.photo.attached? %>
+            <%= cl_image_tag @service.photo.key, width: 300, height: 300 %>
+          <% else %>
+            <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="300" height="300" />
+          <% end %>
         </div>
       </div>
-        <div class="show-card-text-bio">
-          <h4> <%= @service.title.capitalize %></h4>
-          <p><%= @service.bio %></p>
+
+      <div class="show-card-right-info">
+        <div class="top">
+          <div class="show-service-card-header">
+            <div class="show-service-card-name">
+              <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
+            </div>
+            <div class="show-service-subtitle">
+              <p> 📍<%= @service.address %> </p>
+              <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
+            </div>
+          </div>
+          <div class="price">
+            <h3><%= "£ #{@service.price}/hour" %></h3>
+          </div>
         </div>
-        <div class="availability">
-          <%= render "shared/availability", service: @service %>
-        </div>
+          <div class="show-card-text-bio">
+            <h4> <%= @service.title.capitalize %></h4>
+            <p><%= @service.bio %></p>
+          </div>
+          <div class="availability">
+            <%= render "shared/availability", service: @service %>
+          </div>
+      </div>
     </div>
   </div>
 
-  <div class="frame reviews-card">
-    <div class="top">
-      <h2> Reviews </h2>
+  <div class="reviews-card">
+    <div class="title-frame">
+      <h6> Reviews </h6>
+    </div>
+    <div class="frame">
+      <h2> Reviewsfkjdsljflis </h2>
     </div>
   </div>
-</div>
 
-<div class="service-type">
-
-</div>
+  <div class="service-types">
+    <div class="title-frame">
+      <h6> Services included </h6>
+    </div>
+    <div class="list">
+      <%= render "services/service_type", service: @service %>
+    </div>
+  </div>
 
 </div>
