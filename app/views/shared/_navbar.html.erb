@@ -25,15 +25,7 @@
 -->
 <div class="navbar-wheelp navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <% if user_signed_in? %>
-      <% if current_user.expert %>
-        <%= link_to "wheelp", dashboard_path, class: "big-logo-button"%>
-      <% else %>
-        <%= link_to "wheelp", services_path, class: "big-logo-button"%>
-      <% end %>
-    <% else %>
-      <%= link_to "wheelp", root_path, class: "big-logo-button"%>
-    <% end %>
+    <%= link_to "wheelp", root_path, class: "big-logo-button"%>
     <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> %>
@@ -41,19 +33,15 @@
         <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
             <% if current_user.expert == false %>
-              <li class="nav-item"> <%= link_to "Dashboard", dashboard_path, class: "tab" %> </li>
+              <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
+              <li class="nav-item"> <%= link_to "WHEELPERS", wheelpers_path, class: "tab" %> </li>
+            <% else %>
+              <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
             <% end %>
-            <li class="nav-item">
-              <%= link_to "WHEELPERS", wheelpers_path, class: "tab" %>
-            </li>
-            <%# <li class="nav-item">
-              <%= link_to "FAQ", "#", class: "tab" %>
-            <%# </li> %>
             <li class="nav-item dropdown">
               <%= image_tag "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646398529/car_ospmqs.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "About us", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </li>
