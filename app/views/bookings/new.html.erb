@@ -1,6 +1,8 @@
 <%# <%= javascript_pack_tag 'booking_new' %>
-<h1> Your booking </h1>
-<div class="container col-6">
+<div class="h1-position">
+  <h1> Your booking </h1>
+</div>
+<div class="container col-6 justify-content-center">
   <div id='booking-form' data-controller="flatpickr-booking-form" data-flatpickr-booking-form-available-value="<%= @service.availability.to_json %>">
     <%= simple_form_for [@service, @booking] do |f| %>
       <%= f.input :vehicle_brand %>
@@ -12,7 +14,9 @@
       <%= f.input :vehicle_contact %>
       <%= f.input :additional_details, as: :text %>
       <%= f.input :date, as: :date, html5: true, input_html: { data: { flatpickr_booking_form_target: "input"}} %>
-      <%= f.submit %>
+      <div class="button-position">
+        <%= f.submit class: "bookings-button" %>
+      </div>
     <% end %>
   </div>
 </div>

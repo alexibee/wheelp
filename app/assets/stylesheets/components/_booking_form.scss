@@ -1,0 +1,43 @@
+.mapboxgl-ctrl-geocoder{
+  background-color: #e5d5ef;
+  border: $subtle;
+}
+#booking-form{
+  // .form-control{
+  //   box-shadow: 0px 0px 10px 2px $box-shadow;
+  // }
+}
+.bookings-button{
+  text-transform: lowercase;
+  text-decoration: none;
+  border: 3px solid $color;
+  color: $background-color;
+  background-color: $color;
+  font-weight: 800;
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-family: $wheelp-font;
+  box-shadow: $color-shadow;
+  width: 300px;
+}
+.bookings-button:hover {
+  border: $border;
+  border-color: $gray;
+  color: $background-color;
+  background-color: $gray;
+  box-shadow: $box-shadow;
+}
+.button-position{
+  text-align: center;
+  margin: 0 auto;
+}
+#new_booking{
+  width: 600px;
+  margin: 0 auto;
+}
+.h1-position{
+  text-align: center;
+  margin: 0 auto;
+}
