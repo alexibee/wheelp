@@ -26,6 +26,8 @@ class BookingsController < ApplicationController
       info_window: render_to_string(partial: "map_info_window", locals: { booking: @booking })
       # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
     }
+    @chatroom = Chatroom.find(@booking.chatroom.id) if @booking.chatroom
+    @message = Message.new
   end
 
   def new
@@ -48,6 +50,7 @@ class BookingsController < ApplicationController
   def update
     @booking.state = params[:state]
     if @booking.save && @booking.state == 1
+      @chatroom = Chatroom.create(name: "Evaluation request ##{@booking.id}", user_id: current_user.id, booking_id: @booking.id)
       redirect_to dashboard_path(anchor: "request-#{@booking.id}")
     elsif @booking.save && @booking.state == -1
       redirect_to dashboard_path

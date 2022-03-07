@@ -6,7 +6,6 @@
 <div class="center-button">
   <%= link_to "Book", new_service_booking_path(@service), class: "regular-button hvr-pulse-grow", id:"service-show-btn" %>
 </div>
-<div class="show-container">
 
 <div class="show-galley">
   <div class="main-card">
@@ -61,7 +60,6 @@
       <%= render "services/service_type", service: @service %>
     </div>
   </div>
-
   <div class="reviews-card">
     <% reviews = @service.reviews %>
     <div class="title-frame">
@@ -73,7 +71,4 @@
       </div>
     <% end %>
   </div>
-
-
-
 </div>

@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[update destroy] do
     resources :evaluations, only: %i[new create show]
   end
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
   get "/dashboard", to: 'bookings#index', as: :dashboard
   get "/wheelpers", to: 'services#wheelpers', as: :wheelpers
 end

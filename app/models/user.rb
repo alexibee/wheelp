@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :evaluations, dependent: :destroy
   has_many :service, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :chatrooms, dependent: :destroy
 end

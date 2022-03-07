@@ -1,0 +1,43 @@
+.chatroom-container {
+  border-radius: 15px;
+  box-shadow: $shadow;
+  position: relative;
+  padding: 20px 20px 10px 20px;
+  a {
+    text-decoration: none;
+  }
+  input {
+    border-radius: 15px;
+  }
+}
+.messages {
+  height: 60vh;
+  margin-bottom: 10px;
+  overflow: scroll;
+}
+.close-chat {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  color: $light-color;
+}
+
+.messge-cont {
+  margin: 5px;
+}
+
+.single-message {
+  padding: 5px;
+  margin: 5px 5px;
+  width: 75%;
+  border-radius: 15px;
+}
+
+.your-message {
+  background-color: $background-color;
+  box-shadow: $shadow;
+}
+.not-your-message {
+  background-color: $background-color;
+  box-shadow: $shadow;
+}
