@@ -172,7 +172,7 @@ good_content = [
   "Excellent service, the wheelper arrived at exactly the time given.. to the minute.
   He carried out the job very professionally 👍🏽",
   "Good service, would recomend! :)",
-  "Solid service. 💯"
+  "Solid service. 💯",
   ". Hes very knowledgeable, trustworthy, fair, and clear. He has experience in many makes.",
   "I highly recommed this service! Received a very detailed report 👏🏻!",
   "Very efficient wheelper. The wheelper called me immediately and strongly recommended not to buy the car, I needed a ser",
