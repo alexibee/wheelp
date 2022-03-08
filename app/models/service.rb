@@ -9,7 +9,7 @@ class Service < ApplicationRecord
   validates :address, presence: true
   validates :price, presence: true
   CATEGORIES = ["Enthusiast", "Mechanic", "Technician", "Brand Expert"]
-  validates :category, inclusion: { CATEGORIES }
+  validates :category, inclusion: { in: CATEGORIES }
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   pg_search_scope :search_by_bio_title,
