@@ -77,14 +77,14 @@ character_adjectives = %w[helpful wheelpful sincere serious professional truthwo
 vehicles = %w[vehicle car motorbike van four-wheel convertible SUV minivan pickup limousine scooter micro-car familiar]
 vehicle_adjectives = %w[vintage automatic luxury easy-to-drive small low-emission electric]
 good_adjectives = %w[perfect great amazing high-end awesome exquisite brilliant gorgeous helpful sincere]
-categories = %w[expert enthusiast specialist skilled mechanic technician service]
+CATEGORIES = ["Enthusiast", "Mechanic", "Technician", "Brand Expert"]
 price_adjectives = %w[affordable reasonable inexpensive reduced discounted modest moderate]
 verbs = [
-  "loves",
-  "enjoys",
-  "works with",
-  "owns #{rand(1..4)}",
-  "likes"
+  "love",
+  "enjoy",
+  "work with",
+  "own #{rand(1..4)}",
+  "like"
 ]
 timing = [
   "long time",
@@ -109,9 +109,9 @@ experts.each do |expert_id|
     end
   end
   character = character_adjectives.sample
+  category = CATEGORIES.sample
   vehicle = vehicles.sample
   vehicle_adjective = vehicle_adjectives.sample
-  category = categories.sample
   address = addresses.sample
   price_adjective = price_adjectives.sample
   actions = [
@@ -152,12 +152,26 @@ experts.each do |expert_id|
     "I can only offer my services when I'm not working and unfortunately that is usually not very often",
     "I am not always available so book a viewing as soon as possible"
   ]
+
+  other = [
+    "I really think",
+    "my friends say that",
+    "I'd like to think that",
+    "I can guarantee that",
+    "you won't regret buying my service as",
+    "you can be sure that",
+    "my clients say",
+    "some people say that",
+    "I can say",
+    "I think I can say"
+  ]
   action = actions.sample
 
   new_service = Service.new(
-    description: "I'm a #{timing.sample} #{category} #{character} who #{verbs.sample} #{vehicle_adjective} #{vehicle}s.",
-    bio: "I am a #{vehicle} #{timing.sample} #{category} who #{verbs.sample} #{vehicle_adjective} vehicles.
-    #{wheelp.sample.capitalize} and I can guarantee that I'm a #{character} #{category}.
+    description: "I'm #{character} and I #{verbs.sample} #{vehicle_adjective} #{vehicle}s.",
+    category: category,
+    bio: "I am a #{timing.sample} #{vehicle} #{category} who #{verbs.sample} #{vehicle_adjective} vehicles.
+    #{wheelp.sample.capitalize} and #{other.sample}t I'm a #{character} #{category}.
     #{phrase.sample} so #{contact_phrase.sample}",
     address: address,
     price: rand(45..85),
