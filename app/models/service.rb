@@ -4,6 +4,7 @@ class Service < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
   has_many :reviews, through: :bookings
+  validates :user_id, uniqueness: true
   validates :title, presence: true
   validates :address, presence: true
   validates :price, presence: true
