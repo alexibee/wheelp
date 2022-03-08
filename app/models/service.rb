@@ -30,7 +30,7 @@ class Service < ApplicationRecord
         count += 1
       end
     end
-    sum / count
+    (sum / count).to_f
   end
 
 end
