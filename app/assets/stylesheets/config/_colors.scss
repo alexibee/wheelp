@@ -28,5 +28,11 @@ $border: 1px solid;
 // SHADOWS
 $shadow: 0 3px 7px #dfdfdf;
 
-$box-shadow:  5px 5px 5px #cbc8cd,
-            -5px -5px 5px #ffffff;
+$box-shadow:  5px 5px 6px #cdcacf,
+            -5px -5px 6px #ffffff;
+
+$inverted-shadow:  inset 5px 5px 6px #cdcacf,
+                    inset -5px -5px 6px #ffffff;
+$concave: 5px 5px 6px #cdcacf,
+-5px -5px 6px #ffffff;
+$concave-bg: linear-gradient(145deg, #d4d1d6, #fdf8ff);
