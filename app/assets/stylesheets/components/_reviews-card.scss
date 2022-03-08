@@ -2,6 +2,7 @@
 
 .reviews .frame {
   margin-bottom: 1rem;
+  padding: 1rem;
 
 }
 
@@ -10,6 +11,9 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
+  .user-centered-small {
+    margin-right: 1.5rem;
+  }
 }
 
 .review-content {

@@ -1,7 +1,11 @@
 <div class="review-card">
 
-  <div class="user-centered-small mr-3">
-    <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="user">
+  <div class="user-centered-small">
+    <% if review.user.photo.attached? %>
+      <%= cl_image_tag review.user.photo.key, width: 300, height: 300 %>
+    <% else %>
+      <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="user">
+    <% end %>
     <div class="user-content">
       <h6 class="text-center"> <%= review.user.first_name %> <%= review.user.last_name %></h6>
     </div>
