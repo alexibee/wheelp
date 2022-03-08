@@ -1,6 +1,6 @@
 <%# <%= javascript_pack_tag 'booking_new' %>
 <div class="h1-position">
-  <h1> Your booking </h1>
+  <h1> Your Booking </h1>
 </div>
 <div class="container col-6 justify-content-center">
   <div id='booking-form' data-controller="flatpickr-booking-form" data-flatpickr-booking-form-available-value="<%= @service.availability.to_json %>">
@@ -8,12 +8,12 @@
       <%= f.input :vehicle_brand %>
       <%= f.input :vehicle_model %>
       <%= f.input :vehicle_address,
-                  input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+                  input_html: { data: { geocoder_target: "address" }, class: "d-none", id: "address-picker" },
                   wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } }%>
       <%= f.input :vehicle_year %>
       <%= f.input :vehicle_contact %>
       <%= f.input :additional_details, as: :text %>
-      <%= f.input :date, as: :date, html5: true, input_html: { data: { flatpickr_booking_form_target: "input"}} %>
+      <%= f.input :date, as: :date, html5: true, input_html: { data: { flatpickr_booking_form_target: "input"}, class: "date-picker"} %>
       <div class="button-position">
         <%= f.submit class: "bookings-button" %>
       </div>
