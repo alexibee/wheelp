@@ -1,10 +1,19 @@
 // CARDS IN SHOW PAGE
 
+.reviews .frame {
+  margin-bottom: 1rem;
+  padding: 1rem;
+
+}
+
 .review-card {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
+  .user-centered-small {
+    margin-right: 1.5rem;
+  }
 }
 
 .review-content {
@@ -18,7 +27,7 @@
   svg {
     height: 1rem;
   }
-  p {
-    font-size: 18px;
+  .text p {
+    font-size: 16px;
   }
 }

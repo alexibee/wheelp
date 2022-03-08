@@ -7,7 +7,7 @@
   <%= link_to "Book", new_service_booking_path(@service), class: "regular-button hvr-pulse-grow", id:"service-show-btn" %>
 </div>
 
-<div class="show-galley">
+<div class="show-gallery">
   <div class="main-card">
     <div class="title-frame">
       <h6> About this <mark> wheelper </mark> </h6>
@@ -19,8 +19,8 @@
           <p>category</p>
         </div>
         <div class="show-service-img">
-          <% if @service.photo.attached? %>
-            <%= cl_image_tag @service.photo.key, width: 300, height: 300 %>
+          <% if @service.user.photo.attached? %>
+            <%= cl_image_tag @service.user.photo.key, width: 300, height: 300 %>
           <% else %>
             <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="300" height="300" />
           <% end %>
@@ -34,8 +34,7 @@
               <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
             </div>
             <div class="show-service-subtitle">
-              <p> 📍<%= @service.address %> </p>
-              <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
+              <p> <%= @service.address %> </p>
             </div>
           </div>
           <div class="price">
@@ -52,23 +51,35 @@
       </div>
     </div>
   </div>
-  <div class="service-types">
-    <div class="title-frame">
-      <h6> Services included </h6>
-    </div>
-    <div class="list">
-      <%= render "services/service_type", service: @service %>
-    </div>
-  </div>
-  <div class="reviews-card">
+
+  <div class="2-column">
     <% reviews = @service.reviews %>
-    <div class="title-frame">
-      <h6> Reviews </h6>
-    </div>
-    <% reviews.each do |review| %>
-      <div class="frame">
-        <%= render "reviews/reviews-card", review: review %>
+    <% if reviews.count > 0 %>
+      <div class="reviews">
+        <div class="title-frame">
+          <div class="star-rating">
+            <h6> ★ <%= @service.average_rating %> </h6>
+          </div>
+          <div class="count">
+            <p> <%= reviews.count %> Reviews </p>
+          </div>
+        </div>
+        <% reviews.each do |review| %>
+          <div class="frame">
+            <%= render "reviews/reviews-card", review: review %>
+          </div>
+        <% end %>
       </div>
     <% end %>
+
+    <div class="service-types">
+      <div class="title-frame">
+        <h6> Services included </h6>
+      </div>
+      <div class="list">
+        <%= render "services/service_type", service: @service %>
+      </div>
+    </div>
   </div>
+
 </div>

@@ -9,6 +9,8 @@ class Service < ApplicationRecord
   validates :address, presence: true
   validates :price, presence: true
   validate :just_one_service, :user_is_an_expert
+  CATEGORIES = ["Enthusiast", "Mechanic", "Technician", "Brand Expert"]
+  validates :category, inclusion: { in: CATEGORIES }
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   pg_search_scope :search_by_bio_title,
@@ -21,11 +23,24 @@ class Service < ApplicationRecord
   #                 using: {
   #                   tsearch: { prefix: true }
   #                 }
+
   def user_is_an_expert
     errors.add("To add your services please create an expert account") if user.expert == false
   end
 
   def just_one_service
     errors.add("You have already created your profile") if Service.find_by(user_id: user.id)
+  end
+  
+  def average_rating
+    sum = 0
+    count = 0
+    self.reviews.each do |review|
+      if review&.rating
+        sum += review.rating
+        count += 1
+      end
+    end
+    (sum / count).to_f
   end
 end

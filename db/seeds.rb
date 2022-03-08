@@ -14,7 +14,25 @@ User.destroy_all
 usernames = ["shaquille_oatmeal", "hanging_with_my_gnomies", "hoosier_daddy", "fast_and_curious", "averagestudent", "BadKarma", "google_was_my_idea", "whats_my_name", "where_am_i", "wheelp4lyf", "mr_lewagon", "ms_lewagon", "806_or_die"]
 names = ["Bobby", "Roy", "Jose", "Alex", "Ismael", "Ibrahim", "Rob", "Dick", "Bill", "Auston", "Alice", "Laura", "Margaret", "Cindy", "Grace"]
 surnames = ["Brown", "Green", "Smith", "Jameson", "Gudbranson", "Velasquez", "Khan", "Goldman", "Lee", "Ozols"]
-experts_photos = ["https://www.liveabout.com/thmb/oR_kgnRY47YAD6N5TRlpEYJTCtw=/2064x1161/smart/filters:no_upscale()/GettyImages-522272311-5949bdc15f9b58d58a035319.jpg"]
+avatars = ["https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-31_bdc4ch.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-19_yqatkb.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-25_a1qnht.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-20_psh70f.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-18_pov4ir.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-37_cgyi4d.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-09_v3w9s2.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-11_rd9yty.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-34_yi3lgf.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-36_wyj3b7.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-05_tcgblf.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-23_yb27vm.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-01_eclrli.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-14_j7memd.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-28_dosqpd.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-15_b4y5wu.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-39_pb3r6n.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-04_u31y2d.png"
+]
 
 #---------USERS
 customers = []
@@ -28,6 +46,8 @@ usernames[0..5].each do |user|
     last_name: surnames.sample,
     expert: true
   )
+  file = URI.open(avatars.sample)
+  new_user.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_user.save!
   experts << new_user.id
   puts "expert #{user} created"
@@ -42,6 +62,8 @@ usernames[6..(usernames.length-1)].each do |user|
     last_name: surnames.sample,
     expert: false
   )
+  file = URI.open(avatars.sample)
+  new_user.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_user.save!
   customers << new_user.id
   puts "customer #{user} created"
@@ -55,14 +77,14 @@ character_adjectives = %w[helpful wheelpful sincere serious professional truthwo
 vehicles = %w[vehicle car motorbike van four-wheel convertible SUV minivan pickup limousine scooter micro-car familiar]
 vehicle_adjectives = %w[vintage automatic luxury easy-to-drive small low-emission electric]
 good_adjectives = %w[perfect great amazing high-end awesome exquisite brilliant gorgeous helpful sincere]
-categories = %w[expert enthusiast specialist skilled mechanic technician service]
+CATEGORIES = ["Enthusiast", "Mechanic", "Technician", "Brand Expert"]
 price_adjectives = %w[affordable reasonable inexpensive reduced discounted modest moderate]
 verbs = [
-  "loves",
-  "enjoys",
-  "works with",
-  "owns #{rand(1..4)}",
-  "likes"
+  "love",
+  "enjoy",
+  "work with",
+  "own #{rand(1..4)}",
+  "like"
 ]
 timing = [
   "long time",
@@ -87,9 +109,9 @@ experts.each do |expert_id|
     end
   end
   character = character_adjectives.sample
+  category = CATEGORIES.sample
   vehicle = vehicles.sample
   vehicle_adjective = vehicle_adjectives.sample
-  category = categories.sample
   address = addresses.sample
   price_adjective = price_adjectives.sample
   actions = [
@@ -130,12 +152,26 @@ experts.each do |expert_id|
     "I can only offer my services when I'm not working and unfortunately that is usually not very often",
     "I am not always available so book a viewing as soon as possible"
   ]
+
+  other = [
+    "I really think",
+    "my friends say that",
+    "I'd like to think that",
+    "I can guarantee that",
+    "you won't regret buying my service as",
+    "you can be sure that",
+    "my clients say",
+    "some people say that",
+    "I can say",
+    "I think I can say"
+  ]
   action = actions.sample
 
   new_service = Service.new(
-    description: "I'm a #{timing.sample} #{category} #{character} who #{verbs.sample} #{vehicle_adjective} #{vehicle}s.",
-    bio: "I am a #{vehicle} #{timing.sample} #{category} who #{verbs.sample} #{vehicle_adjective} vehicles.
-    #{wheelp.sample.capitalize} and I can guarantee that I'm a #{character} #{category}.
+    description: "I'm #{character} and I #{verbs.sample} #{vehicle_adjective} #{vehicle}s.",
+    category: category,
+    bio: "I am a #{timing.sample} #{vehicle} #{category} who #{verbs.sample} #{vehicle_adjective} vehicles.
+    #{wheelp.sample.capitalize} and #{other.sample}t I'm a #{character} #{category}.
     #{phrase.sample} so #{contact_phrase.sample}",
     address: address,
     price: rand(45..85),
@@ -143,8 +179,6 @@ experts.each do |expert_id|
     title: "#{character} #{vehicle_adjective} #{vehicle} #{category} #{action}",
     user_id: expert_id
   )
-  file = URI.open(experts_photos.sample)
-  new_service.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_service.save!
   services << new_service.id
   puts "service #{expert_id} created"
@@ -202,7 +236,7 @@ bad_content = [
   "Not the best but the price is decent 🙃",
   "I'm a long time user from Wheelp since I change my car very often and this was the worst wheelper I've booked so far.... sometimes happens 😣"
 ]
-(3..20).each do |n|
+bookings.each do |n|
   type = [good_content, bad_content].sample
   if type == good_content
     rating = rand(4..5)
@@ -220,5 +254,5 @@ bad_content = [
     )
   new_review.save!
   reviews << new_review.id
-  puts "review #{n - 1} created"
+  puts "review #{n} created"
 end
