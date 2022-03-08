@@ -46,6 +46,8 @@ usernames[0..5].each do |user|
     last_name: surnames.sample,
     expert: true
   )
+  file = URI.open(avatars.sample)
+  new_user.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_user.save!
   experts << new_user.id
   puts "expert #{user} created"
@@ -60,8 +62,6 @@ usernames[6..(usernames.length-1)].each do |user|
     last_name: surnames.sample,
     expert: false
   )
-  file = URI.open(avatars.sample)
-  new_user.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_user.save!
   customers << new_user.id
   puts "customer #{user} created"
