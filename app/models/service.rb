@@ -20,4 +20,17 @@ class Service < ApplicationRecord
   #                 using: {
   #                   tsearch: { prefix: true }
   #                 }
+
+  def average_rating
+    sum = 0
+    count = 0
+    self.reviews.each do |review|
+      if review&.rating
+        sum += review.rating
+        count += 1
+      end
+    end
+    sum / count
+  end
+
 end

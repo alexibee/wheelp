@@ -54,10 +54,11 @@
   </div>
 
   <% reviews = @service.reviews %>
-  <% if reviews < 0 %>
-    <div class="reviews-card">
+  <% if reviews.count > 0 %>
+    <div class="reviews">
       <div class="title-frame">
-        <h6> Reviews </h6>
+        <%= console %>
+        <h6> <%= @service.average_rating %> - <%= reviews.count %> Reviews </h6>
       </div>
       <% reviews.each do |review| %>
         <div class="frame">
