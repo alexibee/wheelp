@@ -11,6 +11,7 @@
     <%= f.input :bio, as: :text %>
     <%= f.input :price, as: :numeric %>
     <%= f.input :photo, as: :file %>
+    <%= f.input :category, collection: Service::CATEGORIES %>
     <div class="availability">
       <%= f.label :availability %>
       <%= f.input_field :availability, as: :date, html5: true, value: "", data: { flatpickr_service_form_target: "input" } %>
