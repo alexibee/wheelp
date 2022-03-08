@@ -9,9 +9,21 @@
   column-gap: 1rem;
 }
 
+.review-form-container {
+  border-radius: 15px;
+  box-shadow: $shadow;
+  a {
+    text-decoration: none;
+  }
+  input {
+    border-radius: 15px;
+  }
+}
+
 .booking-card-container {
   box-shadow: $shadow;
   border-radius: 15px;
+  height: 81vh;
 }
 
 .card-info {
