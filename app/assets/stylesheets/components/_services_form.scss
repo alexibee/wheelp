@@ -1,0 +1,24 @@
+#service-form{
+  width: 600px;
+  margin: 0 auto;
+}
+.mapboxgl-ctrl-geocoder{
+  width: 600px;
+}
+.flatpickr-input[readonly]{
+ margin-bottom: 10px;
+ background: $background-color;
+ border: 1px solid #ced4da;
+}
+
+#service_photo{
+  color: $gray
+}
+
+.availability{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
