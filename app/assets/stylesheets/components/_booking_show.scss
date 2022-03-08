@@ -23,7 +23,7 @@
 }
 
 .booking-card-container {
-  box-shadow: $shadow;
+  box-shadow: $box-shadow;
   border-radius: 15px;
 }
 
@@ -36,5 +36,5 @@
   position: absolute;
   right: 12px;
   top: 3px;
-  color: $gray;
+  color: $light-color;
 }
