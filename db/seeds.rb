@@ -60,6 +60,8 @@ usernames[6..(usernames.length-1)].each do |user|
     last_name: surnames.sample,
     expert: false
   )
+  file = URI.open(avatars.sample)
+  new_user.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_user.save!
   customers << new_user.id
   puts "customer #{user} created"
@@ -91,7 +93,7 @@ timing = [
 
 addresses = %w[London Dublin Paris Berlin Rome Milan Kairo Latvia Bilbao Sevilla Barcelona Bristol Athens Lion Madrid Norway]
 availability = []
-30.times do |i|
+avatar.size.times do |i|
   date = Date.today + i
   availability << date
 end
@@ -161,8 +163,6 @@ experts.each do |expert_id|
     title: "#{character} #{vehicle_adjective} #{vehicle} #{category} #{action}",
     user_id: expert_id
   )
-  file = URI.open(avatars.sample)
-  new_service.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_service.save!
   services << new_service.id
   puts "service #{expert_id} created"
@@ -238,5 +238,5 @@ bookings.each do |n|
     )
   new_review.save!
   reviews << new_review.id
-  puts "review #{n - 1} created"
+  puts "review #{n} created"
 end
