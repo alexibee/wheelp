@@ -93,7 +93,7 @@ timing = [
 
 addresses = %w[London Dublin Paris Berlin Rome Milan Kairo Latvia Bilbao Sevilla Barcelona Bristol Athens Lion Madrid Norway]
 availability = []
-avatar.size.times do |i|
+30.times do |i|
   date = Date.today + i
   availability << date
 end
