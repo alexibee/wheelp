@@ -10,13 +10,11 @@
         <% end %>
       </div>
       <div class="reviews-info">
-        <% total = 0 %>
-        <% service.bookings.each do |book| %>
-          <% total += book.review ? book.review.rating : 0 %>
-        <% end %>
-        <% if service.bookings.count > 0 %>
-          <% total/service.bookings.count %>
-        <p> ★ 4.2 - <%= rand(2..200) %> Reviews</p>
+        <% reviews = service.reviews %>
+        <% if reviews.count > 0 %>
+          <p> ★ <%= service.average_rating %> - <%= reviews.count %> Reviews </p>
+        <% else %>
+          <p> Has no reviews yet</p>
         <% end %>
       </div>
     </div>

@@ -1,8 +1,8 @@
 <div class="review-card">
 
   <div class="user-centered-small">
-    <% if @service.user.photo.attached? %>
-      <%= cl_image_tag @service.user.photo.key, width: 300, height: 300 %>
+    <% if review.user.photo.attached? %>
+      <%= cl_image_tag review.user.photo.key, width: 300, height: 300 %>
     <% else %>
       <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="user">
     <% end %>
