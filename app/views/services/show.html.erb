@@ -19,8 +19,8 @@
           <p>category</p>
         </div>
         <div class="show-service-img">
-          <% if @service.photo.attached? %>
-            <%= cl_image_tag @service.photo.key, width: 300, height: 300 %>
+          <% if @service.user.photo.attached? %>
+            <%= cl_image_tag @service.user.photo.key, width: 300, height: 300 %>
           <% else %>
             <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="300" height="300" />
           <% end %>
