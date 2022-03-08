@@ -1,8 +1,9 @@
-.cta-button{
+.cta-button ..hvr-pulse-grow {
   text-transform: lowercase;
   text-decoration: none;
   border: 3px solid $color;
   color: $color;
+  text-align: center;
   background-color: $background-color;
   font-weight: 800;
   min-width: 100px;
@@ -14,14 +15,6 @@
   font-family: $wheelp-font;
   box-shadow: $color-shadow;
   min-width: 180px;
-}
-
-.cta-button:hover {
-  border: $border;
-  border-color: $gray;
-  color: $gray;
-  background-color: $background-color;
-  box-shadow: $box-shadow;
 }
 
 @media only screen and (max-width: 767px) {

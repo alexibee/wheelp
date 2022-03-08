@@ -29,6 +29,7 @@ $border: 3px solid;
 // SHADOWS
 $shadow: 0 3px 7px #dfdfdf;
 $color-shadow: rgba(#6D378E, 12%) 0px 6px 16px;
-$box-shadow: ($gray, 0.12) 0px 6px 16px;
+$box-shadow: 6px 6px 12px #c5c5c5,
+            -6px -6px 12px #ffffff;
 
 $other: #F6F2FF;
