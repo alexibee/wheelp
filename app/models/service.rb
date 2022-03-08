@@ -8,6 +8,7 @@ class Service < ApplicationRecord
   validates :title, presence: true
   validates :address, presence: true
   validates :price, presence: true
+  validates :category, presence: true
   validate :just_one_service, :user_is_an_expert
   CATEGORIES = ["Enthusiast", "Mechanic", "Technician", "Brand Expert"]
   validates :category, inclusion: { in: CATEGORIES }
@@ -31,7 +32,7 @@ class Service < ApplicationRecord
   def just_one_service
     errors.add("You have already created your profile") if Service.find_by(user_id: user.id)
   end
-  
+
   def average_rating
     sum = 0
     count = 0
