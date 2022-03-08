@@ -188,10 +188,10 @@ bad_content = [
   "Never showed up to the viewing. Luckily the guys from Wheelp are very nice and gave me a refund of my money.
   Don't book this wheelper! 👀",
   "Not worth the price, there's cheaper and better whelpers out there",
-  "The evaluation was ready "
+  "The evaluation was ready ",
   "The service was good but this wheelper was rude. Would not recomment",
   "Not the best but the price is decent 🙃",
-  "I'm a long time user from Wheelp since I change my car very often and this was the worst wheelper I've booked so far.... sometimes happens 😣",
+  "I'm a long time user from Wheelp since I change my car very often and this was the worst wheelper I've booked so far.... sometimes happens 😣"
 ]
 (3..20).each do |n|
   type = [good_content, bad_content].sample
