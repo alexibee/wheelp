@@ -7,7 +7,7 @@
   <%= link_to "Book", new_service_booking_path(@service), class: "regular-button hvr-pulse-grow", id:"service-show-btn" %>
 </div>
 
-<div class="show-galley">
+<div class="new-grid">
   <div class="main-card">
     <div class="title-frame">
       <h6> About this <mark> wheelper </mark> </h6>
@@ -34,8 +34,7 @@
               <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
             </div>
             <div class="show-service-subtitle">
-              <p> 📍<%= @service.address %> </p>
-              <p> 4.6 <i class="fa-solid fa-star-sharp"></i> - <%= rand(3..400) %> reviews</p>
+              <p> <%= @service.address %> </p>
             </div>
           </div>
           <div class="price">
