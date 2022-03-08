@@ -17,13 +17,13 @@ $font-color: darken($color, 50%);
 // GRAYS
 
 $sublte-gray: $background-color;
-$dark-gray: darken($background-color, 60%);
-$gray: darken ($background-color, 35%);
+$dark-gray: darken(rgb(212, 212, 212), 60%);
+$gray: darken(rgb(212, 212, 212), 35%);
+$light-color: rgb(212, 212, 212)
 
 // BORDERS
 $subtle: 1px solid $background-color;
-$subtle-solid: 1px solid;
-$border: 3px solid;
+$border: 1px solid;
 
 // SHADOWS
 $shadow: 0 3px 7px #dfdfdf;
