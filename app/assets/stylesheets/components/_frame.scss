@@ -58,12 +58,10 @@
 .box:hover .front {
   transform: rotateX(180deg);
   border: $subtle;
-  box-shadow: $color-shadow;
 }
 
 .box:hover .back {
   transform: rotateX(0);
   border: $subtle;
-  box-shadow: $color-shadow;
 
 }
