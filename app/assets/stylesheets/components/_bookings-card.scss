@@ -1,12 +1,15 @@
-.bookings-card {
+.bookings-card{
   overflow: hidden;
   height: 120px;
-  background: $background-color;
+  width: 800px;
+  background: white;
   display: flex;
   align-items: center;
-  border: $border $dark-color;
-  margin: 15px;
-  border-radius: 15px;
+  border: 1px solid #e5d5ef;
+  box-shadow: 0 3px 7px #dfdfdf;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: relative;
 }
 
 .bookings-card img {
@@ -31,4 +34,85 @@
 
 .bookings-card .info {
   padding: 16px;
+}
+
+.bookings-card .request-state {
+  position: absolute;
+  right: 5%;
+}
+
+.request-tag {
+  text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 200;
+  font-size: 16px;
+  color: rgba(0,0,0,0.7);
+  border: $border;
+  border-color: white;
+  background-color: $light-color;
+  padding: 5px 15px;
+  border-radius: 30px;
+}
+
+.action-tag {
+  text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 200;
+  font-size: 16px;
+  color: white;
+  border: $border;
+  border-color: white;
+  background-color: $dark-color;
+  padding: 5px 15px;
+  border-radius: 30px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-headers {
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.expert-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+// expert-card-styling
+.bookings-card {
+  a {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.decline-btn {
+  text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 200;
+  font-size: 16px;
+  color: white;
+  border: $border;
+  border-color: white;
+  background-color: $light-color;
+  padding: 5px 15px;
+  border-radius: 30px;
+}
+
+.bookings-card {
+  img {
+    height: auto;
+    width: 120px;
+    object-fit: cover;
+  }
+}
+
+.request-state {
+  margin: 0 auto;
 }
