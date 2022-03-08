@@ -8,6 +8,7 @@
 
 .title-frame {
   color: $font-color;
+  margin-inline: 1rem;
   h6{
     filter: drop-shadow($shadow);
     border-color: $background-color;

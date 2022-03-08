@@ -24,8 +24,13 @@
 }
 .availability_table {
   svg {
-    color: $color;
     height: 1rem;
     width: 1rem;
+  }
+  .yes {
+    filter: $font-color;
+  }
+  .no {
+    filter: $font-color opacity(0.6);
   }
 }
