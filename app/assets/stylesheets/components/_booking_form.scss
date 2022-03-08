@@ -2,10 +2,12 @@
   background-color: #e5d5ef;
   border: $subtle;
 }
+
 #booking-form{
-  // .form-control{
-  //   box-shadow: 0px 0px 10px 2px $box-shadow;
-  // }
+  color: #515151;
+  .form-control{
+     box-shadow: 0px 0px 10px 2px $box-shadow;
+   }
 }
 .bookings-button{
   text-transform: lowercase;
@@ -40,4 +42,7 @@
 .h1-position{
   text-align: center;
   margin: 0 auto;
+}
+.date-picker{
+  margin: 0 !important;
 }
