@@ -1,0 +1,21 @@
+.booking-wrapper {
+  padding: 20px 100px;
+  height: auto;
+}
+
+.card-and-chat-wrapper {
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  margin: 0 auto;
+}
+
+.booking-card-container {
+  box-shadow: $shadow;
+  border-radius: 15px;
+}
+
+.card-info {
+  border-top: $subtle;
+  border-bottom: $subtle;
+  overflow: scroll;
+}

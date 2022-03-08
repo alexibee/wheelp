@@ -1,5 +1,10 @@
 <h1 class="text-center my-5"> Details of your evaluation request </h1>
 <div class="d-flex container px-5" data-controller="reveal">
+  <div class="showmap" style="width: 400px; height: 400px;"
+    data-controller="mbox"
+    data-mbox-marker-value="<%= @marker.to_json %>"
+    data-mbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
   <div class="p-3">
     <p> Wheelper: <%= @booking.service.user.first_name %> </p>
     <p> Vehicle: <%= @booking.vehicle_brand %> </p>
@@ -18,11 +23,6 @@
         <% end %>
       <% end %>
     <% end %>
-  </div>
-  <div class="showmap" style="width: 80%; height: 400px;"
-        data-controller="mbox"
-        data-mbox-marker-value="<%= @marker.to_json %>"
-        data-mbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <% if @booking.state == 1 %>
     <% if !@booking.evaluation.nil? %>

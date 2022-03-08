@@ -11,14 +11,14 @@
   }
 }
 .messages {
-  height: 60vh;
-  margin-bottom: 10px;
+  height: 70vh;
+  margin-bottom: 20px;
   overflow: scroll;
 }
 .close-chat {
   position: absolute;
-  right: 10px;
-  top: 0px;
+  right: 12px;
+  top: 3px;
   color: $light-color;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .single-message {
-  padding: 5px;
+  padding: 5px 10px;
   margin: 5px 5px;
   width: 75%;
   border-radius: 15px;
