@@ -29,7 +29,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   max-width: 850px;
 }
 
@@ -40,20 +40,17 @@
   align-items: center;
   padding-right: 1rem;
   .category-tag {
-    min-width: 50px;
-    max-width: 300px;
-    width: 100px;
-    padding: 5px 5px;
     color: #F6F2FF;
     background-color: gray;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: nowrap;
+    border-radius: 2rem;
+    display: inline;
     align-items: center;
-    flex-direction: column;
     p {
       margin: 0px;
       text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      font-size: 16px;
     }
   }
   img {
