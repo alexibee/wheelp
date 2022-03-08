@@ -147,7 +147,7 @@ experts.each do |expert_id|
   new_service.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_service.save!
   services << new_service.id
-  puts "service #{n} created"
+  puts "service #{expert_id} created"
 end
 
 bookings = []
