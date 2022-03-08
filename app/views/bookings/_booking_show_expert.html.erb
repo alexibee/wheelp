@@ -8,41 +8,66 @@
   <div class="card-and-chat-wrapper">
     <div class="booking-card-container col">
       <div class="map-info-container">
+        <div class="booking-show-links d-flex justify-content-around pt-3">
+          <% if @booking.state == 0 %>
+            <%= link_to "Accept", booking_path(@booking, state: 1), remote: true, method: :patch %>
+            <%= link_to "Decline", booking_path(@booking, state: -1), remote: true, method: :patch %>
+          <% elsif @booking.state == 1 %>
+            <% if !@booking.evaluation %>
+              <%= link_to "Add evaluation", new_booking_evaluation_path(@booking), class:"link" %>
+            <% else @booking.evaluation %>
+              <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation), class: "link" %>
+            <% end %>
+            <% if !@chatroom.nil? %>
+              <%= link_to "Open chat with #{ @booking.user.first_name }","", class: "link d-none", data: { action:"click->reveal#unhideChat", reveal_target:"link" } %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="card-info mx-3 py-3">
+          <table class="table">
+            <tr>
+              <th> Customer:</th>
+              <td> <%= @booking.user.first_name %> </td>
+            </tr>
+            <tr>
+              <th> Vehicle:</th>
+              <td> <%= @booking.vehicle_brand %> <%= @booking.vehicle_model %> / <%= @booking.vehicle_year %> </td>
+            </tr>
+            <tr>
+              <th> Vehicle location: </th>
+              <td> <%= @booking.vehicle_address %> </td>
+            </tr>
+            <tr>
+              <th> Owner contact details: </th>
+              <td> <%=@booking.vehicle_contact%> </td>
+            </tr>
+            <tr>
+              <th> Booking date: </th>
+              <td> <%= @booking.date %> </td>
+            </tr>
+            <tr>
+              <th> Status: </th>
+              <td> <%= render "states_converted", booking: @booking %> </td>
+            </tr>
+            <% if !@booking.vehicle_url.nil? %>
+              <tr>
+                <th> URL: </th>
+                <td> <%= link_to "see the link", @booking.vehicle_url %> </td>
+              </tr>
+            <% end %>
+            <% if !@booking.additional_details.nil? %>
+              <tr>
+                <th> Additional details: </th>
+                <td> <%= @booking.additional_details %> </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
         <div class="showmap m-3" style="width: 50vw; height: 300px;"
           data-controller="mbox"
           data-mbox-marker-value="<%= @marker.to_json %>"
           data-mbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-        <div class="card-info ps-3 pe-1 py-3">
-          <p> Customer: <%= @booking.user.first_name %> </p>
-          <p> Vehicle: <%= @booking.vehicle_brand %> <%= @booking.vehicle_model %> / <%= @booking.vehicle_year %> </p>
-
-          <p> Vehicle location: <%= @booking.vehicle_address %> </p>
-          <p> Owner contact details: <%=@booking.vehicle_contact%> </p>
-          <p> Booking date: <%= @booking.date %> </p>
-          <p> Status: <%= render "states_converted", booking: @booking %> </p>
-          <% if !@booking.vehicle_url.nil? %>
-            <%= link_to "Vehicle URL", @booking.vehicle_url %>
-          <% end %>
-          <% if !@booking.additional_details.nil? %>
-            <p> Additional details: <%= @booking.additional_details %> </p>
-          <% end %>
-        </div>
-      </div>
-      <div class="booking-show-links d-flex justify-content-around pb-3">
-        <% if @booking.state == 0 %>
-          <%= link_to "Accept", booking_path(@booking, state: 1), remote: true, method: :patch %>
-          <%= link_to "Decline", booking_path(@booking, state: -1), remote: true, method: :patch %>
-        <% elsif @booking.state == 1 %>
-          <% if !@booking.evaluation %>
-            <%= link_to "Add evaluation", new_booking_evaluation_path(@booking), class:"link" %>
-          <% else @booking.evaluation %>
-            <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation), class: "link" %>
-          <% end %>
-          <% if !@chatroom.nil? %>
-            <%= link_to "Open chat with #{ @booking.user.first_name }","", class: "link d-none", data: { action:"click->reveal#unhideChat", reveal_target:"link" } %>
-          <% end %>
-        <% end %>
       </div>
     </div>
     <% if @booking.state == 1 %>

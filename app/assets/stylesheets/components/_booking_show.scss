@@ -1,12 +1,12 @@
 .booking-wrapper {
   padding: 20px 100px;
-  height: auto;
 }
 
 .card-and-chat-wrapper {
   display: grid;
   grid-template-columns: 4fr 3fr;
   margin: 0 auto;
+  column-gap: 1rem;
 }
 
 .booking-card-container {
@@ -15,7 +15,6 @@
 }
 
 .card-info {
-  border-top: $subtle;
-  border-bottom: $subtle;
   overflow: scroll;
+  height:250px;
 }
