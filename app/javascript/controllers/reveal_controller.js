@@ -10,12 +10,19 @@ export default class extends Controller {
     event.preventDefault()
     this.reviewsTarget.classList.remove('d-none')
     this.rlinkTarget.classList.add('d-none')
-    this.wrapperTarget.scrollTo({
-      top: 100,
-      left: 100,
+    window.scrollTo({
+      top: this.wrapperTarget.scrollHeight,
       behavior: 'smooth'
     })
-
+  }
+  hideReviews(event) {
+    event.preventDefault()
+    this.reviewsTarget.classList.add('d-none')
+    this.rlinkTarget.classList.remove('d-none')
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   }
   unhideChat(event) {
     event.preventDefault()
