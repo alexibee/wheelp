@@ -43,7 +43,7 @@
   <% end %>
 </div>
 <div class="booking-wrapper" data-controller="reveal">
-  <div class="card-and-chat-wrapper">
+  <div class="card-and-chat-wrapper" data-reveal-target="wrapper">
     <div class="booking-card-container col">
       <div class="map-info-container">
         <div class="booking-show-links d-flex justify-content-around pt-3">
@@ -54,9 +54,9 @@
               <%= link_to "Open chat with #{ @booking.service.user.first_name }","", class: "link d-none", data: { action:"click->reveal#unhideChat", reveal_target:"link" } %>
             <% end %>
             <% if !@booking.evaluation.nil? %>
-              <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation) %>
+              <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation), class: "link" %>
               <% if !@booking.review.nil? %>
-                <a href="" data-action="click->reveal#unhideReviews"> Leave your review </a>
+                <a href="" class="link" data-action="click->reveal#unhideReviews" data-reveal-target="rlink"> Leave your review </a>
               <% end %>
             <% end %>
           <% end %>

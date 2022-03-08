@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["reviews", "chat", "link"]
+  static targets = ["reviews", "chat", "link", "rlink", "wrapper"]
 
   connect() {
 
@@ -9,6 +9,13 @@ export default class extends Controller {
   unhideReviews(event) {
     event.preventDefault()
     this.reviewsTarget.classList.remove('d-none')
+    this.rlinkTarget.classList.add('d-none')
+    this.wrapperTarget.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: 'smooth'
+    })
+
   }
   unhideChat(event) {
     event.preventDefault()
