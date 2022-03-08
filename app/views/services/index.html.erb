@@ -2,7 +2,6 @@
   <div class="search-bar-box">
     <p>you could use some wheelp</p>
     <%= simple_form_for :service, method: "GET", html: { class: 'search-bar'} do |f| %>
-      <%= f.submit "find wheelpers", class: "icon-button", id:"service" %>
       <%= f.input :address, placeholder: 'Search by address, city or country', label:false, input_html: {value: ""} %>
       <button type="submit", class="icon-button", id="service">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -17,9 +16,6 @@
         <p> <%= @message %> </p>
       </div>
     <% else %>
-      <div class="alert-frame">
-        <p>  Wheelpers found in the area: </p>
-      </div>
       <div class="services-map-container">
         <div class="services-list">
           <% @services.each do |service| %>
