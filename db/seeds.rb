@@ -19,24 +19,33 @@ experts_photos = ["https://www.liveabout.com/thmb/oR_kgnRY47YAD6N5TRlpEYJTCtw=/2
 #---------USERS
 customers = []
 experts = []
-usernames.each do |user|
+usernames[0..5].each do |user|
   new_user = User.new(
     username: user,
     email: "#{user[0..4]}@email.com",
     password: "123456",
     first_name: names.sample,
     last_name: surnames.sample,
-    expert: [true, false].sample
+    expert: true
   )
   new_user.save!
-  if new_user.expert
-    experts << new_user.id
-  else
-    customers << new_user.id
-  end
-  puts "user #{user} created"
+  experts << new_user.id
+  puts "expert #{user} created"
 end
 
+usernames[6..(usernames.length-1)].each do |user|
+  new_user = User.new(
+    username: user,
+    email: "#{user[0..4]}@email.com",
+    password: "123456",
+    first_name: names.sample,
+    last_name: surnames.sample,
+    expert: false
+  )
+  new_user.save!
+  customers << new_user.id
+  puts "customer #{user} created"
+end
 
 #-------- SERVICES
 
@@ -57,7 +66,7 @@ verbs = [
 ]
 timing = [
   "long time",
-  "amateour",
+  "amateur",
   "new",
   ""
 ]
@@ -68,7 +77,7 @@ availability = []
   date = Date.today + i
   availability << date
 end
-(1..10).each do |n|
+experts.each do |expert_id|
   unavailability = []
   availability.count.times do |i|
     action = [true, false]
@@ -132,7 +141,7 @@ end
     price: rand(45..85),
     availability: availability - unavailability,
     title: "#{character} #{vehicle_adjective} #{vehicle} #{category} #{action}",
-    user_id: experts.sample
+    user_id: expert_id
   )
   file = URI.open(experts_photos.sample)
   new_service.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
