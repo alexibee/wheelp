@@ -1,64 +1,110 @@
-<h1 class="text-center my-5"> Details of your evaluation request </h1>
-<div class="d-flex container px-5" data-controller="reveal">
-  <div class="p-3">
-    <p> Wheelper: <%= @booking.service.user.first_name %> </p>
-    <p> Vehicle: <%= @booking.vehicle_brand %> </p>
-    <p> Vehicle location: <%= @booking.vehicle_address %> </p>
-    <p> Status: <%= render "states_converted", booking: @booking %> </p>
-    <% if @booking.state == 1%>
-      <% if !@chatroom.nil? %>
-        <%= link_to "Open chat with #{ @booking.service.user.first_name }","", class: "regular-button", data: { action:"click->reveal#unhideChat" } %>
-      <% end %>
-      <% if @booking.evaluation.nil? %>
-        <p> Evaluation is in progress... </p>
-      <% else %>
-        <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation) %>
-        <% if @booking.review.nil? %>
-          <a href="" data-action="click->reveal#unhideReviews"> Leave a review about this evaluation </a>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="showmap" style="width: 80%; height: 400px;"
-        data-controller="mbox"
-        data-mbox-marker-value="<%= @marker.to_json %>"
-        data-mbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <% if @booking.state == 1 %>
-    <% if !@booking.evaluation.nil? %>
-      <div class="col-3">
-        <div class="review-form-container d-none" data-reveal-target="reviews">
-          <h3> Add your review </h3>
-          <%= simple_form_for [@service, @booking, @review] do |f| %>
-            <%= f.input :content %>
-            <%= f.input :rating, as: :integer %>
-            <%= f.submit %>
-          <% end %>
-        </div>
-    <% end %>
-      <div class="chatroom-container px-3 d-none" data-controller="chatroom-subscription"
-        data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-reveal-target="chat">
-        <%= link_to "X","", class: "close-chat", data: { action: "click->reveal#hideChat" } %>
-        <div class="messages" data-chatroom-subscription-target="messages">
-          <% @chatroom.messages.each do |message| %>
-            <%= render "messages/message", message: message %>
-          <% end %>
-        </div>
-        <%= simple_form_for [@chatroom, @message],
-          remote: true,
-          html: {data: {chatroom_subscription_target: "form"}, class: "d-flex align-items-start"} do |f|
-        %>
-          <%= f.input :content,
-          label: false,
-          placeholder: "Message #{@booking.service.user.first_name}",
-          wrapper_html: {class: "flex-grow-1"}
-        %>
-          <%= f.submit "Send", class: "regular-button" %>
-        <% end %>
-      </div>
-    </div>
+<div class="icon-subtle-button hvr-float">
+  <%= link_to dashboard_path do %>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM384 288H205.3l49.38 49.38c12.5 12.5 12.5 32.75 0 45.25s-32.75 12.5-45.25 0L105.4 278.6C97.4 270.7 96 260.9 96 256c0-4.883 1.391-14.66 9.398-22.65l103.1-103.1c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L205.3 224H384c17.69 0 32 14.33 32 32S401.7 288 384 288z"/></svg>
   <% end %>
 </div>
-
-<%= link_to "Show this expert's page", service_path(@service) %>
-<%= link_to "Back to your dashboard", dashboard_path %>
+<div class="booking-wrapper" data-controller="reveal">
+  <div class="card-and-chat-wrapper" data-reveal-target="wrapper">
+    <div class="booking-card-container col">
+      <div class="map-info-container">
+        <div class="booking-show-links d-flex justify-content-around pt-3">
+          <% if @booking.state == 0 %>
+            <h6> Awaiting response from <%= @booking.service.user.first_name %> </h6>
+          <% elsif @booking.state == 1%>
+            <% if !@chatroom.nil? %>
+              <%= link_to "Open chat with #{ @booking.service.user.first_name }","", class: "link d-none", data: { action:"click->reveal#unhideChat", reveal_target:"link" } %>
+            <% end %>
+            <% if !@booking.evaluation.nil? %>
+              <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation), class: "link" %>
+              <% if !@booking.review.nil? %>
+                <a href="" class="link" data-action="click->reveal#unhideReviews" data-reveal-target="rlink"> Leave your review </a>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="card-info mx-3 py-3">
+          <table class="table">
+            <tr>
+              <th> Wheelper:</th>
+              <td> <%= link_to @booking.service.user.first_name, service_path(@service) %> </td>
+            </tr>
+            <tr>
+              <th> Vehicle:</th>
+              <td> <%= @booking.vehicle_brand %> <%= @booking.vehicle_model %> / <%= @booking.vehicle_year %> </td>
+            </tr>
+            <tr>
+              <th> Vehicle location: </th>
+              <td> <%= @booking.vehicle_address %> </td>
+            </tr>
+            <tr>
+              <th> Owner contact details: </th>
+              <td> <%=@booking.vehicle_contact%> </td>
+            </tr>
+            <tr>
+              <th> Booking date: </th>
+              <td> <%= @booking.date %> </td>
+            </tr>
+            <tr>
+              <th> Status: </th>
+              <td> <%= render "states_converted", booking: @booking %> </td>
+            </tr>
+            <% if !@booking.vehicle_url.nil? %>
+              <tr>
+                <th> URL: </th>
+                <td> <%= link_to "see the link", @booking.vehicle_url %> </td>
+              </tr>
+            <% end %>
+            <% if !@booking.additional_details.nil? %>
+              <tr>
+                <th> Additional details: </th>
+                <td> <%= @booking.additional_details %> </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+        <div class="showmap m-3" style="width: 50vw; height: 300px;"
+          data-controller="mbox"
+          data-mbox-marker-value="<%= @marker.to_json %>"
+          data-mbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+    </div>
+    <% if @booking.state == 1 %>
+      <div class="col">
+        <div class="chatroom-container px-3" data-controller="chatroom-subscription"
+          data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-reveal-target="chat">
+          <%= link_to "X","", class: "close-chat", data: { action: "click->reveal#hideChat" } %>
+          <div class="inner-chat-container">
+            <div class="messages" data-chatroom-subscription-target="messages">
+              <% @chatroom.messages.each do |message| %>
+                <%= render "messages/message", message: message %>
+              <% end %>
+            </div>
+            <%= simple_form_for [@chatroom, @message],
+              remote: true,
+              html: {data: {chatroom_subscription_target: "form"}, class: "d-flex align-items-start chat-form"} do |f|
+            %>
+              <%= f.input :content,
+              label: false,
+              placeholder: "Message #{@booking.user.first_name}",
+              wrapper_html: {class: "flex-grow-1"}
+            %>
+              <%= f.submit "Send", class: "regular-button" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% if @booking.state == 1 && !@booking.evaluation.nil? %>
+      <div class="review-form-container p-3 mt-3 col d-none" data-reveal-target="reviews">
+        <%= link_to "X","", class: "close-reviews", data: { action: "click->reveal#hideReviews" } %>
+        <h3> Add your review </h3>
+        <%= simple_form_for [@service, @booking, @review] do |f| %>
+          <%= f.input :content %>
+          <%= f.input :rating, as: :integer %>
+          <%= f.submit "Submit", class: "regular-button" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
