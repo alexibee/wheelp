@@ -1,63 +1,41 @@
-<!--
-<div class="navbar navbar-expand-sm navbar-light ">
-  <div class="container-fluid">
-    <%= link_to "wheelp", services_path, class: "big-logo-button" %>
-    <div class="navbar-links">
-      <ul>
-        <li class="nav-item">
-          <%= link_to "WHEELPERS", wheelpers_path, class: "tab" %>
-          <%= link_to "FAQ", "#", class: "tab" %>
-          <% if user_signed_in? %>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Dashboard", dashboard_path %>
-            <%= link_to "LOG OUT", destroy_user_session_path, method: "delete", class: "tab" %>
-            <</div>
-          <% else %>
-            <%= link_to "LOG IN", new_user_session_path, class: "tab" %>
-            <%= link_to "SIGN UP", new_user_registration_path, class: "submit-button" %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
--->
-<div class="navbar-wheelp navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "wheelp", root_path, class: "big-logo-button"%>
-    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> %>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <% if user_signed_in? %>
-            <li class="nav-item align-self-center">
-              Welcome, <%= current_user.first_name %>
-            </li>
-            <% if current_user.expert == false %>
-              <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
-              <li class="nav-item"> <%= link_to "WHEELPERS", wheelpers_path, class: "tab" %> </li>
-            <% else %>
-              <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
-            <% end %>
-            <li class="nav-item dropdown">
-              <% if current_user.photo.attached? %>
-                <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+<div class="frame">
+  <div class="navbar-wheelp navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <%= link_to "wheelp", root_path, class: "big-logo-button"%>
+      <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item align-self-center">
+                Welcome, <%= current_user.first_name %>
+              </li>
+              <% if current_user.expert == false %>
+                <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
+                <li class="nav-item"> <%= link_to "WHEELPERS", wheelpers_path, class: "tab" %> </li>
               <% else %>
-                <%= image_tag "https://png.pngitem.com/pimgs/s/22-223925_female-avatar-female-avatar-no-face-hd-png.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
               <% end %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "About us", "#", class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "tab" %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+              <li class="nav-item dropdown">
+                <% if current_user.photo.attached? %>
+                  <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
+                  <%= image_tag "https://png.pngitem.com/pimgs/s/22-223925_female-avatar-female-avatar-no-face-hd-png.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%= link_to "About us", "#", class: "dropdown-item" %>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "tab" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+    </div>
   </div>
 </div>
