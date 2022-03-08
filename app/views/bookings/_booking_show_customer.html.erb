@@ -16,7 +16,7 @@
             <% end %>
             <% if !@booking.evaluation.nil? %>
               <%= link_to "See evaluation", booking_evaluation_path(@booking, @booking.evaluation), class: "link" %>
-              <% if !@booking.review.nil? %>
+              <% if @booking.review.nil? %>
                 <a href="" class="link" data-action="click->reveal#unhideReviews" data-reveal-target="rlink"> Leave your review </a>
               <% end %>
             <% end %>
