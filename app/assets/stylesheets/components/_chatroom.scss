@@ -21,9 +21,10 @@
 }
 .close-chat {
   position: absolute;
+  color: $gray;
   right: 12px;
   top: 3px;
-  color: $light-color;
+
 }
 
 .inner-chat-container {

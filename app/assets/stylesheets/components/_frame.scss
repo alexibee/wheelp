@@ -1,9 +1,9 @@
 .frame {
-  background-color: white;
-  box-shadow: $shadow;
+  background-color: $background-color;
+  box-shadow: $box-shadow;
   padding: 1.5rem;
-  border: $subtle;
-  border-color: $subtle;
+  margin: 1.5rem;
+  border-radius: 2rem;
 }
 
 .title-frame {

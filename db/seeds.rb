@@ -77,7 +77,6 @@ character_adjectives = %w[helpful wheelpful sincere serious professional truthwo
 vehicles = %w[vehicle car motorbike van four-wheel convertible SUV minivan pickup limousine scooter micro-car familiar]
 vehicle_adjectives = %w[vintage automatic luxury easy-to-drive small low-emission electric]
 good_adjectives = %w[perfect great amazing high-end awesome exquisite brilliant gorgeous helpful sincere]
-CATEGORIES = ["Enthusiast", "Mechanic", "Technician", "Brand Expert"]
 price_adjectives = %w[affordable reasonable inexpensive reduced discounted modest moderate]
 verbs = [
   "love",
@@ -109,7 +108,7 @@ experts.each do |expert_id|
     end
   end
   character = character_adjectives.sample
-  category = CATEGORIES.sample
+  category = Service::CATEGORIES.sample
   vehicle = vehicles.sample
   vehicle_adjective = vehicle_adjectives.sample
   address = addresses.sample
