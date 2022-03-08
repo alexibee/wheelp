@@ -85,3 +85,14 @@
   display: flex;
   justify-content: center;
 }
+
+.reviews .title-frame {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.star-rating {
+  display: inline;
+}
