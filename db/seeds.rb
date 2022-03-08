@@ -161,7 +161,7 @@ experts.each do |expert_id|
     title: "#{character} #{vehicle_adjective} #{vehicle} #{category} #{action}",
     user_id: expert_id
   )
-  file = URI.open(experts_photos.sample)
+  file = URI.open(avatars.sample)
   new_service.photo.attach(io: file, filename: 'test.png', content_type: 'image/png')
   new_service.save!
   services << new_service.id
