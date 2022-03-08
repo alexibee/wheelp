@@ -52,6 +52,21 @@
       </div>
     </div>
   </div>
+
+  <% reviews = @service.reviews %>
+  <% if reviews < 0 %>
+    <div class="reviews-card">
+      <div class="title-frame">
+        <h6> Reviews </h6>
+      </div>
+      <% reviews.each do |review| %>
+        <div class="frame">
+          <%= render "reviews/reviews-card", review: review %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="service-types">
     <div class="title-frame">
       <h6> Services included </h6>
@@ -59,16 +74,5 @@
     <div class="list">
       <%= render "services/service_type", service: @service %>
     </div>
-  </div>
-  <div class="reviews-card">
-    <% reviews = @service.reviews %>
-    <div class="title-frame">
-      <h6> Reviews </h6>
-    </div>
-    <% reviews.each do |review| %>
-      <div class="frame">
-        <%= render "reviews/reviews-card", review: review %>
-      </div>
-    <% end %>
   </div>
 </div>
