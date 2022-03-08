@@ -202,7 +202,7 @@ bad_content = [
   "Not the best but the price is decent 🙃",
   "I'm a long time user from Wheelp since I change my car very often and this was the worst wheelper I've booked so far.... sometimes happens 😣"
 ]
-(3..20).each do |n|
+bookings.each do |n|
   type = [good_content, bad_content].sample
   if type == good_content
     rating = rand(4..5)
