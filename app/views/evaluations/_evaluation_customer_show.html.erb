@@ -1,32 +1,59 @@
-<div class="container col-6 text-center">
-  <div class="title-frame">
-    <h1> Evaluation </h1>
-    <h3> Provided by <%= evaluation.user.first_name %> </h3>
-  </div>
-  <div class="frame">
-    <p>"<%= evaluation.comment %>"</p>
-  </div>
-  <% if evaluation.video.attached? %>
-    <div class="frame">
-      <p> <%= cl_video_tag evaluation.video.key, controls: true, width: "480px", height: "360px" if evaluation.video.attached?%> </p>
-    </div>
-  <% end %>
-  <% if evaluation.photo.attached? %>
-    <div class="frame">
-      <p> <%= cl_image_tag evaluation.photo.key, width: "300px", height: "400px" if evaluation.photo.attached?%> </p>
-    </div>
-  <% end %>
-  <% if evaluation.document.attached? %>
-    <div class="frame">
-      <%= link_to cl_image_path(evaluation.document.key) do %>
-        <p> <%= cl_image_tag evaluation.document.key, format: "jpg", width: "210px", height: "297px"%> </p>
-      <% end %>
-    </div>
+<div class="icon-subtle-button hvr-float">
+  <%= link_to service_booking_path(evaluation.booking.service, evaluation.booking) do %>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM384 288H205.3l49.38 49.38c12.5 12.5 12.5 32.75 0 45.25s-32.75 12.5-45.25 0L105.4 278.6C97.4 270.7 96 260.9 96 256c0-4.883 1.391-14.66 9.398-22.65l103.1-103.1c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L205.3 224H384c17.69 0 32 14.33 32 32S401.7 288 384 288z"/></svg>
   <% end %>
 </div>
-<p>
-  <%= link_to "Back", service_booking_path(booking.service, booking) %>
-</p>
-<p>
-  <%= link_to "Back to your dashboard", dashboard_path %>
-</p>
+<div class="evaluation-wrapper" data-controller="reveal">
+  <div class="container evaluation-cont col-6">
+    <div class="title-frame text-center my-5">
+      <h6> Evaluation</h6>
+      <p> Provided by <%= link_to evaluation.user.first_name, service_path(evaluation.booking.service.id) %> </p>
+    </div>
+    <div class="frame">
+      <h6> <%=evaluation.user.first_name%>'s comment: </h6>
+      <p>"<%= evaluation.comment %>"</p>
+    </div>
+    <div class="attachments">
+      <% if evaluation.video.attached? %>
+          <a href="#" class="frame attach-link" data-action="click->reveal#toggleVideo">
+              <%= cl_image_tag 'video_ndopig.png', width: "100px" %>
+          </a>
+      <% end %>
+      <% if evaluation.photo.attached? %>
+            <a href="#" class="frame attach-link" data-action="click->reveal#togglePhoto">
+              <%= cl_image_tag 'photos_ljeufb.png', width: "100px" %>
+            </a>
+      <% end %>
+      <% if evaluation.document.attached? %>
+            <a href="#" class="frame attach-link" data-action="click->reveal#toggleDoc">
+              <%= cl_image_tag 'file_jl8ona.png', width: "100px" %>
+            </a>
+      <% end %>
+    </div>
+  </div>
+  <div class="attachments attach-center">
+    <% if evaluation.video.attached? %>
+      <div class="single-attachment d-none" data-reveal-target="video">
+        <div class="frame">
+          <p> <%= cl_video_tag evaluation.video.key, controls: true, width: "480px", height: "360px" if evaluation.video.attached?%> </p>
+        </div>
+      </div>
+    <% end %>
+    <% if evaluation.photo.attached? %>
+      <div class="single-attachment d-none" data-reveal-target="photo">
+        <div class="frame">
+          <p> <%= cl_image_tag evaluation.photo.key, width: "210px", height: "297px" if evaluation.photo.attached?%> </p>
+        </div>
+      </div>
+    <% end %>
+    <% if evaluation.document.attached? %>
+      <div class="single-attachment d-none" data-reveal-target="doc">
+        <div class="frame">
+          <%= link_to cl_image_path(evaluation.document.key) do %>
+            <p> <%= cl_image_tag evaluation.document.key, format: "jpg", width: "210px", height: "297px"%> </p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
