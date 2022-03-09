@@ -39,17 +39,38 @@
   color: $font-color;
 }
 
-.flat {
+.submit-button {
   background-color: $background-color;
   box-shadow: $box-shadow;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  color: $font-color;
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+  &:hover {
+    box-shadow: -2px -2px 5px $background-color, 2px 2px 5px #BABECC;
+  }
+  &:active {
+    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $background-color;
+  }
 }
 
-.blended {
+
+.input {
+  box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px $background-color;
+  &:active {
+    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $background-color;
+  }
+}
+
+.concave {
   background-color: $background-color;
   box-shadow: $inverted-shadow;
+
 }
 
-.blended:hover {
+.concave:hover {
   box-shadow: $concave;
   background-color: $concave-bg;
 }
