@@ -12,7 +12,6 @@
         <p> <%= booking.date %></p>
       </div>
     </div>
-
     <% if booking.state == 0 %>
       <h6> Pending request <h6>
     <% elsif booking.state == 1 && !booking.evaluation %>

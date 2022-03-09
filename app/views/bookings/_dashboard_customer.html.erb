@@ -12,7 +12,6 @@
   <% declined = @bookings.select do |booking| %>
     <% booking.state == -1 %>
   <% end %>
-
   <% if pending.any? %>
   <div class="title-frame">
     <h2> Pending Bookings </h2>
@@ -42,6 +41,8 @@
       <%= render "booking_dashboard_card_customer", booking: booking %>
     </div>
     <% end %>
-  <% end %>
-  <%= link_to "Find an expert", services_path, class: "link" %>
+  </div>
+  <div class="expert-button">
+    <%= link_to "Find an expert", services_path, class: "link" %>
+  </div>
 <% end %>

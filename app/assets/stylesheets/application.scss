@@ -11,7 +11,7 @@
 @import 'flatpickr/dist/flatpickr.css';
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 @import "mapbox-gl/dist/mapbox-gl";
-@import 'animate.css';
+// @import 'animate.css';
 // @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 // Your CSS partials
@@ -20,6 +20,7 @@
 @import "components/home_card";
 @import "components/sign_up_banner";
 @import "components/booking_form";
+@import "components/services_form";
 
 body {
   overflow: auto;
