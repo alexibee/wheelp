@@ -9,15 +9,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
             <% if user_signed_in? %>
+              <li class="nav-item">
+                <h6 class="welcome-text"> Hi, <%= current_user.first_name %> </h6>
+              </li>
               <% if current_user.expert == false %>
                 <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
                 <li class="nav-item"> <%= link_to "WHEELPERS", wheelpers_path, class: "tab" %> </li>
               <% else %>
                 <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
               <% end %>
-              <li class="nav-item align-self-center">
-                Hi, <%= current_user.first_name %>
-              </li>
                 <% if current_user.expert %>
                   <% total_notif = 0 %>
                   <% pending = current_user.service[0].bookings.select { |book| book.state == 0} %>
@@ -42,9 +42,9 @@
                       <% end %>
                   <% end %>
                   <% if total_notif > 0 %>
-                    <li class="nav-item dropdown">
-                    <h6 class="avatar-large dropdown-toggle" id="navbarDropdown2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%>! </h6>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
+                    <li class="nav-item dropdown align-self-center">
+                    <p class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%> <img src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646843166/bell_mfqpma.png"> </p>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                       <% if !message_book.nil? %>
                         <%= link_to message_book, dashboard_path, class: "dropdown-item" %>
                       <% end %>
@@ -71,8 +71,8 @@
                   <% end %>
                   <% if total_notif > 0 %>
                     <li class="nav-item dropdown">
-                      <h6 class="avatar-large dropdown-toggle" id="navbarDropdown2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%>! </h6>
-                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
+                      <p class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%> <img src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646843166/bell_mfqpma.png"></p>
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <% if !no_review_msg.nil? %>
                           <%= link_to no_review_msg, dashboard_path, class: "dropdown-item" %>
                         <% end %>
