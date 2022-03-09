@@ -1,11 +1,4 @@
-.icon-button {
-  box-shadow: $box-shadow;
-  background-color: $background-color;
-  svg {
-    fill: $font-color;
-    width: 1.5rem;
-  }
-}
+
 
 .regular-button {
   color: transparent;
@@ -14,9 +7,4 @@
   border-radius: 20px;
   box-shadow: $box-shadow;
   width: 2rem;
-}
-
-.icon-subtle-button {
-  width: 2rem;
-  color: $gray;
 }

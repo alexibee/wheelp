@@ -1,5 +1,14 @@
 .container .form {
   max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+}
+
+.simple_form .new_user {
+  justify-content: center;
+  align-items: stretch;
 }
 
 // INPUT BLENDED
@@ -26,40 +35,40 @@ form {
   margin: 0 auto;
 }
 
-.segment {
-  padding: $ruler*2 0;
-  text-align: center;
-}
+// .segment {
+//   padding: $ruler*2 0;
+//   text-align: center;
+// }
 
-button, input {
-  border: 0;
-  outline: 0;
-  font-size: $ruler;
-  border-radius: $ruler*20;
-  padding: $ruler;
-  background-color:$color-bg;
-  text-shadow: 1px 1px 0 $color-white;
-}
+// input {
+//   border: 0;
+//   outline: 0;
+//   font-size: $ruler;
+//   border-radius: $ruler*20;
+//   padding: $ruler;
+//   background-color:$color-bg;
+//   text-shadow: 1px 1px 0 $color-white;
+// }
 
-label {
-  display: block;
-  margin-bottom: $ruler*1.5;
-  width: 100%;
-}
+// label {
+//   display: block;
+//   margin-bottom: $ruler*1.5;
+//   width: 100%;
+// }
 
-input {
-  margin-right: $ruler/2;
-  box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
-  width: 100%;
-  box-sizing: border-box;
-  transition: all 0.2s ease-in-out;
-  appearance: none;
-  -webkit-appearance: none;
+// input {
+//   margin-right: $ruler/2;
+//   box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+//   width: 100%;
+//   box-sizing: border-box;
+//   transition: all 0.2s ease-in-out;
+//   appearance: none;
+//   -webkit-appearance: none;
 
-  &:focus {
-    box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
-  }
-}
+//   &:focus {
+//     box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+//   }
+// }
 
 button {
   color:#61677C;
@@ -104,13 +113,13 @@ button {
   }
 }
 
-.input-group {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+// .input-group {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
 
-  label {
-    margin: 0;
-    flex: 1;
-  }
-}
+//   label {
+//     margin: 0;
+//     flex: 1;
+//   }
+// }
