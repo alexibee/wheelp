@@ -1,13 +1,18 @@
+// CTA COLOR BUTTON
 .cta {
   background-color: $color;
-  color: $dark-color;
+  color: $background-color;
+  &:hover {
+    font-size: large;
+    color: $background-color;
+  }
 }
 @media only screen and (max-width: 767px) {
   .cta {
     min-width: 80px;
   }
 }
-
+// BASIC BUTTON SHAPE
 .button {
   max-width: 12rem;
   min-width: 6rem;
@@ -16,9 +21,10 @@
   text-transform: uppercase;
   border-radius: 2rem;
   font-weight: 700;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.2px;
 }
 
+// NEUTRAL COLOR BUTTON
 .regular {
   background-color: $gray;
   color: $background-color;
@@ -26,6 +32,10 @@
     background-color: $dark-color;
   }
 }
+
+// BLENDED BUTTON
+
+// BLENDED INPUT
 
 // ACTION
 
