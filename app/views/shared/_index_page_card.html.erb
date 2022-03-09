@@ -12,7 +12,11 @@
       <div class="reviews-info">
         <% reviews = service.reviews %>
         <% if reviews.count > 0 %>
-          <p> ★ <%= service.average_rating %> - <%= reviews.count %> Reviews </p>
+          <% if reviews.count == 1 %>
+            <p> ★ <%= service.average_rating %> - <%= reviews.count %> Review </p>
+          <% else %>
+            <p> ★ <%= service.average_rating %> - <%= reviews.count %> Reviews </p>
+          <% end %>
         <% else %>
           <p> Has no reviews yet</p>
         <% end %>

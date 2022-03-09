@@ -7,24 +7,6 @@
   justify-items: stretch;
 }
 
-.new-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 2rem;
-  grid-template-areas:
-      "main-card reviews"
-      "main-card service-types";
-  align-items: start;
-  justify-content: center;
-  margin: 3rem;
-
-  .main-card { grid-area: main-card; }
-  .reviews { grid-area: reviews; }
-  .service-types { grid-area: service-types; }
-}
-
-
 .show-service-card {
   display: flex;
   align-content: center;
