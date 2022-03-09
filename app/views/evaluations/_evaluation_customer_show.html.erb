@@ -5,19 +5,28 @@
   </div>
   <div class="frame">
     <p>"<%= evaluation.comment %>"</p>
-    <p> <%= cl_video_tag evaluation.video.key, controls: true, width: "480px", height: "360px" if evaluation.video.attached?%> </p>
-    <div class="attachments d-flex justify-content-around">
+  </div>
+  <% if evaluation.video.attached? %>
+    <div class="frame">
+      <p> <%= cl_video_tag evaluation.video.key, controls: true, width: "480px", height: "360px" if evaluation.video.attached?%> </p>
+    </div>
+  <% end %>
+  <% if evaluation.photo.attached? %>
+    <div class="frame">
       <p> <%= cl_image_tag evaluation.photo.key, width: "300px", height: "400px" if evaluation.photo.attached?%> </p>
-      <% if evaluation.document.attached? %>
-        <%= link_to cl_image_path(evaluation.document.key) do %>
-          <p> <%= cl_image_tag evaluation.document.key, format: "jpg", width: "210px", height: "297px"%> </p>
-        <% end %>
+    </div>
+  <% end %>
+  <% if evaluation.document.attached? %>
+    <div class="frame">
+      <%= link_to cl_image_path(evaluation.document.key) do %>
+        <p> <%= cl_image_tag evaluation.document.key, format: "jpg", width: "210px", height: "297px"%> </p>
       <% end %>
     </div>
-  </div>
-    <%= link_to "Back", service_booking_path(booking.service, booking) %>
-  </p>
-  <p>
-    <%= link_to "Back to your dashboard", dashboard_path %>
-  </p>
+  <% end %>
 </div>
+<p>
+  <%= link_to "Back", service_booking_path(booking.service, booking) %>
+</p>
+<p>
+  <%= link_to "Back to your dashboard", dashboard_path %>
+</p>
