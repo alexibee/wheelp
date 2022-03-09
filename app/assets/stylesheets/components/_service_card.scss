@@ -4,14 +4,6 @@
   justify-content: space-between;
 }
 
-.services-list {
-  display: flex;
-  flex-direction: column;
-}
-.service-card {
-  width: 550px;
-}
-
 .service-card:hover{
   border: $subtle;
   border-color: rgb(214, 214, 214);
@@ -41,6 +33,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  padding-right: 0.7rem;
   h3 {
     font-size: 18px;
   }

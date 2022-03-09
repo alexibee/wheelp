@@ -24,12 +24,9 @@
         </div>
     </div>
 
-    <div class="right-side">
+    <div class="right-side mr-4">
       <div class="top d-flex justify-content-between">
         <h3> <%= service.title.capitalize %></h3>
-        <div class="price-tag">
-          <h6>from £<%= service.price %></h6>
-        </div>
       </div>
       <div class="middle">
         <p> "<%= service.description %>"</p>
@@ -37,6 +34,9 @@
       <div class="bottom">
         <div class="availability-window">
           <%= render "shared/availability", service: service %>
+        </div>
+        <div class="price-tag">
+          <h6>from £<%= service.price %></h6>
         </div>
       </div>
     </div>
