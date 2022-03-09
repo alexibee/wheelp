@@ -14,24 +14,24 @@ User.destroy_all
 usernames = ["shaquille_oatmeal", "hanging_with_my_gnomies", "hoosier_daddy", "fast_and_curious", "averagestudent", "BadKarma", "google_was_my_idea", "whats_my_name", "where_am_i", "wheelp4lyf", "mr_lewagon", "ms_lewagon", "806_or_die"]
 names = ["Bobby", "Roy", "Jose", "Alex", "Ismael", "Ibrahim", "Rob", "Dick", "Bill", "Auston", "Alice", "Laura", "Margaret", "Cindy", "Grace"]
 surnames = ["Brown", "Green", "Smith", "Jameson", "Gudbranson", "Velasquez", "Khan", "Goldman", "Lee", "Ozols"]
-avatars = ["https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-31_bdc4ch.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-19_yqatkb.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-25_a1qnht.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-20_psh70f.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-18_pov4ir.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-37_cgyi4d.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-09_v3w9s2.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-11_rd9yty.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-34_yi3lgf.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-36_wyj3b7.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-05_tcgblf.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736370/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-23_yb27vm.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-01_eclrli.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-14_j7memd.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-28_dosqpd.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-15_b4y5wu.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-39_pb3r6n.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646736369/development/wheelp/avatars/Artboards_Diversity_Avatars_by_Netguru-04_u31y2d.png"
+avatars = ["https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761321/development/nl0z5vr0d3fhbetjjlxtxlp06wp0.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761319/development/wmt5c2m3brlgdm7rv3vrs4angnao.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761318/development/gmjoy1slz0h72scr727jmabh6p4s.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761317/development/ide2ugb024ptdvyx5d4z69twko5j.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761316/development/jsbxcjbn07z49u8tuq6a7eydz3b5.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761315/development/yov7bjcrd599cd60wla0c8jkrumf.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761314/development/ir8uc32nw6jlauwd1e0fqyo3af98.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761313/development/393entkruernngcv1yw0du18bgb2.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761311/development/d2dk5jr96m8tzfbawawdroa6fc9d.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761310/development/6avxfn53lhbp7nelek2rqog21sb5.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761309/development/qnlba4oq3njhsnejrp1ihkvrdcwh.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761308/development/miycpqj9adpbww1pg9v8jlmbvuor.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761307/development/2n5gkr0p52oscyhym28ykb6y14xb.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760784/development/bqb5hzwibsyha98m088x5q0za4v2.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760780/development/qonr97eu0t8cjczeqqrrcw6fw3sr.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760775/development/0xni4247z03utz8ds3u4jjbcbnxd.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760771/development/homec20w4u52osnwfi6vu4p2jx6h.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760768/development/4tr3mq7nmkay7rv6lq7ui5x4lx0k.png"
 ]
 
 #---------USERS
@@ -73,7 +73,7 @@ end
 
 services = []
 
-character_adjectives = %w[helpful wheelpful sincere serious professional truthworthy knowledgeable passionate thoughtful nice]
+character_adjectives = %w[helpful wheelpful sincere serious professional trustworthy knowledgeable passionate thoughtful nice]
 vehicles = %w[vehicle car motorbike van four-wheel convertible SUV minivan pickup limousine scooter micro-car familiar]
 vehicle_adjectives = %w[vintage automatic luxury easy-to-drive small low-emission electric]
 good_adjectives = %w[perfect great amazing high-end awesome exquisite brilliant gorgeous helpful sincere]
@@ -92,7 +92,7 @@ timing = [
   ""
 ]
 
-addresses = %w[London Dublin Paris Berlin Rome Milan Kairo Latvia Bilbao Sevilla Barcelona Bristol Athens Lion Madrid Norway]
+addresses = %w[London Dublin Paris Berlin Rome Milan Cairo Latvia Bilbao Sevilla Barcelona Bristol Athens Lion Madrid Norway]
 availability = []
 30.times do |i|
   date = Date.today + i
@@ -117,23 +117,23 @@ experts.each do |expert_id|
     "help you find a #{vehicle_adjective} vehicle",
     "help you find the perfect #{vehicle}",
     "check the #{vehicle} for you",
-    "verify the condition any #{vehicle} for you",
+    "verify the condition of any #{vehicle} for you",
     "assist you in your next #{vehicle} purchase",
-    "offering #{price_adjective} priced service",
-    "helps you finding a #{vehicle} at a #{price_adjectives.sample} price"
+    "offering a #{price_adjective} priced service",
+    "help you to find a #{vehicle} at a #{price_adjectives.sample} price"
   ]
   wheelp = [
-    "I love offering my service in Wheelp",
-    "I've been a wheelper for a long time now",
+    "I love offering my services in Wheelp",
+    "I've been a Wheelper for a long time now",
     "I'm new to Wheelp",
-    "I discovered wheelp a couple of months ago",
-    "I used Wheelp a couple of years ago as a customer and a few months ago I decided to become a wheelper",
+    "I discovered Wheelp a couple of months ago",
+    "I used Wheelp a couple of years ago as a customer and a few months ago I decided to become a Wheelper",
     "I joined Wheelp some years ago",
-    "I'm a reputable long time wheelper",
+    "I'm a reputable long time Wheelper"
   ]
 
   phrase = [
-    "I love offering my service in Wheelp for people in #{address}",
+    "I love offering my services in Wheelp for people in #{address}",
     "I love wheelping people in #{address}",
     "I take this very seriously",
     "This is a service I actually enjoy doing",
@@ -142,9 +142,9 @@ experts.each do |expert_id|
 
   contact_phrase = [
     "please feel free to get in touch with me",
-    "please don't hesitate to ask me any question",
+    "please don't hesitate to ask me any questions",
     "I would love to check the vehicle for you",
-    "feel free to ask me any question regarding your vehicle or my service",
+    "feel free to ask me any questions regarding your vehicle or my service",
     "let me know what you are looking for in your #{vehicle} and book a vehicle viewing with me",
     "I'm sure I can be super wheelpful to you.",
     "I'm usually booked but make sure you check my availability to book my service ASAP",
@@ -209,31 +209,31 @@ end
 
 reviews = []
 good_content = [
-  "Excellent service, the wheelper arrived at exactly the time given.. to the minute.
+  "Excellent service, the wheelper arrived at exactly the time I requested.
   He carried out the job very professionally 👍🏽",
-  "Good service, would recomend! :)",
+  "Good service, highly recomend! :)",
   "Solid service 💯",
-  "Hes very knowledgeable, trustworthy, fair, and clear. He has experience in many makes.",
+  "He's very knowledgeable, trustworthy, fair, and clear. He has experience in many makes.",
   "I highly recommed this service! Received a very detailed report 👏🏻!",
   "Very efficient wheelper. The wheelper called me immediately and strongly recommended not to buy the car",
-  "I know nothing about cars so this service was really helpful to me ☺️. I was able to purchase a car in very goog condition ✌🏼",
+  "I know nothing about cars so this service was really helpful to me ☺️. I was able to purchase a car in very good condition ✌🏼",
   "Highly recommended, great work at very reasonable prices. Accommodating and really friendly",
-  "Really helful and also super friendly 10/10! Thank you 👍🏼",
+  "Really helpful and also super friendly, 10/10! Thank you 👍🏼",
   "This was such a great service, booking was easy and everything went really well!",
   "Such a great wheelper",
-  "I told this wheelper over the chat that I needed a car ASAP to be able to go to my new job, he was kind enough to call me personally so that I didn't have to wait for the evaluation 🤩",
+  "I told this wheelper over the chat that I needed a car ASAP to be able to go to my new job. He was kind enough to call me personally so that I didn't have to wait for the evaluation 🤩",
   "Amazing service at a very reasonable price"
 ]
 
 bad_content = [
-  "Horrible service, was late to the booking and the owner of the vehicle sold it by the time the wheelper arrived.",
+  "Horrible service. The Wheelper was late to the booking and the owner of the vehicle sold it by the time the Wheelper arrived.",
   "Never showed up to the viewing. Luckily the guys from Wheelp are very nice and gave me a refund of my money.
   Don't book this wheelper! 👀",
-  "Not worth the price, there's cheaper and better whelpers out there",
-  "The evaluation was ready ",
+  "Not worth the price, there's cheaper and better Wheelpers out there",
+  "The evaluation was not ready",
   "The service was good but this wheelper was rude. Would not recomment",
   "Not the best but the price is decent 🙃",
-  "I'm a long time user from Wheelp since I change my car very often and this was the worst wheelper I've booked so far.... sometimes happens 😣"
+  "I'm a long time customer from Wheelp since I change my car very often and this was the worst wheelper I've booked so far... it sometimes happens 😣"
 ]
 bookings.each do |n|
   type = [good_content, bad_content].sample
