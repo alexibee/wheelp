@@ -11,6 +11,7 @@
     <% end %>
   </div>
   <div class="container">
+    <%= render "categories" %>
     <% if @services.empty? %>
       <div class="alert-frame">
         <p> <%= @message %> </p>
