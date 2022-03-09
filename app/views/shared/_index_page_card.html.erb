@@ -9,32 +9,32 @@
           <img src="https://media.wired.com/photos/5c54ee6a4feec32ca0f590d8/125:94/w_1761,h_1324,c_limit/superman-922909434.jpg" />
         <% end %>
       </div>
-      <div class="reviews-info">
-        <% reviews = service.reviews %>
-        <% if reviews.count > 0 %>
-          <% if reviews.count == 1 %>
-            <p> ★ <%= service.average_rating %> - <%= reviews.count %> Review </p>
+       <h5> <%=service.user.first_name.capitalize  %> <%=service.user.last_name.capitalize  %></h5>
+        <div class="reviews-info">
+          <% reviews = service.reviews %>
+          <% if reviews.count > 0 %>
+            <% if reviews.count == 1 %>
+              <p> ★ <%= service.average_rating %> - <%= reviews.count %> Review </p>
+            <% else %>
+              <p> ★ <%= service.average_rating %> - <%= reviews.count %> Reviews </p>
+            <% end %>
           <% else %>
-            <p> ★ <%= service.average_rating %> - <%= reviews.count %> Reviews </p>
+            <p> Has no reviews yet</p>
           <% end %>
-        <% else %>
-          <p> Has no reviews yet</p>
-        <% end %>
-      </div>
+        </div>
     </div>
 
     <div class="right-side">
-      <div class="top-right d-flex justify-content-between">
+      <div class="top d-flex justify-content-between">
         <h3> <%= service.title.capitalize %></h3>
         <div class="price-tag">
           <h6>from £<%= service.price %></h6>
         </div>
       </div>
-      <div class="right-middle">
-        <h5> <%=service.user.first_name.capitalize  %> <%=service.user.last_name.capitalize  %></h5>
+      <div class="middle">
         <p> "<%= service.description %>"</p>
       </div>
-      <div class="bottom-right">
+      <div class="bottom">
         <div class="availability-window">
           <%= render "shared/availability", service: service %>
         </div>
