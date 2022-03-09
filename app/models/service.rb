@@ -44,4 +44,17 @@ class Service < ApplicationRecord
     end
     (sum / count).to_f
   end
+
+  def type
+    case service.category
+    when "Enthusiast"
+      [1, 2].sample
+    when "Mechanic"
+      [2, 3, 3].sample
+    when "Technician"
+      [2, 3].sample
+    when "Brand Expert"
+      [2, 1, 2].sample
+    end
+  end
 end
