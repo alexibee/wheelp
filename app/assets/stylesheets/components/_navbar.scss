@@ -28,11 +28,22 @@
   }
 }
 
+.nav-item {
+  display: flex;
+  align-items: center;
+  p {
+    margin: 0;
+    font-weight: 600;
+    img {
+      width: 20px;
+    }
+  }
+}
 // NAV TABS
 
 .tab {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-self: center;
   cursor: pointer;
   text-decoration: none;
   padding: 8px;

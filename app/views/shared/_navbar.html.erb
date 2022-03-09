@@ -43,7 +43,7 @@
                   <% end %>
                   <% if total_notif > 0 %>
                     <li class="nav-item dropdown align-self-center">
-                    <p class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%>! </p>
+                    <p class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%> <img src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646843166/bell_mfqpma.png"> </p>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                       <% if !message_book.nil? %>
                         <%= link_to message_book, dashboard_path, class: "dropdown-item" %>
@@ -71,7 +71,7 @@
                   <% end %>
                   <% if total_notif > 0 %>
                     <li class="nav-item dropdown">
-                      <p class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%>! </p>
+                      <p class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%> <img src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646843166/bell_mfqpma.png"></p>
                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <% if !no_review_msg.nil? %>
                           <%= link_to no_review_msg, dashboard_path, class: "dropdown-item" %>
