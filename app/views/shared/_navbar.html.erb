@@ -10,7 +10,7 @@
           <ul class="navbar-nav me-auto">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <h6 class="welcome-text"> Hi, <%= current_user.first_name %> </h6>
+                <h6 class="welcome-text"> Hi, <%= current_user.first_name %>! </h6>
               </li>
               <% if current_user.expert == false %>
                 <li class="nav-item"> <%= link_to "DASHBOARD", dashboard_path, class: "tab" %> </li>
@@ -20,39 +20,41 @@
               <% end %>
                 <% if current_user.expert %>
                   <% total_notif = 0 %>
-                  <% pending = current_user.service[0].bookings.select { |book| book.state == 0} %>
-                  <% if pending.any? %>
-                      <% if pending.count != 1 %>
-                        <% message_book = "#{pending.count} unconfirmed bookings" %>
-                      <% else %>
-                        <% message_book = "#{pending.count} unconfirmed booking" %>
-                      <% end %>
-                      <% total_notif += pending.count %>
-                  <% end %>
-                  <% confirmed = current_user.service[0].bookings.select { |book| book.state == 1} %>
-                  <% if confirmed.any? %>
-                    <% pending_eval = confirmed.select {|book| book.evaluation.nil? } %>
-                      <% if pending_eval.any? %>
-                          <% if pending_eval.count != 1 %>
-                            <% message_eval = "#{pending_eval.count} pending evaluations"%>
-                          <% else %>
-                            <% message_eval = "#{pending_eval.count} pending evaluation"%>
-                          <% end %>
-                          <% total_notif += pending_eval.count %>
-                      <% end %>
-                  <% end %>
-                  <% if total_notif > 0 %>
-                    <li class="nav-item dropdown align-self-center">
-                    <p class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%> <img src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646843166/bell_mfqpma.png"> </p>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                      <% if !message_book.nil? %>
-                        <%= link_to message_book, dashboard_path, class: "dropdown-item" %>
-                      <% end %>
-                      <% if !message_eval.nil? %>
-                        <%= link_to message_eval, dashboard_path, class: "dropdown-item" %>
-                      <% end %>
-                    </div>
-                    </li>
+                  <% if !current_user.service[0].nil? %>
+                    <% pending = current_user.service[0].bookings.select { |book| book.state == 0} %>
+                    <% if pending.any? %>
+                        <% if pending.count != 1 %>
+                          <% message_book = "#{pending.count} unconfirmed bookings" %>
+                        <% else %>
+                          <% message_book = "#{pending.count} unconfirmed booking" %>
+                        <% end %>
+                        <% total_notif += pending.count %>
+                    <% end %>
+                    <% confirmed = current_user.service[0].bookings.select { |book| book.state == 1} %>
+                    <% if confirmed.any? %>
+                      <% pending_eval = confirmed.select {|book| book.evaluation.nil? } %>
+                        <% if pending_eval.any? %>
+                            <% if pending_eval.count != 1 %>
+                              <% message_eval = "#{pending_eval.count} pending evaluations"%>
+                            <% else %>
+                              <% message_eval = "#{pending_eval.count} pending evaluation"%>
+                            <% end %>
+                            <% total_notif += pending_eval.count %>
+                        <% end %>
+                    <% end %>
+                    <% if total_notif > 0 %>
+                      <li class="nav-item dropdown align-self-center">
+                      <p class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <%=total_notif%> <img src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646843166/bell_mfqpma.png"> </p>
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <% if !message_book.nil? %>
+                          <%= link_to message_book, dashboard_path, class: "dropdown-item" %>
+                        <% end %>
+                        <% if !message_eval.nil? %>
+                          <%= link_to message_eval, dashboard_path, class: "dropdown-item" %>
+                        <% end %>
+                      </div>
+                      </li>
+                    <% end %>
                   <% end %>
                 <% elsif !current_user.expert %>
                   <% total_notif = 0 %>
