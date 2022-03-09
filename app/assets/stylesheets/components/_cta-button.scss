@@ -1,13 +1,29 @@
 .cta {
-  background-color: $light-color;
+  background-color: $color;
   color: $dark-color;
-  max-width: 12rem;
-  min-width: 9rem;
 }
-
 @media only screen and (max-width: 767px) {
   .cta {
     min-width: 80px;
+  }
+}
+
+.button {
+  max-width: 12rem;
+  min-width: 6rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.regular {
+  background-color: $gray;
+  color: $background-color;
+  &:hover {
+    background-color: $dark-color;
   }
 }
 
