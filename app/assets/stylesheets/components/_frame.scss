@@ -1,13 +1,14 @@
 .frame {
   background-color: $background-color;
   box-shadow: $box-shadow;
-  padding: 1.5rem;
-  margin: 1.5rem;
+  padding: 1rem;
+  margin: 1rem;
   border-radius: 2rem;
 }
 
 .title-frame {
   color: $font-color;
+  margin-inline: 1rem;
   h6{
     filter: drop-shadow($shadow);
     border-color: $background-color;
@@ -58,12 +59,10 @@
 .box:hover .front {
   transform: rotateX(180deg);
   border: $subtle;
-  box-shadow: $color-shadow;
 }
 
 .box:hover .back {
   transform: rotateX(0);
   border: $subtle;
-  box-shadow: $color-shadow;
 
 }

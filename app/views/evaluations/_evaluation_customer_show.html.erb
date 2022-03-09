@@ -1,15 +1,19 @@
 <div class="container col-6 text-center">
-  <h1> Evaluation </h1>
-  <h3> Provided by <%= evaluation.user.first_name %> </h3>
-  <p>"<%= evaluation.comment %>"</p>
-  <p> <%= cl_video_tag evaluation.video.key, controls: true, width: "480px", height: "360px" if evaluation.video.attached?%> </p>
-  <div class="attachments d-flex justify-content-around">
-    <p> <%= cl_image_tag evaluation.photo.key, width: "300px", height: "400px" if evaluation.photo.attached?%> </p>
-    <% if evaluation.document.attached? %>
-      <%= link_to cl_image_path(evaluation.document.key) do %>
-        <p> <%= cl_image_tag evaluation.document.key, format: "jpg", width: "210px", height: "297px"%> </p>
+  <div class="title-frame">
+    <h1> Evaluation </h1>
+    <h3> Provided by <%= evaluation.user.first_name %> </h3>
+  </div>
+  <div class="frame">
+    <p>"<%= evaluation.comment %>"</p>
+    <p> <%= cl_video_tag evaluation.video.key, controls: true, width: "480px", height: "360px" if evaluation.video.attached?%> </p>
+    <div class="attachments d-flex justify-content-around">
+      <p> <%= cl_image_tag evaluation.photo.key, width: "300px", height: "400px" if evaluation.photo.attached?%> </p>
+      <% if evaluation.document.attached? %>
+        <%= link_to cl_image_path(evaluation.document.key) do %>
+          <p> <%= cl_image_tag evaluation.document.key, format: "jpg", width: "210px", height: "297px"%> </p>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
     <%= link_to "Back", service_booking_path(booking.service, booking) %>
   </p>

@@ -13,7 +13,6 @@
   padding: 5px 15px;
   cursor: pointer;
   font-family: $wheelp-font;
-  box-shadow: $color-shadow;
   min-width: 180px;
 }
 
@@ -53,26 +52,12 @@
 // ACTION
 
 .action-button {
-  text-transform: lowercase;
   text-decoration: none;
-  border: 3px solid $color;
-  color: $background-color;
-  background-color: $color;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: $font-color;
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
   font-weight: 800;
-  min-width: 100px;
-  border-radius: 30px;
-  font-size: 20px;
-  display: inline-block;
-  padding: 5px 15px;
-  cursor: pointer;
-  font-family: $wheelp-font;
-  box-shadow: $color-shadow;
-  min-width: 200px;
-}
-.action-button:hover {
-  border: $border;
-  border-color: $gray;
-  color: $background-color;
-  background-color: $gray;
-  box-shadow: $box-shadow;
 }

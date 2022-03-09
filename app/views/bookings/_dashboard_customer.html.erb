@@ -12,24 +12,34 @@
   <% declined = @bookings.select do |booking| %>
     <% booking.state == -1 %>
   <% end %>
-  <div class="dashboard-headers">
-    <% if pending.any? %>
-      <h2 > Pending Bookings </h2>
-      <% pending.each do |booking| %>
-        <%= render "booking_dashboard_card_customer", booking: booking %>
-      <% end %>
+  <% if pending.any? %>
+  <div class="title-frame">
+    <h2> Pending Bookings </h2>
+  </div>
+    <% pending.each do |booking| %>
+    <div class="frame">
+      <%= render "booking_dashboard_card_customer", booking: booking %>
+    </div>
     <% end %>
-    <% if confirmed.any? %>
-      <h2> Confirmed Bookings </h2>
-      <% confirmed.each do |booking| %>
-        <%= render "booking_dashboard_card_customer", booking: booking %>
-      <% end %>
+  <% end %>
+  <% if confirmed.any? %>
+  <div class="title-frame">
+    <h2> Confirmed Bookings </h2>
+  <div>
+    <% confirmed.each do |booking| %>
+    <div class="frame">
+      <%= render "booking_dashboard_card_customer", booking: booking %>
+    </div>
     <% end %>
-    <% if declined.any? %>
-      <h2> Declined Bookings </h2>
-      <% declined.each do |booking| %>
-        <%= render "booking_dashboard_card_customer", booking: booking %>
-      <% end %>
+  <% end %>
+  <% if declined.any? %>
+  <div class="title-frame">
+    <h2> Declined Bookings </h2>
+  </div>
+    <% declined.each do |booking| %>
+    <div class="frame">
+      <%= render "booking_dashboard_card_customer", booking: booking %>
+    </div>
     <% end %>
   </div>
   <div class="expert-button">

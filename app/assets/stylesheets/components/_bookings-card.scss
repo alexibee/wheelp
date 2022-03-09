@@ -1,20 +1,15 @@
 .bookings-card{
   overflow: hidden;
   height: 120px;
-  width: 800px;
-  background: white;
   display: flex;
   align-items: center;
-  border: 1px solid #e5d5ef;
-  box-shadow: 0 3px 7px #dfdfdf;
-  margin: 0 auto;
-  margin-top: 10px;
-  position: relative;
+  max-width: 500px;
 }
 
 .bookings-card img {
   height: 100%;
   width: 120px;
+  border-radius: 50%;
   object-fit: cover;
 }
 
