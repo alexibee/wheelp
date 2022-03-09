@@ -1,15 +1,13 @@
 .icon-button {
   box-shadow: $box-shadow;
   background-color: $background-color;
-  border-radius: 20px;
-  padding: 5px 15px;
   svg {
     fill: $font-color;
     width: 1.5rem;
   }
 }
 
-.subtle-button {
+.regular-button {
   color: transparent;
   background-color: $gray;
   padding: 5 15px;
@@ -21,4 +19,16 @@
 .icon-subtle-button {
   width: 2rem;
   color: $gray;
+}
+
+.rounded {
+  border-radius: 20px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.custom-shadow {
+  filter: drop-shadow($box-shadow);
 }

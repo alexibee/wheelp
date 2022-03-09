@@ -39,6 +39,11 @@
   color: $font-color;
 }
 
+.flat {
+  background-color: $background-color;
+  box-shadow: $box-shadow;
+}
+
 .blended {
   background-color: $background-color;
   box-shadow: $inverted-shadow;
