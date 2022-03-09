@@ -35,9 +35,11 @@
 
 .show-service-left {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column-reverse;
+  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-right: 1rem;
   .category-tag {
     color: #F6F2FF;
@@ -45,6 +47,7 @@
     border-radius: 2rem;
     display: inline;
     align-items: center;
+    margin-bottom: 1rem;
     p {
       margin: 0px;
       text-transform: uppercase;
@@ -57,36 +60,33 @@
     border-radius: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
+    max-height: 30rem;
   }
 }
 
-.show-card-right-info .top {
+.show-card-right {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   align-items: baseline;
   .price {
     font-size: 18px;
     font-weight: 700;
     color: $color;
   }
-}
-
-.show-service-subtitle {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-
-.show-card-right-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   .availabilty {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-right: 3rem;
+  }
+  .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }
 

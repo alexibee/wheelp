@@ -14,10 +14,10 @@
         <h6> About this <mark> wheelper </mark> </h6>
       </div>
 
-      <div class= "frame main show-service-card">
+      <div class= "frame show-service-card">
         <div class="show-service-left">
-          <div class="category-tag">
-            <p> <%= @service.category %></p>
+          <div class="show-service-card-name">
+            <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
           </div>
           <div class="show-service-img">
             <% if @service.user.photo.attached? %>
@@ -26,29 +26,26 @@
               <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="300" height="300" />
             <% end %>
           </div>
+          <div class="category-tag">
+            <p> <%= @service.category %></p>
+          </div>
         </div>
 
-        <div class="show-card-right-info">
-          <div class="top">
-            <div class="show-service-card-header">
-              <div class="show-service-card-name">
-                <h2> <%= @service.user.first_name %> <%= @service.user.last_name %> </h2>
-              </div>
-              <div class="show-service-subtitle">
-                <p> <%= @service.address %> </p>
-              </div>
+        <div class="show-card-right">
+          <div class="show-service-card-header">
+            <h4> <%= @service.title.capitalize %></h4>
+          </div>
+          <div class="show-card-text-bio">
+            <p><%= @service.bio %></p>
+          </div>
+          <div class="bottom">
+            <div class="availability">
+              <%= render "shared/availability", service: @service %>
             </div>
             <div class="price">
               <h3><%= "£ #{@service.price}/hour" %></h3>
             </div>
           </div>
-            <div class="show-card-text-bio">
-              <h4> <%= @service.title.capitalize %></h4>
-              <p><%= @service.bio %></p>
-            </div>
-            <div class="availability">
-              <%= render "shared/availability", service: @service %>
-            </div>
         </div>
       </div>
       <div class="location">
