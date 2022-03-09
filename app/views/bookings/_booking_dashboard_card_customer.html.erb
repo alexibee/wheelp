@@ -4,11 +4,15 @@
     src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
     />
     <div class="info">
-      <p><%= booking.vehicle_brand + " " + booking.vehicle_model%></p>
-      <p>📍 <%= booking.vehicle_address %></p>
-      <p> <%= booking.service.user.first_name %>
-      <p> <%= booking.date %></p>
+      <div class="title">
+        <h6>About the vehicle</h6>
+        <p><%= booking.vehicle_brand + " " + booking.vehicle_model%></p>
+        <p>📍 <%= booking.vehicle_address %></p>
+        <p> <%= booking.service.user.first_name %>
+        <p> <%= booking.date %></p>
+      </div>
     </div>
+
     <% if booking.state == 0 %>
       <h6> Pending request <h6>
     <% elsif booking.state == 1 && !booking.evaluation %>
