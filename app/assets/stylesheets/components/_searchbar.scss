@@ -31,23 +31,6 @@
   color: $gray;
 }
 
-.service_address {
-  display: block;
-  width: 400px !important;
-  margin-right: 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  .form-control {
-    background-color: $concave-bg;
-    filter: drop-shadow($concave);
-    border-radius: 1rem;
-  }
-}
-
 .search-bar .search-input {
   width: 400px;
 }
