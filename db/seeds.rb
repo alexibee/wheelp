@@ -73,7 +73,7 @@ end
 
 services = []
 
-character_adjectives = %w[helpful wheelpful sincere serious professional truthworthy knowledgeable passionate thoughtful nice]
+character_adjectives = %w[helpful wheelpful sincere serious professional trustworthy knowledgeable passionate thoughtful nice]
 vehicles = %w[vehicle car motorbike van four-wheel convertible SUV minivan pickup limousine scooter micro-car familiar]
 vehicle_adjectives = %w[vintage automatic luxury easy-to-drive small low-emission electric]
 good_adjectives = %w[perfect great amazing high-end awesome exquisite brilliant gorgeous helpful sincere]
@@ -92,7 +92,7 @@ timing = [
   ""
 ]
 
-addresses = %w[London Dublin Paris Berlin Rome Milan Kairo Latvia Bilbao Sevilla Barcelona Bristol Athens Lion Madrid Norway]
+addresses = %w[London Dublin Paris Berlin Rome Milan Cairo Latvia Bilbao Sevilla Barcelona Bristol Athens Lion Madrid Norway]
 availability = []
 30.times do |i|
   date = Date.today + i
@@ -117,23 +117,23 @@ experts.each do |expert_id|
     "help you find a #{vehicle_adjective} vehicle",
     "help you find the perfect #{vehicle}",
     "check the #{vehicle} for you",
-    "verify the condition any #{vehicle} for you",
+    "verify the condition of any #{vehicle} for you",
     "assist you in your next #{vehicle} purchase",
-    "offering #{price_adjective} priced service",
-    "helps you finding a #{vehicle} at a #{price_adjectives.sample} price"
+    "offering a #{price_adjective} priced service",
+    "help you to find a #{vehicle} at a #{price_adjectives.sample} price"
   ]
   wheelp = [
-    "I love offering my service in Wheelp",
-    "I've been a wheelper for a long time now",
+    "I love offering my services in Wheelp",
+    "I've been a Wheelper for a long time now",
     "I'm new to Wheelp",
-    "I discovered wheelp a couple of months ago",
-    "I used Wheelp a couple of years ago as a customer and a few months ago I decided to become a wheelper",
+    "I discovered Wheelp a couple of months ago",
+    "I used Wheelp a couple of years ago as a customer and a few months ago I decided to become a Wheelper",
     "I joined Wheelp some years ago",
-    "I'm a reputable long time wheelper",
+    "I'm a reputable long time Wheelper"
   ]
 
   phrase = [
-    "I love offering my service in Wheelp for people in #{address}",
+    "I love offering my services in Wheelp for people in #{address}",
     "I love wheelping people in #{address}",
     "I take this very seriously",
     "This is a service I actually enjoy doing",
@@ -142,9 +142,9 @@ experts.each do |expert_id|
 
   contact_phrase = [
     "please feel free to get in touch with me",
-    "please don't hesitate to ask me any question",
+    "please don't hesitate to ask me any questions",
     "I would love to check the vehicle for you",
-    "feel free to ask me any question regarding your vehicle or my service",
+    "feel free to ask me any questions regarding your vehicle or my service",
     "let me know what you are looking for in your #{vehicle} and book a vehicle viewing with me",
     "I'm sure I can be super wheelpful to you.",
     "I'm usually booked but make sure you check my availability to book my service ASAP",
@@ -209,31 +209,31 @@ end
 
 reviews = []
 good_content = [
-  "Excellent service, the wheelper arrived at exactly the time given.. to the minute.
+  "Excellent service, the wheelper arrived at exactly the time I requested.
   He carried out the job very professionally 👍🏽",
-  "Good service, would recomend! :)",
+  "Good service, highly recomend! :)",
   "Solid service 💯",
-  "Hes very knowledgeable, trustworthy, fair, and clear. He has experience in many makes.",
+  "He's very knowledgeable, trustworthy, fair, and clear. He has experience in many makes.",
   "I highly recommed this service! Received a very detailed report 👏🏻!",
   "Very efficient wheelper. The wheelper called me immediately and strongly recommended not to buy the car",
-  "I know nothing about cars so this service was really helpful to me ☺️. I was able to purchase a car in very goog condition ✌🏼",
+  "I know nothing about cars so this service was really helpful to me ☺️. I was able to purchase a car in very good condition ✌🏼",
   "Highly recommended, great work at very reasonable prices. Accommodating and really friendly",
-  "Really helful and also super friendly 10/10! Thank you 👍🏼",
+  "Really helpful and also super friendly, 10/10! Thank you 👍🏼",
   "This was such a great service, booking was easy and everything went really well!",
   "Such a great wheelper",
-  "I told this wheelper over the chat that I needed a car ASAP to be able to go to my new job, he was kind enough to call me personally so that I didn't have to wait for the evaluation 🤩",
+  "I told this wheelper over the chat that I needed a car ASAP to be able to go to my new job. He was kind enough to call me personally so that I didn't have to wait for the evaluation 🤩",
   "Amazing service at a very reasonable price"
 ]
 
 bad_content = [
-  "Horrible service, was late to the booking and the owner of the vehicle sold it by the time the wheelper arrived.",
+  "Horrible service. The Wheelper was late to the booking and the owner of the vehicle sold it by the time the Wheelper arrived.",
   "Never showed up to the viewing. Luckily the guys from Wheelp are very nice and gave me a refund of my money.
   Don't book this wheelper! 👀",
-  "Not worth the price, there's cheaper and better whelpers out there",
-  "The evaluation was ready ",
+  "Not worth the price, there's cheaper and better Wheelpers out there",
+  "The evaluation was not ready",
   "The service was good but this wheelper was rude. Would not recomment",
   "Not the best but the price is decent 🙃",
-  "I'm a long time user from Wheelp since I change my car very often and this was the worst wheelper I've booked so far.... sometimes happens 😣"
+  "I'm a long time customer from Wheelp since I change my car very often and this was the worst wheelper I've booked so far... it sometimes happens 😣"
 ]
 bookings.each do |n|
   type = [good_content, bad_content].sample
