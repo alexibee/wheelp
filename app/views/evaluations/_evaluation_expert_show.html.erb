@@ -13,20 +13,20 @@
       <h6> Your comment: </h6>
       <p>"<%= evaluation.comment %>"</p>
     </div>
-    <div class="attachments">
+    <div class="attachments icon-attach">
       <% if evaluation.video.attached? %>
           <a href="#" class="frame attach-link" data-action="click->reveal#toggleVideo">
-              <%= cl_image_tag 'video_ndopig.png', width: "100px" %>
+              <img src='https://res.cloudinary.com/dhoecmw9w/image/upload/v1646825488/development/video_ndopig.png'>
           </a>
       <% end %>
       <% if evaluation.photo.attached? %>
             <a href="#" class="frame attach-link" data-action="click->reveal#togglePhoto">
-              <%= cl_image_tag 'photos_ljeufb.png', width: "100px" %>
+              <img src='https://res.cloudinary.com/dhoecmw9w/image/upload/v1646825488/development/photos_ljeufb.png'>
             </a>
       <% end %>
       <% if evaluation.document.attached? %>
             <a href="#" class="frame attach-link" data-action="click->reveal#toggleDoc">
-              <%= cl_image_tag 'file_jl8ona.png', width: "100px" %>
+              <img src='https://res.cloudinary.com/dhoecmw9w/image/upload/v1646825488/development/file_jl8ona.png'>
             </a>
       <% end %>
     </div>
