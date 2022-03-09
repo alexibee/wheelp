@@ -40,12 +40,33 @@
   h5 {
     font-size: 12px;
   }
+  .availability-window {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    align-content: flex-start;
+    p {
+      margin-top: 0;
+      margin-left: 0.5rem;
+    }
+  }
 }
+
+.bottom {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
 .price-tag {
   text-decoration: none;
   align-items: center;
   border-radius: 50%;
-  padding: 0.2rem 0.5rem;
+  padding: 0.4rem 1rem;
   color: $color;
 }
 
