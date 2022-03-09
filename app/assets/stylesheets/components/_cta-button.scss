@@ -43,22 +43,9 @@
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;
-  color: $font-color;
+  color: $color;
   font-size: 2rem;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   font-weight: 800;
-}
-
-.rounded {
-  border-radius: 3rem;
-  padding: 5px 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.2px;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.custom-shadow {
-  filter: drop-shadow($box-shadow);
 }

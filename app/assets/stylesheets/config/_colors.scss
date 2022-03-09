@@ -8,18 +8,18 @@ $orange: #E67E22;
 $green: #1EDD88;
 
 
-$color: #6D378E;
+$color: #4844B7;
 $dark-color: darken($color, 20%);
+$light-color: lighten($color, 30%);
 
 $background-color: #ffffff;
 $font-color: darken($color, 50%);
 
 // GRAYS
 
-$light-color: rgb(212, 212, 212);
-$sublte-gray: $light-color;
-$dark-gray: darken(rgb(212, 212, 212), 60%);
-$gray: darken(rgb(212, 212, 212), 35%);
+$gray: #6C6C6B;
+$light-gray: lighten($gray, 20%);
+$dark-gray: darken($gray, 40%);
 
 // BORDERS
 $subtle: 1px solid $background-color;
@@ -30,13 +30,13 @@ $color-shadow: #BABECC;
 $shadow: 0 3px 7px #dfdfdf;
 
 $box-shadow: 8px 8px 16px #d6d6d6,
--8px -8px 16px #ffffff;;
+            -8px -8px 16px #ffffff;;
 
 $inverted-shadow:  inset 5px 5px 6px #cdcacf,
                     inset -5px -5px 6px #ffffff;
 $pressed-shadow: inset 8px 8px 16px #d6d6d6,
-inset -8px -8px 16px #ffffff;
+                inset -8px -8px 16px #ffffff;
 
 $concave: 8px 8px 16px #d6d6d6,
--8px -8px 16px #ffffff;
+        -8px -8px 16px #ffffff;
 $concave-bg: linear-gradient(145deg, #e6e6e6, #ffffff);
