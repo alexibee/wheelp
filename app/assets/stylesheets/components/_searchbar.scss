@@ -9,7 +9,6 @@
     text-transform: lowercase;
     font-size: 14px;
     color: $sublte-gray;
-    font-family: $wheelp-font;
     margin: 0px;
   }
 }
@@ -24,12 +23,9 @@
   }
 }
 #query {
-  box-shadow: $shadow;
-  border-radius: 20px;
-  border: $subtle;
   padding-top: 20px;
   padding-bottom: 25px;
-  width: 45vw;
+  width: 50vw;
   height: 40px;
   font-size: 12px;
   color: $gray;
