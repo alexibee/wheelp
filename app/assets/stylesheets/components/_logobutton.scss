@@ -17,28 +17,6 @@
   background-color: sgrey;
 }
 
-// LOGO BUTTON BLENDED
-
-.big .logo-button {
-  font-weight: 300;
-}
-
-.logo-button {
-  font-family: $wheelp-font;
-  text-decoration: none;
-  text-transform: lowercase;
-  font-weight: 300;
-  color: $font-color;
-  font-size: 2rem;
-  padding: 0.5rem 1.5rem;
-  border-radius: 1rem;
-}
-
-.logo-button:hover {
-  font-weight: 500;
-  color: $font-color;
-}
-
 .submit-button {
   background-color: $background-color;
   box-shadow: $box-shadow;

@@ -7,13 +7,19 @@ $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
 
+// Variables
 
 $color: #4844B7;
 $dark-color: darken($color, 20%);
-$light-color: lighten($color, 30%);
+$light-color: lighten($color, 40%);
 
 $background-color: #ffffff;
 $font-color: darken($color, 50%);
+
+$ruler: 16px;
+$color-bg: #EBECF0;
+$color-shadow: #BABECC;
+$color-white: #FFF;
 
 // GRAYS
 
