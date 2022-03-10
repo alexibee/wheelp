@@ -89,7 +89,7 @@
               placeholder: "Message #{@booking.user.first_name}",
               wrapper_html: {class: "flex-grow-1"}
             %>
-              <%= f.submit "Send", class: "regular-button" %>
+              <%= f.submit "Send", class: "submit-blended", id:"chat-submit" %>
             <% end %>
           </div>
         </div>
@@ -102,7 +102,7 @@
         <%= simple_form_for [@service, @booking, @review] do |f| %>
           <%= f.input :content %>
           <%= f.input :rating, as: :integer %>
-          <%= f.submit "Submit", class: "regular-button" %>
+          <%= f.submit "Submit", class: "submit-blended", id:"chat-submit" %>
         <% end %>
       </div>
     <% end %>

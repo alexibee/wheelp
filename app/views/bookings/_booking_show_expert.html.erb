@@ -10,8 +10,8 @@
       <div class="map-info-container">
         <div class="booking-show-links d-flex justify-content-around pt-3">
           <% if @booking.state == 0 %>
-            <%= link_to "Accept", booking_path(@booking, state: 1), remote: true, method: :patch %>
-            <%= link_to "Decline", booking_path(@booking, state: -1), remote: true, method: :patch %>
+            <%= link_to "Accept", booking_path(@booking, state: 1), class: "action-tag", remote: true, method: :patch %>
+            <%= link_to "Decline", booking_path(@booking, state: -1), class: "decline-btn", remote: true, method: :patch %>
           <% elsif @booking.state == 1 %>
             <% if !@booking.evaluation %>
               <%= link_to "Add evaluation", new_booking_evaluation_path(@booking), class:"link" %>
@@ -89,7 +89,7 @@
             placeholder: "Message #{@booking.user.first_name}",
             wrapper_html: {class: "flex-grow-1"}
           %>
-            <%= f.submit "Send", class: "regular-button" %>
+            <%= f.submit "Send", class: "submit-blended", id:"chat-submit" %>
           <% end %>
         </div>
       </div>
