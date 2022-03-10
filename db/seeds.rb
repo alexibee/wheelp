@@ -69,6 +69,37 @@ usernames[6..(usernames.length-1)].each do |user|
   puts "customer #{user} created"
 end
 
+wheelper = User.new(
+  username: "alexiwheelper",
+  email: "alexi@wheelper.com",
+  password: "123456",
+  first_name: "Alexi",
+  last_name: "Brehovs",
+  expert: true
+)
+
+alexi_avatar = URI.open("https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat3&accessoriesType=Prescription01&hatColor=Black&facialHairType=BeardLight&facialHairColor=Blonde&clotheType=ShirtCrewNeck&clotheColor=Black&eyeType=Default&eyebrowType=FlatNatural&mouthType=Serious&skinColor=Pale")
+
+wheelper.photo.attach(io: file, filename: 'alexi-avatar.png', content_type: 'image/png')
+wheelper.save!
+puts "Alexi Wheelper user"
+
+customer = User.new(
+  username: "silvithebest",
+  email: "silvia@user.com",
+  password: "123456",
+  first_name: "Silvia",
+  last_name: "Gonzalez",
+  expert: true
+)
+
+alexi_avatar = URI.open("https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Blank&hairColor=Brown&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Pink&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light")
+
+wheelper.photo.attach(io: file, filename: 'silvia-avatar.png', content_type: 'image/png')
+wheelper.save!
+puts "Silvia customer user done"
+
+
 #-------- SERVICES
 
 services = []
