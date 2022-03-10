@@ -34,3 +34,17 @@
 .search-bar .search-input {
   width: 400px;
 }
+
+.form-control {
+  border-radius: 30px !important;
+  width: 247px;
+}
+
+#service {
+  height: 1.5rem;
+  background-color: $light-color;
+  svg {
+    fill: $color;
+  }
+
+}
