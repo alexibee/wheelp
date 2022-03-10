@@ -1,5 +1,5 @@
 meta_product_name: "Wheelp"
 meta_title: "Wheelp - Get your questions answered by people you can trust"
 meta_description: "Quick, easy and secure online verification of a second-hand vehicle's condition from our network of highly-trained Wheelpers."
-meta_image: "wheelp-logo.png" # should exist in `app/assets/images/`
+meta_image: "og_image.jpg" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
