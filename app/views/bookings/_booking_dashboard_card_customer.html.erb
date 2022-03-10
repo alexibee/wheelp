@@ -12,12 +12,20 @@
     </div>
     <div class="request-state">
       <% if booking.state == 0 %>
-        <h6 class="request-tag"> Pending request <h6>
+        <%# <div class="booking-card-status">
+          <h6> Status: </h6>
+          <p> Pending </p>
+        </div> %>
       <% elsif booking.state == 1 && !booking.evaluation %>
-        <h6 class="request-accepted"> Request accepted </h6>
-        <h6> <%= booking.service.user.first_name %> is working on it </h6>
+        <div class="booking-card-status">
+          <h6> Status: </h6>
+          <p> <span><%= booking.service.user.first_name %></span> is working on it </p>
+        </div>
       <% elsif booking.state == 1 && booking.evaluation %>
-        <h6> Evaluation completed </h6>
+        <div class="booking-card-status">
+          <h6> Status: </h6>
+          <p> Evaluation completed </p>
+        </div>
         <%= link_to "See evaluation", booking_evaluation_path(booking, booking.evaluation), class: "action-tag" %>
       <% else%>
         <h6> Request declined </h6>

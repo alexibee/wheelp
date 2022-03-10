@@ -43,7 +43,7 @@
             </tr>
             <tr>
               <th> Booking date: </th>
-              <td> <%= @booking.date %> </td>
+              <td> <%= @booking.date.strftime("%e %b %y") %> </td>
             </tr>
             <tr>
               <th> Status: </th>
