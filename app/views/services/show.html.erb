@@ -62,12 +62,12 @@
     <% reviews = @service.reviews %>
     <% if reviews.count > 0 %>
       <div class="reviews">
-        <div class="title-frame">
+        <div class="title-frame justify-content-start align-items-baseline">
           <% if reviews.count > 0 %>
             <div class="star-rating">
               <h6> ★ <%= @service.average_rating %> </h6>
             </div>
-            <div class="count">
+            <div class="count mx-3">
               <% if reviews.count == 1 %>
                 <p> <%= reviews.count %> Review </p>
               <% else %>
