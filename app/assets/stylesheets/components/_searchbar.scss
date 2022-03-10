@@ -8,8 +8,7 @@
   p {
     text-transform: lowercase;
     font-size: 14px;
-    color: $light-gray;
-    font-family: $wheelp-font;
+    color: $subtle-gray;
     margin: 0px;
   }
 }
@@ -24,34 +23,28 @@
   }
 }
 #query {
-  box-shadow: $shadow;
-  border-radius: 20px;
-  border: $subtle;
   padding-top: 20px;
   padding-bottom: 25px;
-  width: 45vw;
+  width: 50vw;
   height: 40px;
   font-size: 12px;
   color: $gray;
 }
 
-.service_address {
-  display: block;
-  width: 400px !important;
-  margin-right: 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  .form-control {
-    background-color: $concave-bg;
-    filter: drop-shadow($concave);
-    border-radius: 1rem;
-  }
-}
-
 .search-bar .search-input {
   width: 400px;
+}
+
+.form-control {
+  border-radius: 30px !important;
+  width: 247px;
+}
+
+#service {
+  height: 1.5rem;
+  background-color: $light-color;
+  svg {
+    fill: $color;
+  }
+
 }

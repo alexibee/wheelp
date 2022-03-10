@@ -3,11 +3,10 @@
     <div class= "banner-header">
       <% if current_user.expert == false %>
         <h3>Get the peace of mind you need before you buy</h3>
-        <%= render "shared/search_bar" %>
       <% else %>
         <% if current_user.service.nil? %>
           <h3>Specialists make Wheelp, Wheelp</h3>
-          <%= link_to "Create service", new_service_path, class: "action-button" %>
+          <%= link_to "Create service", new_service_path, class: "blended-button" %>
         <% end %>
       <% end %>
     </div>
