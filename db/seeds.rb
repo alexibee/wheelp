@@ -99,6 +99,17 @@ wheelper.photo.attach(io: file, filename: 'silvia-avatar.png', content_type: 'im
 wheelper.save!
 puts "Silvia customer user done"
 
+shady = User.new(
+  username: "harleylover",
+  email: "harley@angel.com",
+  password: "123456",
+  first_name: "Stone",
+  last_name: "Gonzalez",
+  expert: true
+)
+shady.photo.attach(io: file, filename: 'shady-avatar.png', content_type: 'image/png')
+shady.save!
+puts "Shady user done"
 
 #-------- SERVICES
 
@@ -213,7 +224,41 @@ experts.each do |expert_id|
   new_service.save!
   services << new_service.id
   puts "service #{expert_id} created"
+
+  # Alexis Service :
+    alexis_service = Service.new(
+      description: "Hey, I'm scooter stan, I love everything motorised on two wheelps!",
+      #looking for a scooter
+      bio: "I've been a long time fan of scooters and I love to help others build their love for scooters. When I was a teenager I took apart a Vespa and put it back together in a weekend and I've got an amazing garage filled with tools and spare parts 😊. Let me help you find the motorbike of your dreams! 🛵💨",
+      address: "Seville",
+      price: 80,
+      availability: availability - unavailability,
+      title: "Scooter maniac looking to help someone buy their first scooter!",
+      category: "Enthusiast",
+      user: wheelper
+    )
+
+    alexis_service.save!
+    services << alexis_service.id
+
+  # Shady Character
+    shady_service = Service.new (
+      description: "I'm an ex Hell's Angels member 🏍, just got out of prison and I'm looking to turn my life around",
+      bio: "I've got a huge collection of Harley Davidson's I know everything about motorbikes. After 20 years riding around the world with my gang, the law finally caught up with me. This is a great way for me to pay off my debts while still allowing me to maintain my Rock n' Roll lifestyle 🤟🏼 . All appointments must be approved by my probation officer 🚔",
+      address: "Seville",
+      price: 180,
+      availability: availability - unavailability,
+      category: "Enthusiast",
+      user: shady,
+      title: "Former Hell's Angel trying to make some cash, always ready to help!"
+    )
+    shady_service.save!
+    services << shady_service.id
 end
+
+
+
+
 
 bookings = []
 brands = %w[Audi Ford Volvo BMW VW Scania Mini Toyota Mazda Vauxhall Rolls-Royce Ferrari Porsche Smart Citroen]
