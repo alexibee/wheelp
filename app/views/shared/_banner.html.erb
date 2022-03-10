@@ -1,4 +1,6 @@
-<div class="logged-banner-wrapper">
+<% wrapper_class = current_user.expert ? "wrapper" : "logged-customer-banner-wrapper wrapper" %>
+
+<div class="<%=wrapper_class%>">
   <div class="banner mb-3">
     <div class= "banner-header">
       <% if current_user.expert == false %>
