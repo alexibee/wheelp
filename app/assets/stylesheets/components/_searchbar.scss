@@ -37,7 +37,12 @@
 
 .form-control {
   border-radius: 30px !important;
-  width: 247px;
+  min-width: 247px;
+  width: 400px;
+  .mapboxgl-ctrl-geocoder {
+    box-shadow: none;
+    background-color: none;
+  }
 }
 
 #service {
@@ -46,5 +51,4 @@
   svg {
     fill: $color;
   }
-
 }

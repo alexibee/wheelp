@@ -23,6 +23,8 @@
 
 .mapboxgl-ctrl-geocoder {
   max-width: none;
+  background-color: $background-color;
+  box-shadow: none;
   width: 100%;
 }
 
