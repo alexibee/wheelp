@@ -1,18 +1,19 @@
 <%= link_to service_booking_path(@service, booking) do %>
-  <div class="bookings-card expert", id="request-<%=booking.id%>">
+  <div class="bookings-card", id="request-<%=booking.id%>">
     <img
     src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
     />
     <div class="info">
-      <h5><%= booking.vehicle_brand.capitalize + " " + booking.vehicle_model.capitalize %></h5>
+      <h6>About the vehicle</h6>
+      <p><%= booking.vehicle_brand.capitalize + " " + booking.vehicle_model.capitalize %></p>
       <p>📍 <%= booking.vehicle_address %></p>
       <p> <%= booking.user.first_name.capitalize %> </p>
       <p> <%= booking.date.strftime("%e %b %y") %></p>
     </div>
-    <div class="request-state-expert">
+    <div class="request-state">
       <% if booking.state == 0 %>
         <%# <div class="booking-card-status">
-          <h5> Status: </h5>
+          <h6> Status: </h6>
           <p> Request pending </p>
         </div> %>
         <div class="action-buttons">
@@ -21,16 +22,16 @@
         </div>
       <% elsif booking.state == 1 && !booking.evaluation %>
         <div class="booking-card-status">
-          <h5> Status: </h5>
+          <h6> Status: </h6>
           <p> Awaiting evaluation </p>
         </div>
         <%= link_to "Add evaluation", new_booking_evaluation_path(booking), class: "action-tag" %>
       <% elsif booking.state == 1 && booking.evaluation %>
         <div class="booking-card-status">
-          <h5> Status: </h5>
+          <h6> Status: </h6>
           <p> Evaluation completed </p>
         </div>
-        <%= link_to "See evaluation", booking_evaluation_path(booking, booking.evaluation), class: "action-tag" %>
+        <%= link_to "See evaluation", booking_evaluation_path(booking, booking.evaluation), class: "decline-btn" %>
       <% end %>
     </div>
   </div>
