@@ -1,8 +1,9 @@
 <%= link_to service_booking_path(@service, booking) do %>
   <div class="bookings-card", id="request-<%=booking.id%>">
     <img
-    src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
+    src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646935239/sport-car_jmoijz.png"
     />
+    <% end %>
     <div class="info">
       <h6>About the vehicle</h6>
       <p><%= booking.vehicle_brand.capitalize + " " + booking.vehicle_model.capitalize %></p>

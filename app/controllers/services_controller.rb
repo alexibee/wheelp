@@ -14,8 +14,8 @@ class ServicesController < ApplicationController
         {
           lat: service.latitude,
           lng: service.longitude,
-          info_window: render_to_string(partial: "info_window", locals: { service: service })
-          # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
+          info_window: render_to_string(partial: "info_window", locals: { service: service }),
+          image_url: "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646932396/wrench_mxycup.png"
         }
       end
     end

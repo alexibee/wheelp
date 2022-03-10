@@ -12,7 +12,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/alexibee/cl0l9gxet001b14pon1bzmxb1"
     })
     this.#addMarkerToMap()
     this.#fitMapToMarker()
@@ -20,15 +20,15 @@ export default class extends Controller {
 
   #addMarkerToMap() {
       const popup = new mapboxgl.Popup().setHTML(this.markerValue.info_window)
-      // const customMarker = document.createElement("div")
-      // customMarker.className = "marker"
-      // customMarker.style.backgroundImage = `url('${marker.image_url}')`
-      // customMarker.style.backgroundSize = "contain"
-      // customMarker.style.width = "25px"
-      // customMarker.style.height = "25px"
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${this.markerValue.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "30px"
+      customMarker.style.height = "30px"
 
     // Pass the element as an argument to the new marker
-      new mapboxgl.Marker() //pass customMarker here if we have
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
         .setPopup(popup)
         .addTo(this.map)
@@ -36,6 +36,6 @@ export default class extends Controller {
   #fitMapToMarker() {
     const bounds = new mapboxgl.LngLatBounds()
     bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 10, duration: 0 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 }

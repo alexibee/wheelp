@@ -23,8 +23,8 @@ class BookingsController < ApplicationController
     @marker = {
       lat: @booking.latitude,
       lng: @booking.longitude,
-      info_window: render_to_string(partial: "map_info_window", locals: { booking: @booking })
-      # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS") if we have image
+      info_window: render_to_string(partial: "map_info_window", locals: { booking: @booking }),
+      image_url: "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646932396/wrench_mxycup.png"
     }
     @chatroom = Chatroom.find(@booking.chatroom.id) if @booking.chatroom
     @message = Message.new
