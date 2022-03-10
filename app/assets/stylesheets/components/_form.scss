@@ -1,5 +1,9 @@
 .container .form {
   max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
 }
 
 $ruler: 16px;
@@ -38,6 +42,7 @@ button, .icon-button {
   color:#61677C;
   font-weight: bold;
   box-shadow: -5px -5px 20px white,  5px 5px 20px $color-shadow;
+
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   font-weight: 600;
@@ -70,3 +75,4 @@ button, .icon-button {
     }
   }
 }
+

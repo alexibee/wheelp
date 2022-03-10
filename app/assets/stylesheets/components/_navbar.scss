@@ -19,18 +19,38 @@
   flex-grow: 0;
 }
 
+.welcome-text {
+  padding: 8px;
+  margin: 8px;
+  align-self: center;
+  h6 {
+    margin: 0;
+  }
+}
 
+.nav-item {
+  display: flex;
+  align-items: center;
+  p {
+    margin: 0;
+    font-weight: 600;
+    img {
+      width: 20px;
+    }
+  }
+}
 // NAV TABS
 
 .tab {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-self: center;
   cursor: pointer;
   text-decoration: none;
   padding: 8px;
   margin: 8px;
-  color: $dark-color;
-  font-size: 16px;
+  color: #2b286d;
+  font-size: 1.2rem;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
   font-weight: 600;
 }

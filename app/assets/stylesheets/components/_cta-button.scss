@@ -1,27 +1,18 @@
-.cta-button {
-  text-transform: lowercase;
-  text-decoration: none;
-  border: 3px solid $color;
-  color: $color;
-  text-align: center;
-  background-color: $background-color;
-  font-weight: 800;
-  min-width: 100px;
-  border-radius: 30px;
-  font-size: 20px;
-  display: inline-block;
-  padding: 5px 15px;
-  cursor: pointer;
-  font-family: $wheelp-font;
-  min-width: 180px;
-}
-
-@media only screen and (max-width: 767px) {
-  .cta-button{
-    min-width: 80px;
+// CTA COLOR BUTTON
+.cta {
+  background-color: $color;
+  color: $background-color;
+  &:hover {
+    font-size: large;
+    color: $background-color;
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .cta {
+    min-width: 80px;
+  }
+}
 
 // ACTION
 
@@ -29,7 +20,7 @@
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;
-  color: $font-color;
+  color: $color;
   font-size: 2rem;
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;

@@ -1,48 +1,50 @@
-<% if @message %>
-  <h3> <%= @message %> </h3>
-  <%= link_to "Find an expert", services_path, class: "link" %>
-<% else %>
-  <% @bookings = @bookings.sort_by {|obj| obj.date } %>
-  <% pending = @bookings.select do |booking| %>
-    <% booking.state == 0 %>
-  <% end %>
-  <% confirmed = @bookings.select do |booking| %>
-    <% booking.state == 1 %>
-  <% end %>
-  <% declined = @bookings.select do |booking| %>
-    <% booking.state == -1 %>
-  <% end %>
-  <% if pending.any? %>
-    <div class="title-frame">
-      <h2> Pending Bookings </h2>
-    </div>
-    <% pending.each do |booking| %>
-      <div class="frame">
-        <%= render "booking_dashboard_card_customer", booking: booking %>
-      </div>
+<div class="container">
+  <% if @message %>
+    <h3 class="my-5"> <%= @message %> </h3>
+    <%= link_to "Find an expert", services_path, class: "link" %>
+  <% else %>
+    <% @bookings = @bookings.sort_by {|obj| obj.date } %>
+    <% pending = @bookings.select do |booking| %>
+      <% booking.state == 0 %>
     <% end %>
-  <% end %>
-  <% if confirmed.any? %>
-    <div class="title-frame">
-      <h2> Confirmed Bookings </h2>
-    </div>
-      <% confirmed.each do |booking| %>
-        <div class="frame">
+    <% confirmed = @bookings.select do |booking| %>
+      <% booking.state == 1 %>
+    <% end %>
+    <% declined = @bookings.select do |booking| %>
+      <% booking.state == -1 %>
+    <% end %>
+    <% if pending.any? %>
+      <div class="title-frame">
+        <h2> Pending Bookings </h2>
+      </div>
+      <% pending.each do |booking| %>
+        <div class="frame position-rel">
           <%= render "booking_dashboard_card_customer", booking: booking %>
         </div>
       <% end %>
-  <% end %>
-  <% if declined.any? %>
-    <div class="title-frame">
-      <h2> Declined Bookings </h2>
-    </div>
-    <% declined.each do |booking| %>
-      <div class="frame">
-        <%= render "booking_dashboard_card_customer", booking: booking %>
-      </div>
     <% end %>
+    <% if confirmed.any? %>
+      <div class="title-frame">
+        <h2> Confirmed Bookings </h2>
+      </div>
+        <% confirmed.each do |booking| %>
+          <div class="frame position-rel">
+            <%= render "booking_dashboard_card_customer", booking: booking %>
+          </div>
+        <% end %>
+    <% end %>
+    <% if declined.any? %>
+      <div class="title-frame">
+        <h2> Declined Bookings </h2>
+      </div>
+      <% declined.each do |booking| %>
+        <div class="frame position-rel">
+          <%= render "booking_dashboard_card_customer", booking: booking %>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="expert-button">
+      <%= link_to "Find an expert", services_path, class: "link" %>
+    </div>
   <% end %>
-  <div class="expert-button">
-    <%= link_to "Find an expert", services_path, class: "link" %>
-  </div>
-<% end %>
+</div>

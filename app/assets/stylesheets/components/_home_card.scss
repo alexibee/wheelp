@@ -5,7 +5,7 @@
   .number {
     font-size: 160px;
     font-weight: 900;
-    color: $background-color;
+    color: $light-color;
   }
 }
 
@@ -54,13 +54,13 @@
   mark {
     padding: 0.2rem 0.7rem;
     text-transform: lowercase;
-    background-color: $background-color;
-    color: $color;
+    background-color: $color;
+    color: $background-color;
     font-family: $wheelp-font;
     border-radius: 1.2em;
   }
-  .illustration {
-    max-width: 25vw;
+  .illustration img {
+    width: 300px;
   }
 }
 
@@ -68,8 +68,8 @@
   mark {
     padding: 0.2rem 0.7rem;
     text-transform: lowercase;
-    background-color: $background-color;
-    color: $color;
+    background-color: $color;
+    color: $background-color;
     font-family: $wheelp-font;
     border-radius: 1.2em;
   }

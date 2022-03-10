@@ -1,15 +1,14 @@
-<div class="wrapper">
-  <div class="banner mb-3">
-    <div class= "banner-line">
-      <h3> Buying a used vehicle can be a daunting task, you could use some </h3>
-      <%= link_to "wheelp", new_user_registration_path, class: "cta-button wheelp" %>
-    </div>
+<div class="banner-wrapper">
+  <div class="banner">
     <div class="banner-card">
-      <%= cl_image_tag("wheelp/TDV_M115_05_msexyv.svg", crop: :fill) %>
+      <img src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646838038/zktxobwpnq7ukg02yl1w.svg">
       <div class="banner-text" >
-        <h4> Avoid the hassle and uncertainty and get an evaluation on the condition of the vehicle from the confort of your home. </h4>
+        <h4> Avoid the hassle and uncertainty... get an evaluation on the condition of the vehicle from the comfort of your home. </h4>
         <%= link_to "Sign up", new_user_registration_path, class: "cta-button" %>
       </div>
+    </div>
+    <div class= "banner-line my-5">
+      <h3> Already registered? <%= link_to "Log in", new_user_session_path, class: "submit-blended" %> to get some wheelp </h3>
     </div>
   </div>
 </div>

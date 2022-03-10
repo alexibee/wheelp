@@ -13,7 +13,7 @@
     <h3> <%= @message %> </h3>
   <% else %>
     <div class="title-frame">
-      <h2> Browse all our wheelpers </h2>
+      <h2> Browse all our Wheelpers </h2>
     </div>
     <div class="cards-grid">
       <% @services.each do |service| %>
@@ -26,7 +26,7 @@
               <% if service.user.photo.attached? %>
                 <%= cl_image_tag service.user.photo.key %>
               <% else %>
-                <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% @service.title %>" width="300" height="300" />
+                <img src="https://cdn.dribbble.com/users/2145559/screenshots/10415392/media/0fa2ed74268fd3352333d359484252e5.jpg?compress=1&resize=400x300&vertical=top" alt="<% service.title %>" width="300" height="300" />
               <% end %>
             </div>
             <div class="show-service-card-name">
