@@ -29,13 +29,14 @@
 }
 
 .banner-text {
+  text-align: left;
   h4 {
-  font-family: "Roboto", "Helvetica", "sans-serif";
-  font-style: Regular;
+  font-family: $body-font;
   font-size: 34px;
   line-height: 42px;
-  text-align: Center;
+  text-align: left;
   max-width: 636px;
+  margin-bottom: 2rem;
   }
 }
 
