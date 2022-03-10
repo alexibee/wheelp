@@ -5,23 +5,26 @@
   font-family: $wheelp-font;
   text-decoration: none;
   text-transform: lowercase;
-  font-weight: 300;
-  color: $font-color;
+  font-weight: 800;
+  color: $color;
   font-size: 2rem;
-  padding: 0.5rem 1.5rem;
+  padding: 0.3rem 1rem;
   border: 0.3rem solid $color;
-  border-radius: 3rem;
+  border-radius: 4rem;
   text-align: center;
   justify-content: center;
 }
 
 .logo-button:hover {
-  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  // transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  color: $background-color;
+  background-color: $color;
 }
 
 // CTA BUTTON
 
 .cta-button {
+  all: unset;
   text-transform: lowercase;
   text-decoration: none;
   border: 3px solid $color;
@@ -139,7 +142,6 @@ $ruler: 16px;
 
 .icon-blended {
   border-radius: 50%;
-
   line-height: 0;
   width: $ruler*3;
   height: $ruler*3;
@@ -150,5 +152,23 @@ $ruler: 16px;
   font-size: $ruler*1.2;
   .icon {
     margin-right: 0;
+  }
+  svg {
+    fill: $color;
+  }
+}
+
+.back-button {
+  border-radius: 50%;
+  line-height: 0;
+  width: $ruler*3;
+  height: $ruler*3;
+  display:inline-flex;
+  justify-content: center;
+  align-items:center;
+  margin: 0 $ruler/2;
+  font-size: $ruler*1.2;
+  svg {
+    fill: $gray;
   }
 }
