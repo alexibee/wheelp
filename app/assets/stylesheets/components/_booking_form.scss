@@ -1,6 +1,7 @@
 .mapboxgl-ctrl-geocoder{
-  background-color: #e5d5ef;
+  background-color: $background-color;
   border: $subtle;
+  box-shadow: none;
 }
 
 #booking-form{
