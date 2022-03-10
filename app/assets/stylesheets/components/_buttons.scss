@@ -157,6 +157,13 @@ $ruler: 16px;
   }
 }
 
+.icon-blended:hover {
+  border-radius: 1px solid $gray;
+  svg {
+    fill: $gray;
+  }
+}
+
 .back-button {
   border-radius: 50%;
   line-height: 0;

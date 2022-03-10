@@ -37,11 +37,25 @@
 
 .form-control {
   border-radius: 30px !important;
-  min-width: 247px;
+  max-width: 650px;
 }
 
 #service {
+  max-height: 2rem;
   svg {
     fill: $color;
+    max-height: 3rem;
+    position: relative;
+    top: -0.5rem;
+    right: 6rem;
+  }
+}
+
+#service_address {
+  border-radius: 3rem;
+  min-width: 650px;
+  color: $gray;
+  &:active, :hover, :focus {
+    border: 2px solid $color;
   }
 }
