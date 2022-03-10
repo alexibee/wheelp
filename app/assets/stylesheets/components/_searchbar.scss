@@ -37,12 +37,11 @@
 
 .form-control {
   border-radius: 30px !important;
-  width: 247px;
+  min-width: 247px;
 }
 
 #service {
   svg {
     fill: $color;
   }
-
 }

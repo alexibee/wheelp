@@ -6,15 +6,16 @@
   color: $color;
   text-align: center;
   font-size: small;
-  padding: 30px;
+  padding: 10px;
   &-copyright {
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 30px;
+    margin-left: 29px;
   }
 }
 
 .contact-message {
-  font-size: larger;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -28,7 +29,7 @@
   }
 
   i {
-    font-size: 30px;
+    font-size: 25px;
     margin: 0 20px;
   }
 }
