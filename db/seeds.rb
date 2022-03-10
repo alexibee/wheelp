@@ -135,9 +135,10 @@ experts.each do |expert_id|
   phrase = [
     "I love offering my services in Wheelp for people in #{address}",
     "I love wheelping people in #{address}",
+    "This is a great way of making extra cash and helping people",
     "I take this very seriously",
     "This is a service I actually enjoy doing",
-    "This is the perfect way to get involved with #{vehicles} I like while making some extra cash"
+    "This is the perfect way to get involved with #{vehicle} I like while making some extra cash"
   ]
 
   contact_phrase = [
