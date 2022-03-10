@@ -90,7 +90,7 @@ customer = User.new(
   password: "123456",
   first_name: "Silvia",
   last_name: "Gonzalez",
-  expert: true
+  expert: false
 )
 
 silvia_avatar = URI.open("https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Blank&hairColor=Brown&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Pink&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light")
