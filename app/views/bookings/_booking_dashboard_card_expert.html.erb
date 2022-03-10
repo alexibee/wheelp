@@ -1,10 +1,7 @@
 <%= link_to service_booking_path(@service, booking) do %>
   <div class="bookings-card", id="request-<%=booking.id%>">
-    <% if booking.user.photo.attached? %>
-      <%= cl_image_tag booking.user.photo.key %>
-    <% else %>
     <img
-    src="https://docs.arnoldrenderer.com//download/attachments/55708758/1-no-light-blocker.jpeg?api=v2"
+    src="https://res.cloudinary.com/dhoecmw9w/image/upload/v1646935239/sport-car_jmoijz.png"
     />
     <% end %>
     <div class="info">
