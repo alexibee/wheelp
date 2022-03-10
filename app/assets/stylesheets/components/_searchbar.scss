@@ -41,7 +41,23 @@
 }
 
 #service {
+  position: relative;
+  right: 5.5rem;
   svg {
     fill: $color;
+  }
+}
+
+#service_address {
+  all: unset;
+  border-radius: 3rem;
+  min-width: 300px;
+  height: 2rem;
+  border: 2px solid $gray;
+  padding: 0.2rem 1rem;
+  margin: 1rem;
+  height: 48px;
+  &:active, :hover, :focus {
+    border: 2px solid $color;
   }
 }
