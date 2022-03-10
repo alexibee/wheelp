@@ -1,6 +1,6 @@
 <div class="container">
   <% if @message %>
-    <h3> <%= @message %> </h3>
+    <h3 class="my-5"> <%= @message %> </h3>
     <%= link_to "Find an expert", services_path, class: "link" %>
   <% else %>
     <% @bookings = @bookings.sort_by {|obj| obj.date } %>
