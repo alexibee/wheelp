@@ -26,11 +26,11 @@ class Service < ApplicationRecord
   #                 }
 
   def user_is_an_expert
-    errors.add("To add your services please create an expert account") if user.expert == false
+    errors.add(:user, :invalid, message: "To add your services please create an expert account") if user.expert == false
   end
 
   def just_one_service
-    errors.add("You have already created your profile") if Service.find_by(user_id: user.id)
+    errors.add(:user, :invalid, message: "You have already created your profile") if Service.find_by(user: user)
   end
 
   def average_rating
