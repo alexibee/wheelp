@@ -22,10 +22,10 @@ export default class extends Controller {
       const popup = new mapboxgl.Popup().setHTML(this.markerValue.info_window)
       const customMarker = document.createElement("div")
       customMarker.className = "marker"
-      customMarker.style.backgroundImage = `url('${'https://res.cloudinary.com/dhoecmw9w/image/upload/v1646932396/wrench_mxycup.png'}')`
+      customMarker.style.backgroundImage = `url('${this.markerValue.image_url}')`
       customMarker.style.backgroundSize = "contain"
-      customMarker.style.width = "25px"
-      customMarker.style.height = "25px"
+      customMarker.style.width = "30px"
+      customMarker.style.height = "30px"
 
     // Pass the element as an argument to the new marker
       new mapboxgl.Marker(customMarker)
@@ -36,6 +36,6 @@ export default class extends Controller {
   #fitMapToMarker() {
     const bounds = new mapboxgl.LngLatBounds()
     bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 10, duration: 0 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 }
