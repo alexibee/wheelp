@@ -5,8 +5,8 @@
   font-family: $wheelp-font;
   text-decoration: none;
   text-transform: lowercase;
-  font-weight: 300;
-  color: $font-color;
+  font-weight: 800;
+  color: $color;
   font-size: 2rem;
   padding: 0.5rem 1.5rem;
   border: 0.3rem solid $color;
@@ -16,7 +16,8 @@
 }
 
 .logo-button:hover {
-  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  color: $background-color;
+  background-color: $color;
 }
 
 // CTA BUTTON
