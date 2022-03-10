@@ -1,10 +1,11 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
+
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "pry"
 Evaluation.destroy_all
 Review.destroy_all
 Booking.destroy_all
@@ -27,11 +28,11 @@ avatars = ["https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761321/develo
   "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761309/development/qnlba4oq3njhsnejrp1ihkvrdcwh.png",
   "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761308/development/miycpqj9adpbww1pg9v8jlmbvuor.png",
   "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761307/development/2n5gkr0p52oscyhym28ykb6y14xb.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760784/development/bqb5hzwibsyha98m088x5q0za4v2.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760780/development/qonr97eu0t8cjczeqqrrcw6fw3sr.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760775/development/0xni4247z03utz8ds3u4jjbcbnxd.png",
+  # "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760784/development/bqb5hzwibsyha98m088x5q0za4v2.png",
+  # "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760780/development/qonr97eu0t8cjczeqqrrcw6fw3sr.png",
+  # "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760775/development/0xni4247z03utz8ds3u4jjbcbnxd.png",
   "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760771/development/homec20w4u52osnwfi6vu4p2jx6h.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760768/development/4tr3mq7nmkay7rv6lq7ui5x4lx0k.png"
+  # "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760768/development/4tr3mq7nmkay7rv6lq7ui5x4lx0k.png"
 ]
 
 #---------USERS
@@ -80,7 +81,7 @@ wheelper = User.new(
 
 alexi_avatar = URI.open("https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat3&accessoriesType=Prescription01&hatColor=Black&facialHairType=BeardLight&facialHairColor=Blonde&clotheType=ShirtCrewNeck&clotheColor=Black&eyeType=Default&eyebrowType=FlatNatural&mouthType=Serious&skinColor=Pale")
 
-wheelper.photo.attach(io: file, filename: 'alexi-avatar.png', content_type: 'image/png')
+wheelper.photo.attach(io: alexi_avatar, filename: 'alexi-avatar.png', content_type: 'image/png')
 wheelper.save!
 puts "Alexi Wheelper user"
 
@@ -93,10 +94,10 @@ customer = User.new(
   expert: true
 )
 
-alexi_avatar = URI.open("https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Blank&hairColor=Brown&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Pink&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light")
+silvia_avatar = URI.open("https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Blank&hairColor=Brown&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Pink&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light")
 
-wheelper.photo.attach(io: file, filename: 'silvia-avatar.png', content_type: 'image/png')
-wheelper.save!
+customer.photo.attach(io: silvia_avatar, filename: 'silvia-avatar.png', content_type: 'image/png')
+customer.save!
 puts "Silvia customer user done"
 
 shady = User.new(
@@ -107,7 +108,8 @@ shady = User.new(
   last_name: "Gonzalez",
   expert: true
 )
-shady.photo.attach(io: file, filename: 'shady-avatar.png', content_type: 'image/png')
+shady_avatar = URI.open("https://avataaars.io/?avatarStyle=Transparent&topType=Eyepatch&facialHairType=BeardMajestic&facialHairColor=Red&clotheType=Hoodie&clotheColor=Gray02&eyeType=Default&eyebrowType=AngryNatural&mouthType=Smile&skinColor=Yellow")
+shady.photo.attach(io: shady_avatar, filename: 'shady-avatar.png', content_type: 'image/png')
 shady.save!
 puts "Shady user done"
 
@@ -225,36 +227,40 @@ experts.each do |expert_id|
   services << new_service.id
   puts "service #{expert_id} created"
 
-  # Alexis Service :
-    alexis_service = Service.new(
-      description: "Hey, I'm scooter stan, I love everything motorised on two wheelps!",
-      #looking for a scooter
-      bio: "I've been a long time fan of scooters and I love to help others build their love for scooters. When I was a teenager I took apart a Vespa and put it back together in a weekend and I've got an amazing garage filled with tools and spare parts 😊. Let me help you find the motorbike of your dreams! 🛵💨",
-      address: "Seville",
-      price: 80,
-      availability: availability - unavailability,
-      title: "Scooter maniac looking to help someone buy their first scooter!",
-      category: "Enthusiast",
-      user: wheelper
-    )
-
-    alexis_service.save!
-    services << alexis_service.id
-
-  # Shady Character
-    shady_service = Service.new (
-      description: "I'm an ex Hell's Angels member 🏍, just got out of prison and I'm looking to turn my life around",
-      bio: "I've got a huge collection of Harley Davidson's I know everything about motorbikes. After 20 years riding around the world with my gang, the law finally caught up with me. This is a great way for me to pay off my debts while still allowing me to maintain my Rock n' Roll lifestyle 🤟🏼 . All appointments must be approved by my probation officer 🚔",
-      address: "Seville",
-      price: 180,
-      availability: availability - unavailability,
-      category: "Enthusiast",
-      user: shady,
-      title: "Former Hell's Angel trying to make some cash, always ready to help!"
-    )
-    shady_service.save!
-    services << shady_service.id
 end
+
+availability = []
+30.times do |i|
+  date = Date.today + i
+  availability << date
+end
+
+# Alexis Service :
+alexis_service = Service.new(
+  description: "Hey, I'm scooter stan, I love everything motorised on two wheelps!",
+  #looking for a scooter
+  bio: "I've been a long time fan of scooters and I love to help others build their love for scooters. When I was a teenager I took apart a Vespa and put it back together in a weekend and I've got an amazing garage filled with tools and spare parts 😊. Let me help you find the motorbike of your dreams! 🛵💨",
+  address: "Seville",
+  price: 80,
+  availability: availability,
+  title: "Scooter maniac looking to help someone buy their first scooter!",
+  category: "Enthusiast",
+  user_id: wheelper.id
+)
+alexis_service.save!
+
+# Shady Character
+shady_service = Service.new(
+  description: "I'm an ex Hell's Angels member 🏍, just got out of prison and I'm looking to turn my life around",
+  bio: "I've got a huge collection of Harley Davidson's I know everything about motorbikes. After 20 years riding around the world with my gang, the law finally caught up with me. This is a great way for me to pay off my debts while still allowing me to maintain my Rock n' Roll lifestyle 🤟🏼 . All appointments must be approved by my probation officer 🚔",
+  address: "Seville",
+  price: 180,
+  availability: availability,
+  category: "Enthusiast",
+  user_id: shady.id,
+  title: "Former Hell's Angel trying to make some cash, always ready to help!"
+)
+shady_service.save!
 
 
 
