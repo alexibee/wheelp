@@ -1,6 +1,6 @@
 <%# <%= javascript_pack_tag 'booking_new' %>
 <div class="new-booking">
-  <h1> Your Booking </h1>
+  <h1> Details about the vehicle </h1>
   <p> This information about the vehicle will only be provided to the <mark>wheelper</mark>. </p>
   <div id='booking-form' data-controller="flatpickr-booking-form" data-flatpickr-booking-form-available-value="<%= @service.availability.to_json %>">
     <%= simple_form_for [@service, @booking] do |f| %>
