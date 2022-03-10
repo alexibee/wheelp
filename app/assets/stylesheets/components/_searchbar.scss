@@ -55,6 +55,8 @@
   border-radius: 3rem;
   min-width: 650px;
   color: $gray;
+  border: 2px solid $gray;
+  padding: 1rem;
   &:active, :hover, :focus {
     border: 2px solid $color;
   }
