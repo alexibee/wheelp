@@ -55,3 +55,12 @@
 #chat-submit {
   font-size: 16px;
 }
+#chat-form {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#chat-input {
+  flex-grow: 1;
+}
