@@ -14,20 +14,25 @@ User.destroy_all
 usernames = ["shaquille_oatmeal", "hanging_with_my_gnomies", "hoosier_daddy", "fast_and_curious", "averagestudent", "BadKarma", "google_was_my_idea", "whats_my_name", "where_am_i", "wheelp4lyf", "mr_lewagon", "ms_lewagon", "806_or_die"]
 names = ["Bobby", "Roy", "Jose", "Alex", "Ismael", "Ibrahim", "Rob", "Dick", "Bill", "Auston", "Alice", "Laura", "Margaret", "Cindy", "Grace"]
 surnames = ["Brown", "Green", "Smith", "Jameson", "Gudbranson", "Velasquez", "Khan", "Goldman", "Lee", "Ozols"]
-avatars = ["https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761321/development/nl0z5vr0d3fhbetjjlxtxlp06wp0.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761319/development/wmt5c2m3brlgdm7rv3vrs4angnao.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761318/development/gmjoy1slz0h72scr727jmabh6p4s.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761317/development/ide2ugb024ptdvyx5d4z69twko5j.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761316/development/jsbxcjbn07z49u8tuq6a7eydz3b5.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761315/development/yov7bjcrd599cd60wla0c8jkrumf.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761314/development/ir8uc32nw6jlauwd1e0fqyo3af98.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761313/development/393entkruernngcv1yw0du18bgb2.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761311/development/d2dk5jr96m8tzfbawawdroa6fc9d.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761310/development/6avxfn53lhbp7nelek2rqog21sb5.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761309/development/qnlba4oq3njhsnejrp1ihkvrdcwh.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761308/development/miycpqj9adpbww1pg9v8jlmbvuor.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761307/development/2n5gkr0p52oscyhym28ykb6y14xb.png",
-  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760771/development/homec20w4u52osnwfi6vu4p2jx6h.png",
+avatars = ["https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-46_fzinoe.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-31_stst9t.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-37_eshyvx.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-39_bog5o6.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-28_mcjrcc.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-34_c8dc1w.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-36_cl7sgu.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-25_mhs11m.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-18_wmu4xz.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957172/Artboards_Diversity_Avatars_by_Netguru-23_hlqz6g.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-15_xdgg56.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957173/Artboards_Diversity_Avatars_by_Netguru-19_rpg9ju.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957172/Artboards_Diversity_Avatars_by_Netguru-20_puj0tq.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957172/Artboards_Diversity_Avatars_by_Netguru-01_wpft8a.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957172/Artboards_Diversity_Avatars_by_Netguru-09_uax75s.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957172/Artboards_Diversity_Avatars_by_Netguru-11_zcfbbn.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957172/Artboards_Diversity_Avatars_by_Netguru-05_qrlreh.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957172/Artboards_Diversity_Avatars_by_Netguru-04_yzt8og.png",
+  "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646957172/Artboards_Diversity_Avatars_by_Netguru-14_i0y3mv.png"
 ]
 
 #---------USERS
