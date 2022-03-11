@@ -27,11 +27,7 @@ avatars = ["https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761321/develo
   "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761309/development/qnlba4oq3njhsnejrp1ihkvrdcwh.png",
   "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761308/development/miycpqj9adpbww1pg9v8jlmbvuor.png",
   "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646761307/development/2n5gkr0p52oscyhym28ykb6y14xb.png",
-  # "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760784/development/bqb5hzwibsyha98m088x5q0za4v2.png",
-  # "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760780/development/qonr97eu0t8cjczeqqrrcw6fw3sr.png",
-  # "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760775/development/0xni4247z03utz8ds3u4jjbcbnxd.png",
   "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760771/development/homec20w4u52osnwfi6vu4p2jx6h.png",
-  # "https://res.cloudinary.com/dhoecmw9w/image/upload/v1646760768/development/4tr3mq7nmkay7rv6lq7ui5x4lx0k.png"
 ]
 
 #---------USERS
