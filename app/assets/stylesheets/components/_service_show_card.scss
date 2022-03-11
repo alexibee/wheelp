@@ -57,7 +57,7 @@
     font-size: 18px;
     font-weight: 700;
     color: $color;
-    margin-left: 150px; // changed
+    margin-left: 7rem;
   }
   .availabilty {
     display: flex;
@@ -67,10 +67,11 @@
   }
   .bottom {
     display: block;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-between;
-    // align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
   }
 }
 
