@@ -1,1 +1,8 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+🛠
+Ruby on Rails app providing a solution for those who want to buy a second hand vehicle and need third party expertise on its condition.
+
+🚗
+Started during Le Wagon bootcamp London, batch #806.
+
+🔧
+In progress.
