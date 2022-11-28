@@ -32,7 +32,7 @@ gem 'devise'
 gem 'pg_search', '~> 2.3.0'
 
 gem 'autoprefixer-rails', '10.2.5'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 4.6.0'
 gem 'simple_form'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
